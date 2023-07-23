@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  {{新主线<br />
+  |stageId=<span id="id"></span><br />
+  |关卡名=<span id="a1"></span><br />
+  |行动名=<span id="a2"></span><br />
+  |消耗=<span id="a3"></span><br />
+  |部署上限=<span id="a4"></span><br />
+  |介绍=<span id="a10"></span><br />
+  |敌方情报=<span id="a11"></span><br />
+  |推荐平均等级=<span id="a5"></span><br />
+  |首次掉落=<span id="a6"></span><br />
+  |常规掉落=<span id="a9"></span><br />
+  |特殊掉落=<span id="a23"></span><br />
+  |额外物资=<span id="a22"></span><br />
+  |突袭解锁条件=<span id="a17"></span><br />
+  |突袭特殊条件=<span id="a18"></span><br /><!--没有磨难环境别写！-->
+  |首次掉落2=<span id="a7"></span><br /><!--磨难环境首通奖励-->
+  |剧情特殊条件=<span id="a26"></span><br /><!--没有剧情环境别写！-->
+  |首次掉落3=<span id="a8"></span><br /><!--剧情环境首通奖励-->
+  |视频攻略=<span id="a15"></span><br />
+  |突袭视频攻略=<span id="a20"></span><br />
+  |mapTag=<span id="a24"></span><br />
+  |关卡装置=<span id="a25"></span><br />
+  |备注2=<span id="a13"></span><br /><!--剧情环境备注-->
+  |备注=<span id="a12"></span><br />
+  |突袭备注=<span id="a14"></span><br />
+  }}
+  <br />
+  <script src="/js/jQuery.js"></script>
+  <script src="/js/replaceStr.js"></script>
+  <script src="/js/cailiao.js"></script>
+  <script src="/js/enemyId.js"></script>
+  <script src="/js/attribute.js"></script>
+  <script src="js/stageTable.js"></script>
+  <script>
+    const stage = {
+    "main_12-01": {
+        "stageType": "MAIN",
+        "difficulty": "NORMAL",
+        "performanceStageFlag": "NORMAL_STAGE",
+        "diffGroup": "NORMAL",
+        "unlockCondition": [
+          {
+            "stageId": "main_11-16",
+            "completeState": "PASS"
+          },
+          {
+            "stageId": "tr_22",
+            "completeState": "PASS"
+          }
+        ],
+        "stageId": "main_12-01",
+        "levelId": "Obt/Main/level_main_12-01",
+        "zoneId": "main_12",
+        "code": "12-2",
+        "name": "静候驾临",
+        "description": "好吧，你们是维多利亚不可战胜的象征，是将要帮助我们的拯救者，那现在可以出发了吗？\\n我方费用上限大幅降低",
+        "hardStagedId": null,
+        "dangerLevel": "精英1 LV.60",
+        "dangerPoint": -1.0,
+        "loadingPicId": "loading_VC_street2",
+        "canPractice": true,
+        "canBattleReplay": true,
+        "apCost": 21,
+        "apFailReturn": 20,
+        "etItemId": null,
+        "etCost": -1,
+        "etFailReturn": -1,
+        "etButtonStyle": null,
+        "apProtectTimes": 1,
+        "diamondOnceDrop": 1,
+        "practiceTicketCost": 1,
+        "dailyStageDifficulty": -1,
+        "expGain": 210,
+        "goldGain": 0,
+        "loseExpGain": 0,
+        "loseGoldGain": 0,
+        "passFavor": 20,
+        "completeFavor": 21,
+        "slProgress": 227,
+        "displayMainItem": "4001",
+        "hilightMark": false,
+        "bossMark": false,
+        "isPredefined": false,
+        "isHardPredefined": false,
+        "isSkillSelectablePredefined": false,
+        "isStoryOnly": false,
+        "appearanceStyle": "MAIN_NORMAL",
+        "stageDropInfo": {
+          "firstPassRewards": null,
+          "firstCompleteRewards": null,
+          "passRewards": null,
+          "completeRewards": null,
+          "displayRewards": [
+            {
+              "type": "GOLD",
+              "id": "4001",
+              "dropType": "NORMAL"
+            },
+            {
+              "type": "DIAMOND",
+              "id": "4002",
+              "dropType": "COMPLETE"
+            }
+          ],
+          "displayDetailRewards": [
+            {
+              "occPercent": "ALWAYS",
+              "type": "GOLD",
+              "id": "4001",
+              "dropType": "NORMAL"
+            },
+            {
+              "occPercent": "OFTEN",
+              "type": "MATERIAL",
+              "id": "30011",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "30061",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "OFTEN",
+              "type": "MATERIAL",
+              "id": "30012",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "30062",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "30013",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "30063",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "30073",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "31013",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "3003",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "ALWAYS",
+              "type": "DIAMOND",
+              "id": "4002",
+              "dropType": "COMPLETE"
+            }
+          ]
+        },
+        "canUseCharm": false,
+        "canUseTech": false,
+        "canUseTrapTool": false,
+        "canUseBattlePerformance": false,
+        "startButtonOverrideId": null,
+        "isStagePatch": false,
+        "mainStageId": "main_12-01",
+        "extraCondition": null,
+        "extraInfo": null
+      } 
+    };
+
+    const starNum = obj => {
+      if (obj == "PASS" || obj == 2) {
+        return 2;
+      } else if (obj == "COMPLETE" || obj == 3) {
+        return 3;
+      }
+    }
+
+    var occProbblt = (obj) => {
+      switch (obj) {
+        case "ALWAYS":
+        case 0:
+          return "固定掉落"
+          break;
+        case "ALMOST":
+        case 1:
+          return "大概率"
+          break;
+        case "USUAL":
+        case 2:
+          return "概率掉落"
+          break;
+        case "OFTEN":
+        case 3:
+          return "小概率"
+          break;
+        case "SOMETIMES":
+        case 4:
+          return "罕见"
+          break;
+        default:
+          return ""
+      }
+    }
+    var levelId = "";
+    if (stage != "") {
+      for (let x in stage) {
+        levelId = stage[x].levelId;
+        // stageId
+        $("#id").html(stage[x].stageId);
+        // 关卡名
+        $("#a1").html(stage[x].code);
+        // 行动名
+        $("#a2").html(stage[x].name);
+        // 消耗
+        $("#a3").html("{{data|理智|" + stage[x].apCost + "}}");
+        // 推荐平均等级
+        $("#a5").html(stage[x].dangerLevel);
+        // 介绍
+        $("#a10").html(replaceStr(stage[x].description).slice(0, -5));
+        for (let j = 0; j < stage[x].stageDropInfo.displayRewards.length; j++) {
+          if (stage[x].stageDropInfo.displayRewards[j].dropType == "COMPLETE" || stage[x].stageDropInfo.displayDetailRewards[j].dropType == 8) {
+            //首次掉落
+            $("#a6").html("{{data|" + ms(stage[x].stageDropInfo.displayRewards[j].id) + "|三星获得}}");
+          }
+        }
+        for (let o = 0; o < stage[x].stageDropInfo.displayDetailRewards.length; o++) {
+          // 常规掉落
+          if (stage[x].stageDropInfo.displayDetailRewards[o].dropType == "NORMAL" || stage[x].stageDropInfo.displayDetailRewards[o].dropType == 2) {
+            $("#a9").html($("#a9").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|" +
+              occProbblt(stage[x].stageDropInfo.displayDetailRewards[o].occPercent) + "}}")
+            // 特殊掉落
+          } else if (stage[x].stageDropInfo.displayDetailRewards[o].dropType == "SPECIAL" || stage[x].stageDropInfo.displayDetailRewards[o].dropType == 3) {
+            $("#a23").html($("#a23").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|" +
+              occProbblt(stage[x].stageDropInfo.displayDetailRewards[o].occPercent) + "}}")
+            // 额外物资
+          } else if (stage[x].stageDropInfo.displayDetailRewards[o].dropType == "ADDITIONAL" || stage[x].stageDropInfo.displayDetailRewards[o].dropType == 4) {
+            $("#a22").html($("#a22").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|" +
+              occProbblt(stage[x].stageDropInfo.displayDetailRewards[o].occPercent) + "}}")
+          }
+        }
+
+        $.getJSON("/zh_CN/gamedata/excel/stage_table.json", (bro) => {
+          $.getJSON("/zh_CN/gamedata/levels/" + levelId + ".json", (data) => {
+            for (let mptg = 0; mptg < data.mapData.tags.length; mptg++) {
+              // mapTag
+              $("#a24").html($("#a24").html() + data.mapData.tags[mptg] + "、");
+            }
+            $("#a24").html($("#a24").html().slice(0, -1));
+            for (let i = 0; i < data.enemyDbRefs.length; i++) {
+              // 敌方情报
+              $("#a11").html($("#a11").html() + enemyId(data.enemyDbRefs[i].id) + "、")
+            }
+            $("#a11").html($("#a11").html().slice(0, -1));
+            $.each(bro.stages, (index, elmt) => {
+              if (stage[x].diffGroup != "TOUGH") {
+                if ("tough" + stage[x].mainStageId.slice(4) == index) {
+                  for (let hsi = 0; hsi < elmt.unlockCondition.length; hsi++) {
+                    // 突袭解锁条件
+                    $("#a17").html(starNum(elmt.unlockCondition[hsi].completeState) + "星通关磨难" + stageCode(elmt.unlockCondition[hsi].stageId) + "[[" + stageName(elmt.unlockCondition[hsi].stageId) + "]]");
+                  }
+                  // 突袭特殊条件
+                  $("#a18").html(replaceStr(elmt.description).slice(0, -5));
+                  for (let io = 0; io < elmt.stageDropInfo.displayRewards.length; io++) {
+                    if (elmt.stageDropInfo.displayRewards[io].dropType == "COMPLETE") {
+                      // 首次掉落2
+                      $("#a7").html($("#a7").html() + "{{data|" + ms(elmt.stageDropInfo.displayRewards[io].id) + "|三星获得}}");
+                    }
+                  }
+                }
+                if ("easy_" + $("#id").html().slice(5) == index) {
+                  // 剧情特殊条件
+                  $("#a26").html(replaceStr(elmt.description).slice(0, -5))
+                  for (let eo = 0; eo < elmt.stageDropInfo.displayRewards.length; eo++) {
+                    // 首次掉落3
+                    $("#a8").html($("#a8").html() + "{{data|" + ms(elmt.stageDropInfo.displayRewards[eo].id) + "|三星获得}}")
+                  }
+                }
+                $.each(stage, (name, content) => {
+                  // 部署上限
+                  $("#a4").html(data.options.characterLimit);
+                })
+              }
+            })
+          })
+        });
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>

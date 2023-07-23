@@ -1,0 +1,688 @@
+<!-- 2023年7月21日修改 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .box {
+      background: rgb(0, 0, 0);
+      padding: 5px;
+      margin: 5px;
+      border-radius: 5px;
+      color: orange;
+    }
+
+    .textcolor {
+      color: rgb(112, 132, 240);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 如果是第一次填写，请务必阅读[[模板:Enemy/common页面]] ，数据全部拆包确认-->{{Enemy/common<br />
+  |敌方名称=<span id="a1"></span><br />
+  |enemyId=<span id="a34"></span><br />
+  |编号=<span id="a2"></span><br />
+  |地位=<span id="a11"></span><br /><!-- 请再次检查levelType的值是否与图鉴文档中一致，只支持普通/精英/领袖 -->
+  |介绍=<span id="a5"></span><br />
+  |能力=<span id="ab"></span><br /><!-- 如果是第一次使用{{Enemy/ability}}模板请务必到[[模板:Enemy/ability]]页面阅读使用说明 -->
+  |关联敌人=<span id="a30"></span><br /><!-- linkEnemies，英文“,”隔开 -->
+  |伤害类型=<span id="a31"></span><br /><!-- 选择填写：物理/法术/治疗/无，多种伤害类型使用英文逗号（,）隔开 -->
+  |六维隐藏=<span id="a32"></span><br /><!--invisibleDetail 为true-->
+  <!--以下所有参数，若m_defined为false必须不填-->
+  |描述=<span id="a12"></span><br />
+  |最大生命值=<span id="a13"></span><br />
+  |攻击力数值=<span id="a14"></span><br />
+  |防御力数值=<span id="a15"></span><br />
+  |法术抗性数值=<span id="a16"></span><br />
+  |移动速度=<span id="a17"></span><br />
+  |攻击速度=<span id="a18"></span><br />
+  |攻击间隔=<span id="a19"></span><br />
+  |生命恢复速度=<span id="a33"></span><br /><!--hpRecoveryPerSec的值-->
+  |重量等级=<span id="a21"></span><br />
+  |元素抗性=<span id="a35"></span><br /><!--epDamageResistance的值-->
+  |损伤抵抗=<span id="a36"></span><br /><!--epResistance的值-->
+  <!--以下抗性判断为持有该抗性的条件为：m_defined与m_value的值同时为true，否则无需填写-->
+  |眩晕抗性=<span id="a22"></span><br />
+  |沉默抗性=<span id="a23"></span><br />
+  |沉睡抗性=<span id="a24"></span><br />
+  |冻结抗性=<span id="a25"></span><br />
+  |浮空抗性=<span id="a26"></span><br />
+  |攻击方式=<span id="a4"></span><br /><!-- applyWay的值，英文“,”隔开 -->
+  |位置=<span id="a37"></span><br /><!-- motion的值，地面/飞行 -->
+  |种族=<span id="a3"></span><br /><!-- enemyTags的值，英文“,”隔开，23年8月1日起可以选择填写代码原文或转码中文 -->
+  |生命值扣除数=<span id="a27"></span><br />
+  |攻击范围半径=<span id="a28"></span><br />
+  |天赋=<span id="a29"></span><br />
+  |技能=<br />
+  }}<br />
+  &#60!!--没存页面等级0不填没数据是正常现象，保存页面后才有数据显示--&#62<br />
+  &#60!--数值更改用&#60span class="label label-danger"&#62&#60/span&#62表示出来--&#62<br />
+  {{Enemy/level|等级=0}}<br />
+  <span id="span1"></span>
+  <span id="span2"></span>
+  <h1>0级天赋</h1>
+  <div id="talent1"
+    style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;background-color: rgb(0, 255, 0);border-radius: 5px;">
+  </div>
+  <h1>0级技能</h1>
+  <div id="skill1"
+    style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;background-color: rgb(0, 255, 0);border-radius: 5px;">
+  </div>
+  <h1>1级天赋</h1>
+  <div id="talent2"
+    style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;background-color: rgb(255, 255, 0);border-radius: 5px;">
+  </div>
+  <h1>1级技能</h1>
+  <div id="skill2"
+    style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;background-color: rgb(255, 255, 0);border-radius: 5px;">
+  </div>
+  <h1>2级天赋</h1>
+  <div id="talent3"
+    style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;background-color: rgb(255, 0, 0);border-radius: 5px;">
+  </div>
+  <h1>2级技能</h1>
+  <div id="skill3"
+    style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;background-color: rgb(255, 0, 0);border-radius: 5px;">
+  </div>
+  <script src="js/jQuery.js"></script>
+  <script src="js/replaceStr.js"></script>
+  <script src="js/enemyId.js"></script>
+  <script>
+
+    var enemy = {
+      "enemy_1506_patrt": {
+        "enemyId": "enemy_1506_patrt",
+        "enemyIndex": "PT",
+        "enemyTags": null,
+        "sortId": 703,
+        "name": "爱国者",
+        "enemyLevel": "BOSS",
+        "description": "年久失修的铠甲多处破损，曾经坚锐的巨戟锋蚀刃锈。但爱国者永不动摇，绝不退缩，从不怜悯。他与命运较量许久，他要割开命运的咽喉。",
+        "attackType": null,
+        "ability": null,
+        "isInvalidKilled": false,
+        "overrideKillCntInfos": {},
+        "hideInHandbook": false,
+        "abilityList": [
+          {
+            "text": "大幅强化敌军攻击与防御力",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "行军姿态",
+            "textFormat": "TITLE"
+          },
+          {
+            "text": "使自身极容易受到我方攻击，普通攻击为4连击",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "生命值降为0后，进入重生阶段，期间持续对周围造成真实伤害，一段时间后切换至毁灭姿态",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "毁灭姿态",
+            "textFormat": "TITLE"
+          },
+          {
+            "text": "对最远的高台单位投掷长枪造成物理伤害",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "持续对周围造成真实伤害",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "免疫眩晕，免疫冻结，免疫浮空",
+            "textFormat": "NORMAL"
+          }
+        ],
+        "linkEnemies": [],
+        "damageType": [
+          "PHYSIC"
+        ],
+        "invisibleDetail": false
+      }
+    };
+
+
+
+    function damageType(obj) {
+      switch (obj) {
+        case "NO_DAMAGE":
+          return "无";
+        case "PHYSIC":
+          return "物理";
+        case "MAGIC":
+          return "法术";
+        case "HEAL":
+          return "治疗";
+      }
+    }
+
+
+
+
+    for (x in enemy) {
+      //名称
+      a1.innerHTML = enemy[x].name;
+      //编号
+      a2.innerHTML = enemy[x].enemyIndex;
+      //类别
+      if (enemy[x].enemyTags == null) {
+        a3.innerHTML = "无";
+      } else {
+        a3.innerHTML = enemy[x].enemyTags;
+      }
+      // a3.innerHTML = enemy[x].enemyRace;
+      //攻击方式
+      a4.innerHTML = enemy[x].attackType;
+      //介绍
+      a5.innerHTML = enemy[x].description;
+      // 关联
+      if (enemy[x].linkEnemies != null) {
+        for (let i = 0; i < enemy[x].linkEnemies.length; i++) {
+          $("#a30").html($("#a30").html() + enemyId(enemy[x].linkEnemies[i]) + ",");
+        }
+        $("#a30").html($("#a30").html().slice(0, -1));
+      }
+      // 伤害类型
+      for (let i = 0; i < enemy[x].damageType.length; i++) {
+        $("#a31").html($("#a31").html() + damageType(enemy[x].damageType[i]) + ",");
+      }
+      $("#a31").html($("#a31").html().slice(0, -1));
+      // 六维隐藏
+      if (enemy.invisibleDetail == true) {
+        $("#a32").html("是");
+      }
+      //备注
+      if (enemy[x].ability != null) {
+        a10.innerHTML = replaceStr(enemy[x].ability).slice(0, -5);
+      }
+      // 分组
+      a11.innerHTML = enemyLevel(enemy[x].enemyLevel);
+      // enemyId
+      a34.innerHTML = enemy[x].enemyId;
+      // 能力
+      // if (enemy[x].abilityList != null) {
+      //   // let tempr =  `&#60;ul class="enemy-ability-list">`;
+      //   for (let i = 0; i < enemy[x].abilityList.length; i++) {
+      //     if (enemy[x].abilityList[i].textFormat == "TITLE") {
+      //       $("#ab").html($("#ab").html() + `&#60;p class="enemy-ability-subtitle">${enemy[x].abilityList[i].text}&#60;/p>`);
+      //     } else if (enemy[x].abilityList[i].textFormat == "NORMAL") {
+      //       $("#ab").html($("#ab").html() + `&#60;ul class="enemy-ability-list">&#60;li>${enemy[x].abilityList[i].text}&#60;/li>&#60;/ul>`);
+      //     } else if (enemy[x].abilityList[i].textFormat == "SILENCE") {
+      //       $("#ab").html($("#ab").html() + `&#60;ul class="enemy-ability-list">[[file:Icon_enemy_silence.png|link=]]&#60;li>${enemy[x].abilityList[i].text}&#60;/li>&#60;/ul>`);
+      //     }
+      //     // $("#ab").html($("#ab").html() +  `<p class="enemy-ability-subtitle">${}</p>`)
+      //   }
+      // }
+      // $("#ab").html()
+      
+      const ablt = (a, elemt) => {
+        let str = "";
+        for (let b = 0; b < a.length; b++) {
+          if (a[b].textFormat == "TITLE") {
+            str += "$*$" + a[b].text;
+          } else if (a[b].textFormat == "NORMAL") {
+            str += "#*#" + a[b].text;
+          } else if (a[b].textFormat == "SILENCE") {
+            str += "#*#[[file:Icon_enemy_silence.png|link=]]" + a[b].text;
+          }
+        }
+        let content = "";
+        if (str.indexOf("$*$") != -1) {
+          for (let i = 0; i < str.slice(3).split("$*$").length; i++) {
+            // console.log(str.slice(3).split("$*$")[i].split("#*#").length)
+            if (str.slice(3).split("$*$")[i].split("#*#").length == 1) {
+              $(elemt).html($(elemt).html() + `{{Enemy/ability
+                |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0]).slice(0, -5)}
+                }}`);
+            }
+            if (str.slice(3).split("$*$")[i].split("#*#").length > 1) {
+              for (let j = 1; j < str.slice(3).split("$*$")[i].split("#*#").length; j++) {
+                content += str.slice(3).split("$*$")[i].split("#*#")[j] + ";"
+              }
+              $(elemt).html($(elemt).html() + `{{Enemy/ability
+                |标题=${str.slice(3).split("$*$")[i].split("#*#")[0]}
+                |${replaceStr(content.slice(0, -1)).slice(0, -5)}
+                }}`);
+              content = "";
+            }
+          }
+        } else {
+          for (let i = 0; i < str.slice(3).split("#*#").length; i++) {
+            $(elemt).html($(elemt).html() + `{{Enemy/ability
+              |${replaceStr(str.slice(3).split("#*#")[i]).slice(0, -5)}
+              }}`);
+          }
+          content = "";
+        }
+      }
+      ablt(enemy[x].abilityList, "#ab");
+    }
+    function enemyLevel(obj) {
+      switch (obj) {
+        case "BOSS":
+          return "领袖";
+          break;
+        case "ELITE":
+          return "精英";
+          break;
+        case "NORMAL":
+          return "普通";
+          break;
+      }
+    }
+    function immune(obj) {
+      if (obj == true) {
+        return "有";
+      } else {
+        return "无";
+      }
+    }
+    function range(obj) {
+      if (obj == 0.0) {
+        return "-"
+      } else {
+        return obj
+      }
+    }
+    function change(objBoolean, obj1, obj2) {
+      if (objBoolean == true) {
+        return "&#60span class=\"label label-danger\">" + obj1 + "&#60/span>";
+      } else {
+        return obj2;
+      }
+    }
+    $.getJSON("/zh_CN/gamedata/levels/enemydata/enemy_database.json", function (data) {
+      for (let i = 0; i < data.enemies.length; i++) {
+        if ($("#a34").html() == data.enemies[i].Key) {
+          console.log(data.enemies[i].Value[0].enemyData.motion.m_value);
+
+          //描述
+          a12.innerHTML = replaceStr(data.enemies[i].Value[0].enemyData.description.m_value);
+          $("#a12").html($("#a12").html().slice(0, -4))
+          //生命数值
+          a13.innerHTML = data.enemies[i].Value[0].enemyData.attributes.maxHp.m_value;
+          //攻击数值
+          a14.innerHTML = data.enemies[i].Value[0].enemyData.attributes.atk.m_value;
+          //防御数值
+          a15.innerHTML = data.enemies[i].Value[0].enemyData.attributes.def.m_value;
+          //法抗数值
+          a16.innerHTML = data.enemies[i].Value[0].enemyData.attributes.magicResistance.m_value;
+          //移速
+          a17.innerHTML = data.enemies[i].Value[0].enemyData.attributes.moveSpeed.m_value.toFixed(1);
+          //攻速
+          a18.innerHTML = data.enemies[i].Value[0].enemyData.attributes.attackSpeed.m_value.toFixed(1);
+          //攻击间隔
+          a19.innerHTML = data.enemies[i].Value[0].enemyData.attributes.baseAttackTime.m_value.toFixed(1);
+          //重量
+          a21.innerHTML = data.enemies[i].Value[0].enemyData.attributes.massLevel.m_value;
+          //眩晕抗性
+          a22.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.stunImmune.m_value);
+          //沉默抗性
+          a23.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.silenceImmune.m_value);
+          //睡眠抗性
+          a24.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.sleepImmune.m_value);
+          //冻结抗性
+          a25.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.frozenImmune.m_value);
+          //浮空抗性
+          a26.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.levitateImmune.m_value);
+          //生命值扣除数
+          a27.innerHTML = data.enemies[i].Value[0].enemyData.lifePointReduce.m_value;
+          //攻击范围半径
+          a28.innerHTML = range(data.enemies[i].Value[0].enemyData.rangeRadius.m_value);
+          // 生命恢复速度
+          a33.innerHTML = data.enemies[i].Value[0].enemyData.attributes.hpRecoveryPerSec.m_value;
+          // 元素抗性
+          a35.innerHTML = data.enemies[i].Value[0].enemyData.attributes.epDamageResistance.m_value;
+          // 损伤抵抗
+          a36.innerHTML = data.enemies[i].Value[0].enemyData.attributes.epResistance.m_value;
+          // 位置
+          if (data.enemies[i].Value[0].enemyData.motion.m_value == "WALK") {
+            a37.innerHTML = "地面";
+          } else if (data.enemies[i].Value[0].enemyData.motion.m_value == "FLY") {
+            a37.innerHTML = "飞行";
+          }
+          $.getJSON("zh_CN/gamedata/excel/enemy_handbook_table.json", race => {
+            $.each(race.raceData, (id, value) => {
+              if (data.enemies[i].Value[0].enemyData.enemyTags.m_value == id) {
+                $("#a3").html(value.raceName);
+              }
+            });
+
+          });
+          if (data.enemies[i].Value.length > 1) {
+            // "&#60!--数值更改尽量使用 <span class=\"label label-danger\"></span>标注--&#62<br />" + ""
+            span1.innerHTML =
+              "{{Enemy/level|等级=1  " +
+              "<span id=\"b2\"></span>" +
+              "<span id=\"b3\"></span>" +
+              "<span id=\"b4\"></span>" +
+              "<span id=\"b5\"></span>" +
+              "<span id=\"b6\"></span>" +
+              "<span id=\"b7\"></span>" +
+              "<span id=\"b8\"></span>" +
+              "<span id=\"b10\"></span" +
+              "<span id=\"b11\"></span" +
+              "<span id=\"b12\"></span" +
+              "<span id=\"b13\"></span" +
+              "<span id=\"b14\"></span" +
+              "<span id=\"b15\"></span" +
+              "<span id=\"b16\"></span" +
+              "<span id=\"b17\"></span";
+
+            span1.innerHTML += "}} <br/>";
+
+
+            // 生命数值 如果等级0不等于等级1
+            if (data.enemies[i].Value[1].enemyData.attributes.maxHp.m_defined == true) {
+              b2.innerHTML = "|最大生命值=" + change(data.enemies[i].Value[1].enemyData.attributes.maxHp.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.maxHp.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.maxHp.m_value);
+            }
+            // 攻击数值 如果等级0不等于等级1
+            if (data.enemies[i].Value[1].enemyData.attributes.atk.m_defined == true) {
+              b3.innerHTML = "|攻击力数值=" + change(data.enemies[i].Value[1].enemyData.attributes.atk.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.atk.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.atk.m_value);
+            }
+            // 防御数值 如果等级0不等于等级1
+            if (data.enemies[i].Value[1].enemyData.attributes.def.m_defined == true) {
+              b4.innerHTML = "|防御力数值=" + change(data.enemies[i].Value[1].enemyData.attributes.def.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.def.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.def.m_value);
+            }
+            // 法抗数值 如果等级0不等于等级1
+            if (data.enemies[i].Value[1].enemyData.attributes.magicResistance.m_defined == true) {
+              b5.innerHTML = "|法术抗性数值=" + change(data.enemies[i].Value[1].enemyData.attributes.magicResistance.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.magicResistance.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.magicResistance.m_value);
+            }
+            // 移速数值
+            if (data.enemies[i].Value[1].enemyData.attributes.moveSpeed.m_defined == true) {
+              b6.innerHTML = "|移动速度=" + change(data.enemies[i].Value[1].enemyData.attributes.moveSpeed.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.moveSpeed.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.moveSpeed.m_value);
+            }
+            // 攻速数值 如果等级0不等于等级1
+            if (data.enemies[i].Value[1].enemyData.attributes.attackSpeed.m_defined == true) {
+              b7.innerHTML = "|攻击速度=" + change(data.enemies[i].Value[1].enemyData.attributes.attackSpeed.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.attackSpeed.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.attackSpeed.m_value)
+            }
+            // 攻击间隔数值 如果等级0不等于等级1
+            if (data.enemies[i].Value[1].enemyData.attributes.baseAttackTime.m_defined == true) {
+              b8.innerHTML = "|攻击间隔=" + change(data.enemies[i].Value[1].enemyData.attributes.baseAttackTime.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.baseAttackTime.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.baseAttackTime.m_value)
+            }
+            //重量
+            if (data.enemies[i].Value[1].enemyData.attributes.massLevel.m_defined == true) {
+              b10.innerHTML = "|重量等级=" + change(data.enemies[i].Value[1].enemyData.attributes.massLevel.m_defined,
+                data.enemies[i].Value[1].enemyData.attributes.massLevel.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.massLevel.m_value);
+            }
+            // 眩晕抗性
+            if (data.enemies[i].Value[1].enemyData.attributes.stunImmune.m_defined == true) {
+              b11.innerHTML = "|眩晕抗性=" + change(data.enemies[i].Value[1].enemyData.attributes.stunImmune.m_defined,
+                immune(data.enemies[i].Value[1].enemyData.attributes.stunImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.stunImmune.m_value));
+            }
+            // 沉默抗性
+            if (data.enemies[i].Value[1].enemyData.attributes.silenceImmune.m_defined == true) {
+              b12.innerHTML = "|沉默抗性=" + change(data.enemies[i].Value[1].enemyData.attributes.silenceImmune.m_defined,
+                immune(data.enemies[i].Value[1].enemyData.attributes.silenceImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.silenceImmune.m_value));
+            }
+            // 睡眠抗性
+            if (data.enemies[i].Value[1].enemyData.attributes.sleepImmune.m_defined == true) {
+              b13.innerHTML = "|睡眠抗性=" + change(data.enemies[i].Value[1].enemyData.attributes.sleepImmune.m_defined,
+                immune(data.enemies[i].Value[1].enemyData.attributes.sleepImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.sleepImmune.m_value));
+            }
+            // 冻结抗性
+            if (data.enemies[i].Value[1].enemyData.attributes.frozenImmune.m_defined == true) {
+              b14.innerHTML = "|冻结抗性=" + change(data.enemies[i].Value[1].enemyData.attributes.frozenImmune.m_defined,
+                immune(data.enemies[i].Value[1].enemyData.attributes.frozenImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.frozenImmune.m_value));
+            }
+            // 浮空抗性
+            if (data.enemies[i].Value[1].enemyData.attributes.levitateImmune.m_defined == true) {
+              b15.innerHTML = "|浮空抗性=" + change(data.enemies[i].Value[1].enemyData.attributes.levitateImmune.m_defined,
+                immune(data.enemies[i].Value[1].enemyData.attributes.levitateImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.levitateImmune.m_value));
+            }
+            // 生命值扣除数
+            if (data.enemies[i].Value[1].enemyData.lifePointReduce.m_defined == true) {
+              b16.innerHTML = "|生命值扣除数=" + change(data.enemies[i].Value[1].enemyData.lifePointReduce.m_defined,
+                data.enemies[i].Value[1].enemyData.lifePointReduce.m_value,
+                data.enemies[i].Value[0].enemyData.lifePointReduce.m_value);
+            }
+            // 攻击范围半径
+            if (data.enemies[i].Value[1].enemyData.rangeRadius.m_defined == true) {
+              b17.innerHTML = "|攻击范围半径=" + change(data.enemies[i].Value[1].enemyData.rangeRadius.m_defined,
+                range(data.enemies[i].Value[1].enemyData.rangeRadius.m_value),
+                range(data.enemies[i].Value[0].enemyData.rangeRadius.m_value));
+            }
+          }
+          if (data.enemies[i].Value.length == 3) {
+            span2.innerHTML =
+              "{{Enemy/level|等级=2  " +
+              "<span id=\"c2\"></span>" +
+              "<span id=\"c3\"></span>" +
+              "<span id=\"c4\"></span>" +
+              "<span id=\"c5\"></span>" +
+              "<span id=\"c6\"></span>" +
+              "<span id=\"c7\"></span>" +
+              "<span id=\"c8\"></span>" +
+              "<span id=\"c10\"></span" +
+              "<span id=\"c11\"></span" +
+              "<span id=\"c12\"></span" +
+              "<span id=\"c13\"></span" +
+              "<span id=\"c14\"></span" +
+              "<span id=\"c15\"></span" +
+              "<span id=\"c16\"></span" +
+              "<span id=\"c17\"></span";
+            span2.innerHTML += "}}";
+
+            // 生命数值 如果等级0不等于等级2
+            if (data.enemies[i].Value[2].enemyData.attributes.maxHp.m_defined == true) {
+              c2.innerHTML = "|最大生命值=" + change(data.enemies[i].Value[2].enemyData.attributes.maxHp.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.maxHp.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.maxHp.m_value);
+            }
+            // 攻击数值 如果等级0不等于等级2
+            if (data.enemies[i].Value[2].enemyData.attributes.atk.m_defined == true) {
+              c3.innerHTML = "|攻击力数值=" + change(data.enemies[i].Value[2].enemyData.attributes.atk.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.atk.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.atk.m_value);
+            }
+            // 防御数值 如果等级0不等于等级2
+            if (data.enemies[i].Value[2].enemyData.attributes.def.m_defined == true) {
+              c4.innerHTML = "|防御力数值=" + change(data.enemies[i].Value[2].enemyData.attributes.def.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.def.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.def.m_value);
+            }
+            // 法抗数值 如果等级0不等于等级2
+            if (data.enemies[i].Value[2].enemyData.attributes.magicResistance.m_defined == true) {
+              c5.innerHTML = "|法术抗性数值=" + change(data.enemies[i].Value[2].enemyData.attributes.magicResistance.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.magicResistance.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.magicResistance.m_value);
+            }
+            // 移速数值
+            if (data.enemies[i].Value[2].enemyData.attributes.moveSpeed.m_defined == true) {
+              c6.innerHTML = "|移动速度=" + change(data.enemies[i].Value[2].enemyData.attributes.moveSpeed.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.moveSpeed.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.moveSpeed.m_value);
+            }
+            // 攻速数值 如果等级0不等于等级2
+            if (data.enemies[i].Value[2].enemyData.attributes.attackSpeed.m_defined == true) {
+              c7.innerHTML = "|攻击速度=" + change(data.enemies[i].Value[2].enemyData.attributes.attackSpeed.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.attackSpeed.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.attackSpeed.m_value)
+            }
+            // 攻击间隔数值 如果等级0不等于等级2
+            if (data.enemies[i].Value[2].enemyData.attributes.baseAttackTime.m_defined == true) {
+              c8.innerHTML = "|攻击间隔=" + change(data.enemies[i].Value[2].enemyData.attributes.baseAttackTime.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.baseAttackTime.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.baseAttackTime.m_value)
+            }
+            //重量
+            if (data.enemies[i].Value[2].enemyData.attributes.massLevel.m_defined == true) {
+              c10.innerHTML = "|重量等级=" + change(data.enemies[i].Value[2].enemyData.attributes.massLevel.m_defined,
+                data.enemies[i].Value[2].enemyData.attributes.massLevel.m_value,
+                data.enemies[i].Value[0].enemyData.attributes.massLevel.m_value);
+            }
+            // 眩晕抗性
+            if (data.enemies[i].Value[2].enemyData.attributes.stunImmune.m_defined == true) {
+              c11.innerHTML = "|眩晕抗性=" + change(data.enemies[i].Value[2].enemyData.attributes.stunImmune.m_defined,
+                immune(data.enemies[i].Value[2].enemyData.attributes.stunImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.stunImmune.m_value));
+            }
+            // 沉默抗性
+            if (data.enemies[i].Value[2].enemyData.attributes.silenceImmune.m_defined == true) {
+              c12.innerHTML = "|沉默抗性=" + change(data.enemies[i].Value[2].enemyData.attributes.silenceImmune.m_defined,
+                immune(data.enemies[i].Value[2].enemyData.attributes.silenceImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.silenceImmune.m_value));
+            }
+            // 睡眠抗性
+            if (data.enemies[i].Value[2].enemyData.attributes.sleepImmune.m_defined == true) {
+              c13.innerHTML = "|睡眠抗性=" + change(data.enemies[i].Value[2].enemyData.attributes.sleepImmune.m_defined,
+                immune(data.enemies[i].Value[2].enemyData.attributes.sleepImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.sleepImmune.m_value));
+            }
+            // 冻结抗性
+            if (data.enemies[i].Value[2].enemyData.attributes.frozenImmune.m_defined == true) {
+              c14.innerHTML = "|冻结抗性=" + change(data.enemies[i].Value[2].enemyData.attributes.frozenImmune.m_defined,
+                immune(data.enemies[i].Value[2].enemyData.attributes.frozenImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.frozenImmune.m_value));
+            }
+            // 浮空抗性
+            if (data.enemies[i].Value[2].enemyData.attributes.levitateImmune.m_defined == true) {
+              c15.innerHTML = "|浮空抗性=" + change(data.enemies[i].Value[2].enemyData.attributes.levitateImmune.m_defined,
+                immune(data.enemies[i].Value[2].enemyData.attributes.levitateImmune.m_value),
+                immune(data.enemies[i].Value[0].enemyData.attributes.levitateImmune.m_value));
+            }
+            // 生命值扣除数
+            if (data.enemies[i].Value[2].enemyData.lifePointReduce.m_defined == true) {
+              c16.innerHTML = "|生命值扣除数=" + change(data.enemies[i].Value[2].enemyData.lifePointReduce.m_defined,
+                data.enemies[i].Value[2].enemyData.lifePointReduce.m_value,
+                data.enemies[i].Value[0].enemyData.lifePointReduce.m_value);
+            }
+            // 攻击范围半径
+            if (data.enemies[i].Value[2].enemyData.rangeRadius.m_defined == true) {
+              c17.innerHTML = "|攻击范围半径=" + change(data.enemies[i].Value[2].enemyData.rangeRadius.m_defined,
+                range(data.enemies[i].Value[2].enemyData.rangeRadius.m_value),
+                range(data.enemies[i].Value[0].enemyData.rangeRadius.m_value));
+            }
+          }
+          if (data.enemies[i].Value[0].enemyData.talentBlackboard != null) {
+            for (let j = 0; j < data.enemies[i].Value[0].enemyData.talentBlackboard.length; j++) {
+              $("#talent1").html($("#talent1").html() + "<div class=\"box\">key: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.talentBlackboard[j].key + "</span>" + "<br/>" +
+                "value: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.talentBlackboard[j].value + "</span>" + "<br/>" +
+                "valueStr: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.talentBlackboard[j].valueStr + "</span>" + "</div>")
+            }
+          }
+          if (data.enemies[i].Value[0].enemyData.skills != null) {
+            for (let j = 0; j < data.enemies[i].Value[0].enemyData.skills.length; j++) {
+              var text = "<div class=\"box\">";
+              text +=
+                "prefabKey: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].prefabKey + "</span>" + "<br/>" +
+                "priority: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].priority + "</span>" + "<br/>" +
+                "cooldown: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].cooldown + "</span>" + "<br/>" +
+                "initCooldown: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].initCooldown + "</span>" + "<br/>" +
+                "spCost: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].spCost + "</span>" + "<br/>" + "blackboard:[";
+              if (data.enemies[i].Value[0].enemyData.skills[j].blackboard != null) {
+                for (let o = 0; o < data.enemies[i].Value[0].enemyData.skills[j].blackboard.length; o++) {
+                  text += "<br/>" + " " + "{<br/>key: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].blackboard[o].key + "</span>" + "<br/>" +
+                    "value: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].blackboard[o].value + "</span>" + "<br/>" +
+                    "valueStr: " + "<span class=\"textcolor\">" + data.enemies[i].Value[0].enemyData.skills[j].blackboard[o].valueStr + "</span><br/>}";
+                }
+              } else {
+                text += "<br/>null"
+              }
+
+              text += "<br/>]</div>";
+              $(text).appendTo("#skill1");
+            }
+          }
+          if (data.enemies[i].Value.length == 2) {
+            if (data.enemies[i].Value[1].enemyData.talentBlackboard != null) {
+              for (let j = 0; j < data.enemies[i].Value[1].enemyData.talentBlackboard.length; j++) {
+                $("#talent2").html($("#talent2").html() + "<div class=\"box\">key: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.talentBlackboard[j].key + "</span>" + "<br/>" +
+                  "value: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.talentBlackboard[j].value + "</span>" + "<br/>" +
+                  "valueStr: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.talentBlackboard[j].valueStr + "</span>" + "</div>")
+              }
+            }
+            if (data.enemies[i].Value[1].enemyData.skills != null) {
+              console.log(123)
+              for (let j = 0; j < data.enemies[i].Value[1].enemyData.skills.length; j++) {
+                var text = "<div class=\"box\">";
+                text +=
+                  "prefabKey: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].prefabKey + "</span>" + "<br/>" +
+                  "priority: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].priority + "</span>" + "<br/>" +
+                  "cooldown: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].cooldown + "</span>" + "<br/>" +
+                  "initCooldown: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].initCooldown + "</span>" + "<br/>" +
+                  "spCost: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].spCost + "</span>" + "<br/>" + "blackboard:[";
+                for (let o = 0; o < data.enemies[i].Value[1].enemyData.skills[j].blackboard.length; o++) {
+                  text += "<br/>key: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].blackboard[o].key + "</span>" + "<br/>" +
+                    "value: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].blackboard[o].value + "</span>" + "<br/>" +
+                    "valueStr: " + "<span class=\"textcolor\">" + data.enemies[i].Value[1].enemyData.skills[j].blackboard[o].valueStr + "</span>" + "<br/>]";
+                }
+                text += "</div>";
+                $(text).appendTo("#skill2");
+              }
+            }
+          }
+          if (data.enemies[i].Value.length == 3) {
+            if (data.enemies[i].Value[2].enemyData.talentBlackboard != null) {
+              for (let j = 0; j < data.enemies[i].Value[2].enemyData.talentBlackboard.length; j++) {
+                $("#talent3").html($("#talent3").html() + "<div class=\"box\">key: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.talentBlackboard[j].key + "</span>" + "<br/>" +
+                  "value: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.talentBlackboard[j].value + "</span>" + "<br/>" +
+                  "valueStr: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.talentBlackboard[j].valueStr + "</span>" + "</div>")
+              }
+            }
+            if (data.enemies[i].Value[2].enemyData.skills != null) {
+              for (let j = 0; j < data.enemies[i].Value[2].enemyData.skills.length; j++) {
+                var text = "<div class=\"box\">";
+                text +=
+                  "prefabKey: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].prefabKey + "</span>" + "<br/>" +
+                  "priority: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].priority + "</span>" + "<br/>" +
+                  "cooldown: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].cooldown + "</span>" + "<br/>" +
+                  "initCooldown: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].initCooldown + "</span>" + "<br/>" +
+                  "spCost: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].spCost + "</span>" + "<br/>" + "blackboard:[";
+                for (let o = 0; o < data.enemies[i].Value[2].enemyData.skills[j].blackboard.length; o++) {
+                  text += "<br/>key:" + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].blackboard[o].key + "</span>" + "<br/>" +
+                    "value: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].blackboard[o].value + "</span>" + "<br/>" +
+                    "valueStr: " + "<span class=\"textcolor\">" + data.enemies[i].Value[2].enemyData.skills[j].blackboard[o].valueStr + "</span>" + "<br/>]";
+                }
+                text += "</div>";
+                $(text).appendTo("#skill3");
+              }
+            }
+          }
+        }
+      }
+    });
+
+
+    //             "blackboard:[<br/>key:" + data.enemies[i].Value[0].enemyData.skills[j].blackboard[o].key + "<br/>" + 
+    //             "value" +  data.enemies[i].Value[0].enemyData.skills[j].blackboard[o].value + "<br/>" +
+    //             "valueStr" + data.enemies[i].Value[0].enemyData.skills[j].blackboard[o].valueStr);
+  </script>
+
+</body>
+
+</html>

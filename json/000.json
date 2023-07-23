@@ -1,0 +1,246 @@
+{
+    "goodList": [
+        {
+            "goodId": "good_REP_1",
+            "startTime": 1597132800,
+            "endTime": 0,
+            "availCount": 340,
+            "item": {
+                "id": "4003",
+                "count": 100
+            },
+            "price": 20,
+            "sortId": 1
+        },
+        {
+            "goodId": "good_REP_11",
+            "startTime": 1597132800,
+            "endTime": 0,
+            "availCount": 12,
+            "item": {
+                "id": "30064",
+                "count": 1
+            },
+            "price": 85,
+            "sortId": 11
+        },
+        {
+            "goodId": "good_REP_12",
+            "startTime": 1597132800,
+            "endTime": 0,
+            "availCount": 12,
+            "item": {
+                "id": "30014",
+                "count": 1
+            },
+            "price": 50,
+            "sortId": 12
+        },
+        {
+            "goodId": "good_REP_101",
+            "startTime": 1597132800,
+            "endTime": 0,
+            "availCount": 255,
+            "item": {
+                "id": "4001",
+                "count": 2000
+            },
+            "price": 15,
+            "sortId": 101
+        },
+        {
+            "goodId": "good_REP_102",
+            "startTime": 1597132800,
+            "endTime": 0,
+            "availCount": 340,
+            "item": {
+                "id": "2004",
+                "count": 1
+            },
+            "price": 15,
+            "sortId": 102
+        },
+        {
+            "goodId": "good_REP_103",
+            "startTime": 1597132800,
+            "endTime": 0,
+            "availCount": 340,
+            "item": {
+                "id": "3303",
+                "count": 1
+            },
+            "price": 20,
+            "sortId": 103
+        },
+        {
+            "goodId": "good_REP_13",
+            "startTime": 1601539200,
+            "endTime": 0,
+            "availCount": 12,
+            "item": {
+                "id": "30054",
+                "count": 1
+            },
+            "price": 65,
+            "sortId": 13
+        },
+        {
+            "goodId": "good_REP_14",
+            "startTime": 1601539200,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "30024",
+                "count": 1
+            },
+            "price": 60,
+            "sortId": 14
+        },
+        {
+            "goodId": "good_REP_15",
+            "startTime": 1606809600,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "30044",
+                "count": 1
+            },
+            "price": 70,
+            "sortId": 15
+        },
+        {
+            "goodId": "good_REP_16",
+            "startTime": 1606809600,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "30034",
+                "count": 1
+            },
+            "price": 60,
+            "sortId": 16
+        },
+        {
+            "goodId": "good_REP_17",
+            "startTime": 1617091200,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "30094",
+                "count": 1
+            },
+            "price": 60,
+            "sortId": 17
+        },
+        {
+            "goodId": "good_REP_18",
+            "startTime": 1617091200,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "30084",
+                "count": 1
+            },
+            "price": 60,
+            "sortId": 18
+        },
+        {
+            "goodId": "good_REP_19",
+            "startTime": 1623916800,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "31024",
+                "count": 1
+            },
+            "price": 60,
+            "sortId": 19
+        },
+        {
+            "goodId": "good_REP_20",
+            "startTime": 1623916800,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "31014",
+                "count": 1
+            },
+            "price": 50,
+            "sortId": 20
+        },
+        {
+            "goodId": "good_REP_21",
+            "startTime": 1626768000,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "30104",
+                "count": 1
+            },
+            "price": 65,
+            "sortId": 21
+        },
+        {
+            "goodId": "good_REP_22",
+            "startTime": 1626768000,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "31034",
+                "count": 1
+            },
+            "price": 70,
+            "sortId": 22
+        },
+        {
+            "goodId": "good_REP_23",
+            "startTime": 1633075200,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "30074",
+                "count": 1
+            },
+            "price": 50,
+            "sortId": 23
+        },
+        {
+            "goodId": "good_REP_24",
+            "startTime": 1638864000,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "31044",
+                "count": 1
+            },
+            "price": 55,
+            "sortId": 24
+        },
+        {
+            "goodId": "good_REP_25",
+            "startTime": 1638864000,
+            "endTime": 0,
+            "availCount": 8,
+            "item": {
+                "id": "31054",
+                "count": 1
+            },
+            "price": 55,
+            "sortId": 25
+        },
+        {
+            "goodId": "good_REP_26",
+            "startTime": 1676966400,
+            "endTime": 0,
+            "availCount": 4,
+            "item": {
+                "id": "31064",
+                "count": 1
+            },
+            "price": 55,
+            "sortId": 26
+        }
+    ],
+    "code": 0,
+    "msg": ""
+}

@@ -1,0 +1,82 @@
+var en = ["char_285_medic2", "char_286_cast3", "char_376_therex", "char_4000_jnight", "char_502_nblade", "char_500_noirc", "char_503_rang", "char_501_durin",
+    "char_009_12fce", "char_123_fang", "char_240_wyvern", "char_504_rguard", "char_192_falco", "char_208_melan", "char_281_popka", "char_209_ardign",
+    "char_122_beagle", "char_284_spot", "char_124_kroos", "char_211_adnach", "char_507_rsnipe", "char_121_lava", "char_120_hibisc", "char_212_ansel",
+    "char_506_rmedic", "char_210_stward", "char_505_rcast", "char_278_orchid", "char_141_nights", "char_109_fmout", "char_253_greyy", "char_328_cammou",
+    "char_469_indigo", "char_4004_pudd", "char_235_jesica", "char_126_shotst", "char_190_clour", "char_133_mm", "char_118_yuki", "char_440_pinecn",
+    "char_302_glaze", "char_366_acdrop", "char_198_blackd", "char_149_scave", "char_290_vigna", "char_151_myrtle", "char_452_bstalk", "char_130_doberm",
+    "char_289_gyuki", "char_159_peacok", "char_193_frostl", "char_127_estell", "char_185_frncat", "char_301_cutter", "char_337_utage", "char_271_spikes",
+    "char_237_gravel", "char_272_strong", "char_236_rope", "char_117_myrrh", "char_187_ccheal", "char_298_susuro", "char_181_flower", "char_385_finlpp",
+    "char_4041_chnut", "char_199_yak", "char_150_snakek", "char_381_bubble", "char_196_sunbr", "char_260_durnar", "char_110_deepcl", "char_183_skgoat",
+    "char_258_podego", "char_484_robrta", "char_355_ethan", "char_277_sqrrel", "char_128_plosis", "char_275_breeze", "char_115_headbr", "char_102_texas",
+    "char_349_chiave", "char_261_sddrag", "char_496_wildmn", "char_401_elysm", "char_476_blkngt", "char_308_swire", "char_265_sophia", "char_106_franka",
+    "char_131_flameb", "char_508_aguard", "char_155_tiger", "char_415_flint", "char_140_whitew", "char_294_ayer", "char_252_bibeak", "char_459_tachak",
+    "char_143_ghost", "char_356_broca", "char_274_astesi", "char_333_sidero", "char_475_akafyu", "char_421_crow", "char_486_takila", "char_129_bluep",
+    "char_204_platnm", "char_367_swllow", "char_511_asnipe", "char_365_aprl", "char_1021_kroos2", "char_219_meteo", "char_379_sesa", "char_279_excu",
+    "char_346_aosta", "char_002_amiya", "char_405_absin", "char_411_tomimi", "char_166_skfire", "char_509_acast", "char_306_leizi", "char_135_halo",
+    "char_344_beewax", "char_373_lionhd", "char_388_mint", "char_338_iris", "char_1011_lava2", "char_489_serum", "char_4013_kjera", "char_4040_rockr",
+    "char_242_otter", "char_336_folivo", "char_108_silent", "char_171_bldsk", "char_345_folnic", "char_510_amedic", "char_348_ceylon", "char_436_whispr",
+    "char_402_tuye", "char_473_mberry", "char_449_glider", "char_1024_hbisc2", "char_148_nearl", "char_226_hmau", "char_144_red", "char_243_waaifu",
+    "char_214_kafka", "char_455_nothin", "char_107_liskam", "char_201_moeshd", "char_325_bison", "char_163_hpsts", "char_378_asbest", "char_512_aprot",
+    "char_4025_aprot2", "char_4047_pianst", "char_457_blitz", "char_304_zebra", "char_431_ashlok", "char_422_aurora", "char_145_prove", "char_158_milu",
+    "char_218_cuttle", "char_363_toddi", "char_4043_erato", "char_1027_greyy2", "char_173_slchan", "char_383_snsant", "char_174_slbell", "char_254_vodfox",
+    "char_195_glassb", "char_326_glacus", "char_433_windft", "char_101_sora", "char_4045_heidi", "char_343_tknogi", "char_4019_ncdeer", "char_492_quercu",
+    "char_215_mantic", "char_478_kirara", "char_241_panda", "char_4036_forcer", "char_451_robin", "char_458_rfrost", "char_369_bena", "char_4016_kazema",
+    "char_103_angel", "char_332_archet", "char_456_ash", "char_340_shwaz", "char_430_fartth", "char_113_cqbw", "char_300_phenxi", "char_197_poca",
+    "char_391_rosmon", "char_1013_chen2", "char_112_siege", "char_222_bpipe", "char_362_saga", "char_479_sleach", "char_420_flamtl", "char_134_ifrit",
+    "char_213_mostma", "char_180_amgoat", "char_2013_cerber", "char_2015_dusk", "char_472_pasngr", "char_426_billro", "char_377_gdglow", "char_4046_ebnhlz",
+    "char_206_gnosis", "char_291_aglina", "char_358_lisa", "char_248_mgllan", "char_1012_skadi2", "char_2023_ling", "char_250_phatom", "char_322_lmlee",
+    "char_400_weedy", "char_225_haak", "char_474_glady", "char_437_mizuki", "char_1023_ghost2", "char_4048_doroth", "char_147_shining", "char_179_cgbird",
+    "char_003_kalts", "char_4042_lumen", "char_136_hsguma", "char_202_demkni", "char_423_blemsh", "char_2014_nian", "char_311_mudrok", "char_416_zumama",
+    "char_4039_horn", "char_264_f12yin", "char_172_svrash", "char_293_thorns", "char_010_chen", "char_4009_irene", "char_017_huang", "char_350_surtr",
+    "char_188_helage", "char_485_pallas", "char_1014_nearl2", "token_10000_silent_healrb", "token_10001_deepcl_tentac", "token_10002_kalts_mon3tr",
+    "token_10003_cgbird_bird", "token_10004_otter_motter", "token_10005_mgllan_drone1", "token_10005_mgllan_drone2", "token_10005_mgllan_drone3",
+    "token_10006_vodfox_doll", "token_10007_phatom_twin", "token_10008_cqbw_box", "token_10009_weedy_cannon", "token_10010_folivo_car",
+    "token_10011_beewax_oblisk", "token_10012_rosmon_shield", "token_10013_robin_mine", "token_10014_bstalk_crab", "token_10015_dusk_drgn",
+    "token_10016_rfrost_mine", "token_10017_skadi2_dedant", "token_10018_robrta_mach", "token_10019_nearl2_sword", "token_10020_ling_soul1",
+    "token_10020_ling_soul2", "token_10020_ling_soul3", "token_10021_blkngt_hypnos", "token_10022_kazema_shadow", "token_10023_windft_wrench",
+    "token_10024_ebnhlz_rcube", "token_10025_doroth_recttp", "trap_001_crate", "trap_002_emp", "trap_003_gate", "trap_005_sensor", "trap_006_antidr",
+    "trap_007_ballis", "trap_008_farm", "trap_009_battery", "trap_010_frosts", "trap_011_ore", "trap_012_mine", "trap_013_blower", "trap_014_tower",
+    "trap_015_tree", "trap_016_peon", "trap_018_bomb", "trap_019_electric", "trap_020_roadblock", "trap_021_flame", "trap_022_frosts_friend",
+    "trap_023_ore_friend", "trap_024_npcsld", "trap_025_prison", "trap_026_inverter", "trap_027_stone", "trap_028_cannon", "trap_029_poison",
+    "trap_030_factory", "trap_031_sleep", "trap_032_mound", "trap_033_sbomb", "trap_034_machst", "trap_035_emperor", "trap_036_storm",
+    "trap_037_airsup", "trap_038_dsbell", "trap_039_dstnta", "trap_040_canoe", "trap_041_fcanon", "trap_042_tidectrl", "trap_043_dupilr",
+    "trap_044_duruin", "trap_045_dublst", "trap_046_oxygen", "trap_048_neonlamp", "trap_049_candle", "trap_050_blizzard", "trap_051_vultres",
+    "trap_052_slowfd", "trap_053_airbomb", "trap_054_dancdol", "trap_055_tileblock", "trap_056_sfsuifire", "trap_057_wpnsts", "trap_058_gunctrl",
+    "trap_059_peacokfool", "trap_060_bouncy", "trap_061_creep", "trap_062_magicstart", "trap_063_magicturn", "trap_064_magiccircle", "trap_069_buffcard",
+    "trap_070_supplycard", "trap_071_recyclecard", "trap_072_revivecard", "trap_073_btauntcard", "trap_074_bbombcard", "trap_082_salecard",
+    "trap_075_bgarmn", "trap_076_bgarms", "trap_077_rmtarmn", "trap_078_rmtarms", "char_230_savage", "char_282_catap", "char_283_midn",
+    "char_137_brownb", "char_347_jaksel", "char_164_nightm", "char_220_grani", "char_263_skadi"]
+
+var cn = ["Lancet-2", "Castle-3", "THRM-EX", "正义骑士号", "夜刀", "黑角", "巡林者", "杜林", "12F", "芬", "香草", "预备干员-近战", "翎羽", "玫兰莎", "泡普卡", "卡缇",
+    "米格鲁", "斑点", "克洛丝", "安德切尔", "预备干员-狙击", "炎熔", "芙蓉", "安赛尔", "预备干员-后勤", "史都华德", "预备干员-术师", "梓兰", "夜烟", "远山", "格雷伊",
+    "卡达", "深靛", "布丁", "杰西卡", "流星", "红云", "梅", "白雪", "松果", "安比尔", "酸糖", "讯使", "清道夫", "红豆", "桃金娘", "豆苗", "杜宾", "缠丸", "断罪者", "霜叶",
+    "艾丝黛尔", "慕斯", "刻刀", "宴", "芳汀", "砾", "孑", "暗索", "末药", "嘉维尔", "苏苏洛", "调香师", "清流", "褐果", "角峰", "蛇屠箱", "泡泡", "古米", "坚雷", "深海色",
+    "地灵", "波登可", "罗比菈塔", "伊桑", "阿消", "白面鸮", "微风", "凛冬", "德克萨斯", "贾维", "苇草", "野鬃", "极境", "夜半", "诗怀雅", "鞭刃", "芙兰卡", "炎客", "Sharp",
+    "因陀罗", "燧石", "拉普兰德", "断崖", "柏喙", "战车", "幽灵鲨", "布洛卡", "星极", "铸铁", "赤冬", "羽毛笔", "龙舌兰", "蓝毒", "白金", "灰喉", "Stormeye", "四月",
+    "寒芒克洛丝", "陨星", "慑砂", "送葬人", "奥斯塔", "阿米娅", "苦艾", "特米米", "天火", "Pith", "惊蛰", "星源", "蜜蜡", "莱恩哈特", "薄绿", "爱丽丝", "炎狱炎熔",
+    "蚀清", "耶拉", "洛洛", "梅尔", "稀音", "赫默", "华法琳", "亚叶", "Touch", "锡兰", "絮雨", "图耶", "桑葚", "蜜莓", "濯尘芙蓉", "临光", "吽", "红", "槐琥", "卡夫卡",
+    "乌有", "雷蛇", "可颂", "拜松", "火神", "石棉", "暮落", "暮落", "车尔尼", "闪击", "暴雨", "灰毫", "极光", "普罗旺斯", "守林人", "安哲拉", "熔泉", "埃拉托",
+    "承曦格雷伊", "崖心", "雪雉", "初雪", "巫恋", "真理", "格劳克斯", "掠风", "空", "海蒂", "月禾", "九色鹿", "夏栎", "狮蝎", "绮良", "食铁兽", "见行者", "罗宾",
+    "霜华", "贝娜", "风丸", "能天使", "空弦", "灰烬", "黑", "远牙", "W", "菲亚梅塔", "早露", "迷迭香", "假日威龙陈", "推进之王", "风笛", "嵯峨", "琴柳", "焰尾",
+    "伊芙利特", "莫斯提马", "艾雅法拉", "刻俄柏", "夕", "异客", "卡涅利安", "澄闪", "黑键", "灵知", "安洁莉娜", "铃兰", "麦哲伦", "浊心斯卡蒂", "令", "傀影",
+    "老鲤", "温蒂", "阿", "歌蕾蒂娅", "水月", "归溟幽灵鲨", "多萝西", "闪灵", "夜莺", "凯尔希", "流明", "星熊", "塞雷娅", "瑕光", "年", "泥岩", "森蚺", "号角",
+    "山", "银灰", "棘刺", "陈", "艾丽妮", "煌", "史尔特尔", "赫拉格", "帕拉斯", "耀骑士临光", "医疗探机", "触手", "Mon3tr", "幻影", "机械水獭", "龙腾.F", "龙腾.L",
+    "龙腾.A", "诅咒娃娃", "镜中虚影", "此面向敌", "工程蓄水炮", "移动摄影器", "沙之碑", "迷迭香的战术装备", "\"夹子\"", "磐蟹护卫队", "\"小自在\"", "迎宾踏垫"
+    , "斯卡蒂的海嗣", "全自动造型仪", "“耀阳”", "“清平”", "“逍遥”", "“弦惊”", "眠兽", "纸偶", "可靠电池", "旧日残影", "共振装置", "障碍物", "震撼装置", "闸门", "侦测器"
+    , "干扰装置", "弩炮", "指挥终端", "便携式补给站", "源石冰晶", "源石祭坛", "干扰地雷", "源石流发生装置", "L-44\"留声机\"", "巨蕈", "罗德岛临时雇员", "轰隆隆先生",
+    "梅什科线圈", "道路障碍物", "能量聚合体", "霜星的源石冰晶", "爱国者的源石祭坛", "盾卫", "禁锢装置", "改良型二踢脚", "碎石", "脉冲防御模组", "催泪瓦斯控制阀",
+    "无人机工厂", "雪雉的安全起重机", "土石结构", "高能源石炸弹", "加固装置", "大帝", "沙尘暴", "可移动战术机库", "应急救治设施", "子代", "特制水上平台", "风筝",
+    "涨潮控制", "破碎支柱", "战场废墟", "爆破装置", "防水蚀镀膜装置", "城市霓虹", "骑士之徽", "暴风雪", "无主的财富", "失修舞台雾机", "便携气罐", "“报幕助手”",
+    "封印的地面", "丹田", "“冰淇淋机”", "伦蒂尼姆城防副炮", "断罪者", "圣徒之手", "溟痕", "“低音号”", "L-7 “回音壁”", "“谐振器”", "战备激活阀", "预备区发讯器",
+    "紧急召回情报箱", "休整区发讯器", "污染晶石", "聚热晶簇", "改派发讯器", "R-31重型动力装甲", "R-31a重型动力装甲", "R-11突击动力装甲", "R-11a突击动力装甲",
+    "暴行", "空爆", "月见夜", "猎蜂", "杰克", "夜魔", "格拉尼", "斯卡蒂"]
+
+function operator(obj) {
+    for (let i = 0; i < en.length; i++) {
+        switch (obj) {
+            case en[i]:
+                return cn[i];
+        }
+    }
+}
+

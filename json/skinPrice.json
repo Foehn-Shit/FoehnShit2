@@ -1,0 +1,138 @@
+{
+    "goodList": [
+        {
+            "goodId": "SS_char_4036_forcer@epoque#20",
+            "slotId": 551,
+            "skinId": "char_4036_forcer@epoque#20",
+            "originPrice": 18,
+            "price": 18,
+            "discount": 0.0,
+            "skinName": "拾翼",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676966400,
+            "endDateTime": 1678132799
+        },
+        {
+            "goodId": "SS_char_479_sleach@epoque#14_r1",
+            "slotId": 550,
+            "skinId": "char_479_sleach@epoque#14",
+            "originPrice": 18,
+            "price": 18,
+            "discount": 0.0,
+            "skinName": "识芳",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676966400,
+            "endDateTime": 1678132799
+        },
+        {
+            "goodId": "SS_char_473_mberry@epoque#14_r1",
+            "slotId": 549,
+            "skinId": "char_473_mberry@epoque#14",
+            "originPrice": 18,
+            "price": 18,
+            "discount": 0.0,
+            "skinName": "植药",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676966400,
+            "endDateTime": 1678132799
+        },
+        {
+            "goodId": "SS_char_402_tuye@epoque#14_r1",
+            "slotId": 548,
+            "skinId": "char_402_tuye@epoque#14",
+            "originPrice": 15,
+            "price": 15,
+            "discount": 0.0,
+            "skinName": "培翠",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676966400,
+            "endDateTime": 1678132799
+        },
+        {
+            "goodId": "SS_char_4055_bgsnow@wild#7",
+            "slotId": 547,
+            "skinId": "char_4055_bgsnow@wild#7",
+            "originPrice": 21,
+            "price": 21,
+            "discount": 0.0,
+            "skinName": "字句中的雪原",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676361600,
+            "endDateTime": 1677527999
+        },
+        {
+            "goodId": "SS_char_4032_provs@wild#7",
+            "slotId": 546,
+            "skinId": "char_4032_provs@wild#7",
+            "originPrice": 18,
+            "price": 18,
+            "discount": 0.0,
+            "skinName": "秋高气爽",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676361600,
+            "endDateTime": 1677527999
+        },
+        {
+            "goodId": "SS_char_185_frncat@wild#7",
+            "slotId": 545,
+            "skinId": "char_185_frncat@wild#7",
+            "originPrice": 15,
+            "price": 15,
+            "discount": 0.0,
+            "skinName": "营地炊烟",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676361600,
+            "endDateTime": 1677527999
+        },
+        {
+            "goodId": "SS_char_215_mantic@epoque#19",
+            "slotId": 544,
+            "skinId": "char_215_mantic@epoque#19",
+            "originPrice": 18,
+            "price": 18,
+            "discount": 0.0,
+            "skinName": "面纱之下",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676361600,
+            "endDateTime": 1677527999
+        },
+        {
+            "goodId": "SS_char_2013_cerber@whirlwind#2_r1",
+            "slotId": 543,
+            "skinId": "char_2013_cerber@whirlwind#2",
+            "originPrice": 18,
+            "price": 18,
+            "discount": 0.0,
+            "skinName": "无拘无束",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676361600,
+            "endDateTime": 1677527999
+        },
+        {
+            "goodId": "SS_char_243_waaifu@whirlwind#2_r1",
+            "slotId": 542,
+            "skinId": "char_243_waaifu@whirlwind#2",
+            "originPrice": 18,
+            "price": 18,
+            "discount": 0.0,
+            "skinName": "街道狂花",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": 1676361600,
+            "endDateTime": 1677527999
+        },
+        {
+            "goodId": "SS_char_123_fang@winter#1",
+            "slotId": 4,
+            "skinId": "char_123_fang@winter#1",
+            "originPrice": 0,
+            "price": 0,
+            "discount": 0.0,
+            "skinName": "十字郡",
+            "currencyUnit": "DIAMOND",
+            "startDateTime": -1,
+            "endDateTime": -1
+        }
+    ],
+    "code": 0,
+    "msg": ""
+}

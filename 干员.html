@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{干员<br />
+    |干员代号=<span id="daihao"></span><br />
+    |实装日期=<span id="riqi"></span><br />
+    |charId=<span id="id"></span><br />
+    |英文名=<span id="yingwenming"></span><br />
+    |职业=<span id="zhiye"></span><br />
+    |星级=<span id="xingji"></span><br />
+    |干员编号=<span id="bianhao"></span>&#60;!-- 类似B101格式的编号 --><br />
+    |阵营=<span id="zhenying"></span>&#60;!-- 有多少写多少，顿号隔开 --><br />
+    |标签=<span id="biaoqian"></span>&#60;!-- 包括近战位/远程位，然后抄tag参数，顿号隔开 --><br />
+    |获取途径=<span id="huoqu"></span><br />
+    |特性=<span id="texing"></span><br />
+    |特性攻击范围=<span id="texingRange"></span><br />
+    |分支=<span id="fenzhi"></span><br />
+    |初始生命=<span id="hp0"></span><br />
+    |初始攻击=<span id="atk0"></span><br />
+    |初始防御=<span id="def0"></span><br />
+    |初始法抗=<span id="mgc0"></span><br />
+    |再部署=<span id="remake"></span><br />
+    |部署费用=<span id="cost"></span><br />
+    |完美部署费用=<span id="costPro"></span>&#60;!-- 计算精二满潜费用 --><br />
+    |阻挡数=<span id="zudang"></span><br />
+    |攻击速度=<span id="gongsu"></span>&#60;!-- 写攻击速度的值 --><br />
+    |攻击间隔=<span id="gongjijiange"></span>&#60;!-- 写攻击间隔的值 --><br />
+    |bb备注=<br />
+    |初始攻击范围=<span id="range0"></span><br />
+    |初始生命max=<span id="hp0max"></span><br />
+    |初始攻击max=<span id="atk0max"></span><br />
+    |初始防御max=<span id="def0max"></span><br />
+    |初始法抗max=<span id="mgc0max"></span><br />
+    |精1等级需求=<span id="elt1level"></span><br />
+    |精1提升=<span id="elt1up"></span><br />
+    |精1材料=<span id="elt1mtrl"></span><br />
+    |精1生命max=<span id="hp1max"></span><br />
+    |精1攻击max=<span id="atk1max"></span><br />
+    |精1防御max=<span id="def1max"></span><br />
+    |精1法抗max=<span id="mgc1max"></span><br />
+    |精1攻击范围=<span id="range1"></span><br />
+    |精2等级需求=<span id="elt2level"></span><br />
+    |精2提升=<span id="elt2up"></span><br />
+    |精2材料=<span id="elt2mtrl"></span><br />
+    |精2生命max=<span id="hp2max"></span><br />
+    |精2攻击max=<span id="atk2max"></span><br />
+    |精2防御max=<span id="def2max"></span><br />
+    |精2法抗max=<span id="mgc2max"></span><br />
+    |精2攻击范围=<span id="range2"></span><br />
+    |精二动态id=<br />
+    |1技能7→8材料=<span id="skill1mtrl78"></span><br />
+    |1技能8→9材料=<span id="skill1mtrl89"></span><br />
+    |1技能9→10材料=<span id="skill1mtrl910"></span><br />
+    |2技能7→8材料=<span id="skill2mtrl78"></span><br />
+    |2技能8→9材料=<span id="skill2mtrl89"></span><br />
+    |2技能9→10材料=<span id="skill2mtrl910"></span><br />
+    |3技能7→8材料=<span id="skill3mtrl78"></span><br />
+    |3技能8→9材料=<span id="skill3mtrl89"></span><br />
+    |3技能9→10材料=<span id="skill3mtrl910"></span><br />
+    |天赋1=<span id="talent1"></span><br />
+    |天赋1解锁条件=<span id="talent1Unlc"></span><br />
+    |天赋1描述=<span id="talent1Desc"></span><br />
+    |天赋1备注=<br />
+    |天赋1提升后=<span id="talent1Up1"></span><br />
+    |天赋1提升条件=<span id="talent1Up1Unlc"></span><br />
+    |天赋1提升后描述=<span id="talent1Up1Desc"></span><br />
+    |天赋1第2次提升后=<span id="talent1Up2"></span><br />
+    |天赋1第2次提升条件=<span id="talent1Up2Unlc"></span><br />
+    |天赋1第2次提升后描述=<span id="talent1Up2Desc"></span><br />
+    |天赋1第3次提升后=<span id="talent1Up3"></span><br />
+    |天赋1第3次提升条件=<span id="talent1Up3Unlc"></span><br />
+    |天赋1第3次提升后描述=<span id="talent1Up3Desc"></span><br />
+    |天赋1第4次提升后=<span id="talent1Up4"></span><br />
+    |天赋1第4次提升条件=<span id="talent1Up4Unlc"></span><br />
+    |天赋1第4次提升后描述=<span id="talent1Up4Desc"></span><br />
+    |天赋1第5次提升后=<span id="talent1Up5"></span><br />
+    |天赋1第5次提升条件=<span id="talent1Up5Unlc"></span><br />
+    |天赋1第5次提升后描述=<span id="talent1Up5Desc"></span><br />
+    |天赋1攻击范围=<span id="tlt1range"></span><br />
+    |天赋2=<span id="talent2"></span><br />
+    |天赋2解锁条件=<span id="talent2Unlc"></span><br />
+    |天赋2描述=<span id="talent2Desc"></span><br />
+    |天赋2备注=<br />
+    |天赋2提升后=<span id="talent2Up1"></span><br />
+    |天赋2提升条件=<span id="talent2Up1Unlc"></span><br />
+    |天赋2提升后描述=<span id="talent2Up1Desc"></span><br />
+    |天赋2第2次提升后=<span id="talent2Up2"></span><br />
+    |天赋2第2次提升条件=<span id="talent2Up2Unlc"></span><br />
+    |天赋2第2次提升后描述=<span id="talent2Up2Desc"></span><br />
+    |天赋2第3次提升后=<span id="talent2Up3"></span><br />
+    |天赋2第3次提升条件=<span id="talent2Up3Unlc"></span><br />
+    |天赋2第3次提升后描述=<span id="talent2Up3Desc"></span><br />
+    |天赋2第4次提升后=<span id="talent2Up4"></span><br />
+    |天赋2第4次提升条件=<span id="talent2Up4Unlc"></span><br />
+    |天赋2第4次提升后描述=<span id="talent2Up4Desc"></span><br />
+    |天赋2第5次提升后=<span id="talent2Up5"></span><br />
+    |天赋2第5次提升条件=<span id="talent2Up5Unlc"></span><br />
+    |天赋2第5次提升后描述=<span id="talent2Up5Desc"></span><br />
+    |天赋2攻击范围=<span id="tlt2range"></span><br />
+    |潜能2=<span id="rank1"></span><br />
+    |潜能3=<span id="rank2"></span><br />
+    |潜能4=<span id="rank3"></span><br />
+    |潜能5=<span id="rank4"></span><br />
+    |潜能6=<span id="rank5"></span><br />
+    |技能1→2材料=<span id="mtrl1"></span><br />
+    |技能2→3材料=<span id="mtrl2"></span><br />
+    |技能3→4材料=<span id="mtrl3"></span><br />
+    |技能4→5材料=<span id="mtrl4"></span><br />
+    |技能5→6材料=<span id="mtrl5"></span><br />
+    |技能6→7材料=<span id="mtrl6"></span><br />
+    |信赖生命=<span id="tstHp"></span><br />
+    |信赖攻击=<span id="tstAtk"></span><br />
+    |信赖防御=<span id="tstDef"></span><br />
+    |信赖法抗=<span id="tstMgk"></span><br />
+    |技能1=<span id="skill1Name"></span><br />
+    |技能1攻击范围=<span id="skill1Range"></span><br />
+    |技能1回复类型=<span id="skill1jihui"></span><br />
+    |技能1触发类型=<span id="skill1chufa"></span><br />
+    |技能1描述1=<span id="skill1Desc1"></span><br />
+    |技能1技力消耗1=<span id="skill1Sp1"></span><br />
+    |技能1初始技力1=<span id="skill1chushisp1"></span><br />
+    |技能1持续时间1=<span id="skill1chixu1"></span><br />
+    |技能1描述2=<span id="skill1Desc2"></span><br />
+    |技能1技力消耗2=<span id="skill1Sp2"></span><br />
+    |技能1初始技力2=<span id="skill1chushisp2"></span><br />
+    |技能1持续时间2=<span id="skill1chixu2"></span><br />
+    |技能1描述3=<span id="skill1Desc3"></span><br />
+    |技能1技力消耗3=<span id="skill1Sp3"></span><br />
+    |技能1初始技力3=<span id="skill1chushisp3"></span><br />
+    |技能1持续时间3=<span id="skill1chixu3"></span><br />
+    |技能1描述4=<span id="skill1Desc4"></span><br />
+    |技能1技力消耗4=<span id="skill1Sp4"></span><br />
+    |技能1初始技力4=<span id="skill1chushisp4"></span><br />
+    |技能1持续时间4=<span id="skill1chixu4"></span><br />
+    |技能1描述5=<span id="skill1Desc5"></span><br />
+    |技能1技力消耗5=<span id="skill1Sp5"></span><br />
+    |技能1初始技力5=<span id="skill1chushisp5"></span><br />
+    |技能1持续时间5=<span id="skill1chixu5"></span><br />
+    |技能1描述6=<span id="skill1Desc6"></span><br />
+    |技能1技力消耗6=<span id="skill1Sp6"></span><br />
+    |技能1初始技力6=<span id="skill1chushisp6"></span><br />
+    |技能1持续时间6=<span id="skill1chixu6"></span><br />
+    |技能1描述7=<span id="skill1Desc7"></span><br />
+    |技能1技力消耗7=<span id="skill1Sp7"></span><br />
+    |技能1初始技力7=<span id="skill1chushisp7"></span><br />
+    |技能1持续时间7=<span id="skill1chixu7"></span><br />
+    |技能1描述8=<span id="skill1Desc8"></span><br />
+    |技能1技力消耗8=<span id="skill1Sp8"></span><br />
+    |技能1初始技力8=<span id="skill1chushisp8"></span><br />
+    |技能1持续时间8=<span id="skill1chixu8"></span><br />
+    |技能1描述9=<span id="skill1Desc9"></span><br />
+    |技能1技力消耗9=<span id="skill1Sp9"></span><br />
+    |技能1初始技力9=<span id="skill1chushisp9"></span><br />
+    |技能1持续时间9=<span id="skill1chixu9"></span><br />
+    |技能1描述10=<span id="skill1Desc10"></span><br />
+    |技能1技力消耗10=<span id="skill1Sp10"></span><br />
+    |技能1初始技力10=<span id="skill1chushisp10"></span><br />
+    |技能1持续时间10=<span id="skill1chixu10"></span><br />
+    |技能1备注=<br />
+    |召唤物1=<span id="zhaohuanwu1"></span>&#60;!-- 请额外创建页面，使用干员附带单位模板 --><br />
+    |技能2=<span id="skill2Name"></span><br />
+    |技能2攻击范围=<span id="skill2Range"></span><br />
+    |技能2回复类型=<span id="skill2jihui"></span><br />
+    |技能2触发类型=<span id="skill2chufa"></span><br />
+    |技能2描述1=<span id="skill2Desc1"></span><br />
+    |技能2技力消耗1=<span id="skill2Sp1"></span><br />
+    |技能2初始技力1=<span id="skill2chushisp1"></span><br />
+    |技能2持续时间1=<span id="skill2chixu1"></span><br />
+    |技能2描述2=<span id="skill2Desc2"></span><br />
+    |技能2技力消耗2=<span id="skill2Sp2"></span><br />
+    |技能2初始技力2=<span id="skill2chushisp2"></span><br />
+    |技能2持续时间2=<span id="skill2chixu2"></span><br />
+    |技能2描述3=<span id="skill2Desc3"></span><br />
+    |技能2技力消耗3=<span id="skill2Sp3"></span><br />
+    |技能2初始技力3=<span id="skill2chushisp3"></span><br />
+    |技能2持续时间3=<span id="skill2chixu3"></span><br />
+    |技能2描述4=<span id="skill2Desc4"></span><br />
+    |技能2技力消耗4=<span id="skill2Sp4"></span><br />
+    |技能2初始技力4=<span id="skill2chushisp4"></span><br />
+    |技能2持续时间4=<span id="skill2chixu4"></span><br />
+    |技能2描述5=<span id="skill2Desc5"></span><br />
+    |技能2技力消耗5=<span id="skill2Sp5"></span><br />
+    |技能2初始技力5=<span id="skill2chushisp5"></span><br />
+    |技能2持续时间5=<span id="skill2chixu5"></span><br />
+    |技能2描述6=<span id="skill2Desc6"></span><br />
+    |技能2技力消耗6=<span id="skill2Sp6"></span><br />
+    |技能2初始技力6=<span id="skill2chushisp6"></span><br />
+    |技能2持续时间6=<span id="skill2chixu6"></span><br />
+    |技能2描述7=<span id="skill2Desc7"></span><br />
+    |技能2技力消耗7=<span id="skill2Sp7"></span><br />
+    |技能2初始技力7=<span id="skill2chushisp7"></span><br />
+    |技能2持续时间7=<span id="skill2chixu7"></span><br />
+    |技能2描述8=<span id="skill2Desc8"></span><br />
+    |技能2技力消耗8=<span id="skill2Sp8"></span><br />
+    |技能2初始技力8=<span id="skill2chushisp8"></span><br />
+    |技能2持续时间8=<span id="skill2chixu8"></span><br />
+    |技能2描述9=<span id="skill2Desc9"></span><br />
+    |技能2技力消耗9=<span id="skill2Sp9"></span><br />
+    |技能2初始技力9=<span id="skill2chushisp9"></span><br />
+    |技能2持续时间9=<span id="skill2chixu9"></span><br />
+    |技能2描述10=<span id="skill2Desc10"></span><br />
+    |技能2技力消耗10=<span id="skill2Sp10"></span><br />
+    |技能2初始技力10=<span id="skill2chushisp10"></span><br />
+    |技能2持续时间10=<span id="skill2chixu10"></span><br />
+    |技能2备注=<br />
+    |召唤物2=<span id="zhaohuanwu2"></span>&#60;!-- 只有一个召唤物就不用填 --><br />
+    |技能3=<span id="skill3Name"></span><br />
+    |技能3攻击范围=<span id="skill3Range"></span><br />
+    |技能3回复类型=<span id="skill3jihui"></span><br />
+    |技能3触发类型=<span id="skill3chufa"></span><br />
+    |技能3描述1=<span id="skill3Desc1"></span><br />
+    |技能3技力消耗1=<span id="skill3Sp1"></span><br />
+    |技能3初始技力1=<span id="skill3chushisp1"></span><br />
+    |技能3持续时间1=<span id="skill3chixu1"></span><br />
+    |技能3描述2=<span id="skill3Desc2"></span><br />
+    |技能3技力消耗2=<span id="skill3Sp2"></span><br />
+    |技能3初始技力2=<span id="skill3chushisp2"></span><br />
+    |技能3持续时间2=<span id="skill3chixu2"></span><br />
+    |技能3描述3=<span id="skill3Desc3"></span><br />
+    |技能3技力消耗3=<span id="skill3Sp3"></span><br />
+    |技能3初始技力3=<span id="skill3chushisp3"></span><br />
+    |技能3持续时间3=<span id="skill3chixu3"></span><br />
+    |技能3描述4=<span id="skill3Desc4"></span><br />
+    |技能3技力消耗4=<span id="skill3Sp4"></span><br />
+    |技能3初始技力4=<span id="skill3chushisp4"></span><br />
+    |技能3持续时间4=<span id="skill3chixu4"></span><br />
+    |技能3描述5=<span id="skill3Desc5"></span><br />
+    |技能3技力消耗5=<span id="skill3Sp5"></span><br />
+    |技能3初始技力5=<span id="skill3chushisp5"></span><br />
+    |技能3持续时间5=<span id="skill3chixu5"></span><br />
+    |技能3描述6=<span id="skill3Desc6"></span><br />
+    |技能3技力消耗6=<span id="skill3Sp6"></span><br />
+    |技能3初始技力6=<span id="skill3chushisp6"></span><br />
+    |技能3持续时间6=<span id="skill3chixu6"></span><br />
+    |技能3描述7=<span id="skill3Desc7"></span><br />
+    |技能3技力消耗7=<span id="skill3Sp7"></span><br />
+    |技能3初始技力7=<span id="skill3chushisp7"></span><br />
+    |技能3持续时间7=<span id="skill3chixu7"></span><br />
+    |技能3描述8=<span id="skill3Desc8"></span><br />
+    |技能3技力消耗8=<span id="skill3Sp8"></span><br />
+    |技能3初始技力8=<span id="skill3chushisp8"></span><br />
+    |技能3持续时间8=<span id="skill3chixu8"></span><br />
+    |技能3描述9=<span id="skill3Desc9"></span><br />
+    |技能3技力消耗9=<span id="skill3Sp9"></span><br />
+    |技能3初始技力9=<span id="skill3chushisp9"></span><br />
+    |技能3持续时间9=<span id="skill3chixu9"></span><br />
+    |技能3描述10=<span id="skill3Desc10"></span><br />
+    |技能3技力消耗10=<span id="skill3Sp10"></span><br />
+    |技能3初始技力10=<span id="skill3chushisp10"></span><br />
+    |技能3持续时间10=<span id="skill3chixu10"></span><br />
+    |技能3备注=<br />
+    |召唤物3=<span id="zhaohuanwu3"></span>&#60;!-- 只有一个召唤物就不用填 --><br />
+    |基建技能1=<span id="buildSkill1"></span><br />
+    |基建技能1解锁=<span id="buildSkill1Unlc"></span><br />
+    |基建技能1设施=<span id="buildSkill1With"></span><br />
+    |基建技能1效果=<span id="buildSkill1Func"></span><br />
+    |基建技能1提升后=<span id="buildSkill1Up1"></span><br />
+    |基建技能1提升条件=<span id="buildSkill1Up1Unlc"></span><br />
+    |基建技能1提升后效果=<span id="buildSkill1Up1Func"></span><br />
+    |基建技能1提升后设施=<span id="buildSkill1Up1With"></span><br />
+    |基建技能1再次提升后=<span id="buildSkill1Up2"></span><br />
+    |基建技能1再次提升条件=<span id="buildSkill1Up2Unlc"></span><br />
+    |基建技能1再次提升后设施=<span id="buildSkill1Up2With"></span><br />
+    |基建技能1再次提升后效果=<span id="buildSkill1Up2Func"></span><br />
+    |基建技能2=<span id="buildSkill2"></span><br />
+    |基建技能2解锁=<span id="buildSkill2Unlc"></span><br />
+    |基建技能2设施=<span id="buildSkill2With"></span><br />
+    |基建技能2效果=<span id="buildSkill2Func"></span><br />
+    |基建技能2提升后=<span id="buildSkill2Up1"></span><br />
+    |基建技能2提升条件=<span id="buildSkill2Up1Unlc"></span><br />
+    |基建技能2提升后设施=<span id="buildSkill2Up1With"></span><br />
+    |基建技能2提升后效果=<span id="buildSkill2Up1Func"></span><br />
+    |基建技能2再次提升后=<span id="buildSkill2Up2"></span><br />
+    |基建技能2再次提升条件=<span id="buildSkill2Up2Unlc"></span><br />
+    |基建技能2再次提升后设施=<span id="buildSkill2Up2With"></span><br />
+    |基建技能2再次提升后效果=<span id="buildSkill2Up2Func"></span><br />
+    |模组名=<br />
+    |模组解锁任务1=<br />
+    |模组解锁任务2=<br />
+    |模组解锁材料=<br />
+    |基础数值变化=<br />
+    |分支特性更新=<br />
+    |画师=<span id="huashi"></span><br />
+    |皮肤=<br />
+    |skin1动态id=<br />
+    |皮肤2=<br />
+    |skin2动态id=<br />
+    |皮肤3=<br />
+    |skin3动态id=<br />
+    |皮肤4=<br />
+    |skin4动态id=<br />
+    |皮肤5=<br />
+    |skin5动态id=<br />
+    |皮肤6=<br />
+    |skin6动态id=<br />
+    |生日=<span id="shengri"></span><br />
+    |出厂日=<span id="chuchangri"></span><br />
+    |月=<span id="yue"></span><br />
+    |日=<span id="ri"></span><br />
+    |性别=<span id="xingbie"></span><br />
+    |真实姓名=<span id="xingming"></span><br />
+    |职能=<span id="zhineng"></span><br />
+    |种族=<span id="zhongzu"></span><br />
+    |出身=<span id="chushen"></span><br />
+    |身高=<span id="shengao"></span><br />
+    |高度=<span id="gaodu"></span><br />
+    |是否感染=<span id="ganran"></span><br />
+    |精英化1皮肤=<br />
+    |设定性别=<span id="shedingxingbie"></span><br />
+    |专精=<br />
+    |战斗经验=<span id="zhandoujingyan"></span><br />
+    |表演经验=<span id="biaoyanjingyan"></span><br />
+    |制造商=<span id="zhizaoshang"></span><br />
+    |产地=<span id="chandi"></span><br />
+    |出厂时间=<span id="chuchangshijian"></span><br />
+    |重量=<span id="zhongliang"></span><br />
+    |维护检测报告=<span id="weihubaogao"></span><br />
+    |矿石病毒感染情况=<span id="ganranDesc"></span><br />
+    |客观履历=<span id="lvli"></span><br />
+    |物理强度=<span id="qiangdu"></span><br />
+    |战场机动=<span id="jidong"></span><br />
+    |生理耐受=<span id="naishou"></span><br />
+    |战术规划=<span id="guihua"></span><br />
+    |战斗技巧=<span id="jiqiao"></span><br />
+    |源石技艺适应性=<span id="shiyingxing"></span><br />
+    |临床诊断分析=<span id="zhenduanfenxi"></span><br />
+    |源石技艺评定=<span id="jiyipingding"></span><br />
+    |档案资料一=<span id="ziliao1"></span><br />
+    |档案资料二=<span id="ziliao2"></span><br />
+    |档案资料三=<span id="ziliao3"></span><br />
+    |档案资料四=<span id="ziliao4"></span><br />
+    |升变档案=<br />
+    |晋升记录=<span id="jinshengjilu"></span><br />
+    |档案资料五=<span id="ziliao5"></span><br />
+    |档案资料五标题=<span id="ziliao5tt"></span><br />
+    |最高速度=<span id="zuigaosudu"></span><br />
+    |爬坡能力=<span id="paponengli"></span><br />
+    |制动效能=<span id="zhidongxiaoneng"></span><br />
+    |通过性=<span id="tongguoxing"></span><br />
+    |续航=<span id="xuhang"></span><br />
+    |结构稳定性=<span id="jiegouwendingxing"></span><br />
+    |体检描述=<span id="tijianmiaoshu"></span><br />
+    |干员密录1=<span id="muli1"></span><br />
+    |干员密录1解锁条件=<span id="muli1Unlc"></span><br />
+    |干员密录1描述=<span id="muli1Desc"></span><br />
+    |干员密录1述描视频=<br />
+    |干员密录2=<span id="muli2"></span><br />
+    |干员密录2解锁条件= <span id="muli2Unlc"></span><br />
+    |干员密录2描述=<span id="muli2Desc"></span><br />
+    |干员密录2述描视频=<br />
+    |干员密录3=<span id="muli3"></span><br />
+    |干员密录3描述= <span id="muli3Unlc"></span><br />
+    |干员密录3述描视频=<span id="muli3Desc"></span><br />
+    |悖论模拟标题=<br />
+    |CV=<br />
+    |CV中=<br />
+    |CV英=<br />
+    |CV韩=<br />
+    |CV方=<br />
+    |台词1类型=<span id="taici1Title"></span><br />
+    |语音1=<br />
+    |台词1=<span id="taici1"></span><br />
+    |台词2类型=<span id="taici2Title"></span><br />
+    |语音2=<br />
+    |台词2=<span id="taici2"></span><br />
+    |台词3类型=<span id="taici3Title"></span><br />
+    |语音3=<br />
+    |台词3=<span id="taici3"></span><br />
+    |台词4类型=<span id="taici4Title"></span><br />
+    |语音4=<br />
+    |台词4=<span id="taici4"></span><br />
+    |台词5类型=<span id="taici5Title"></span><br />
+    |语音5=<br />
+    |台词5=<span id="taici5"></span><br />
+    |台词6类型=<span id="taici6Title"></span><br />
+    |语音6=<br />
+    |台词6=<span id="taici6"></span><br />
+    |台词7类型=<span id="taici7Title"></span><br />
+    |语音7=<br />
+    |台词7=<span id="taici7"></span><br />
+    |台词8类型=<span id="taici8Title"></span><br />
+    |语音8=<br />
+    |台词8=<span id="taici8"></span><br />
+    |台词9类型=<span id="taici9Title"></span><br />
+    |语音9=<br />
+    |台词9=<span id="taici9"></span><br />
+    |台词10类型=<span id="taici10Title"></span><br />
+    |语音10=<br />
+    |台词10=<span id="taici10"></span><br />
+    |台词11类型=<span id="taici11Title"></span><br />
+    |语音11=<br />
+    |台词11=<span id="taici11"></span><br />
+    |台词12类型=<span id="taici12Title"></span><br />
+    |语音12=<br />
+    |台词12=<span id="taici12"></span><br />
+    |台词13类型=<span id="taici13Title"></span><br />
+    |语音13=<br />
+    |台词13=<span id="taici13"></span><br />
+    |台词14类型=<span id="taici14Title"></span><br />
+    |语音14=<br />
+    |台词14=<span id="taici14"></span><br />
+    |台词15类型=<span id="taici15Title"></span><br />
+    |语音15=<br />
+    |台词15=<span id="taici15"></span><br />
+    |台词16类型=<span id="taici16Title"></span><br />
+    |语音16=<br />
+    |台词16=<span id="taici16"></span><br />
+    |台词17类型=<span id="taici17Title"></span><br />
+    |语音17=<br />
+    |台词17=<span id="taici17"></span><br />
+    |台词18类型=<span id="taici18Title"></span><br />
+    |语音18=<br />
+    |台词18=<span id="taici18"></span><br />
+    |台词19类型=<span id="taici19Title"></span><br />
+    |语音19=<br />
+    |台词19=<span id="taici19"></span><br />
+    |台词20类型=<span id="taici20Title"></span><br />
+    |语音20=<br />
+    |台词20=<span id="taici20"></span><br />
+    |台词21类型=<span id="taici21Title"></span><br />
+    |语音21=<br />
+    |台词21=<span id="taici21"></span><br />
+    |台词22类型=<span id="taici22Title"></span><br />
+    |语音22=<br />
+    |台词22=<span id="taici22"></span><br />
+    |台词23类型=<span id="taici23Title"></span><br />
+    |语音23=<br />
+    |台词23=<span id="taici23"></span><br />
+    |台词24类型=<span id="taici24Title"></span><br />
+    |语音24=<br />
+    |台词24=<span id="taici24"></span><br />
+    |台词25类型=<span id="taici25Title"></span><br />
+    |语音25=<br />
+    |台词25=<span id="taici25"></span><br />
+    |台词26类型=<span id="taici26Title"></span><br />
+    |语音26=<br />
+    |台词26=<span id="taici26"></span><br />
+    |台词27类型=<span id="taici27Title"></span><br />
+    |语音27=<br />
+    |台词27=<span id="taici27"></span><br />
+    |台词28类型=<span id="taici28Title"></span><br />
+    |语音28=<br />
+    |台词28=<span id="taici28"></span><br />
+    |台词29类型=<span id="taici29Title"></span><br />
+    |语音29=<br />
+    |台词29=<span id="taici29"></span><br />
+    |台词30类型=<span id="taici30Title"></span><br />
+    |语音30=<br />
+    |台词30=<span id="taici30"></span><br />
+    |台词31类型=<span id="taici31Title"></span><br />
+    |语音31=<br />
+    |台词31=<span id="taici31"></span><br />
+    |台词32类型=<span id="taici32Title"></span><br />
+    |语音32=<br />
+    |台词32=<span id="taici32"></span><br />
+    |台词33类型=<span id="taici33Title"></span><br />
+    |语音33=<br />
+    |台词33=<span id="taici33"></span><br />
+    |台词34类型=<span id="taici34Title"></span><br />
+    |语音34=<br />
+    |台词34=<span id="taici34"></span><br />
+    |台词35类型=<span id="taici35Title"></span><br />
+    |语音35=<br />
+    |台词35=<span id="taici35"></span><br />
+    |台词36类型=<span id="taici36Title"></span><br />
+    |语音36=<br />
+    |台词36=<span id="taici36"></span><br />
+    }}<br />
+    {{干员导航}}
+    <script src="js/jQuery.js"></script>
+    <script src="js/zhiye.js"></script>
+    <script src="js/stars.js"></script>
+    <script src="js/nationid.js"></script>
+    <script src="js/replaceStr.js"></script>
+    <script src="js/profLen.js"></script>
+    <script src="js/rangeId.js"></script>
+    <script src="js/skill.js"></script>
+    <script src="js/cailiao.js"></script>
+    <script src="js/skSpTyp.js"></script>
+    <script src="js/skTyp.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/buildingskill.js"></script>
+    <script src="js/operator.js"></script>
+
+    <script>
+        const char = {
+            "char_4102_threye": {
+                "name": "凛视",
+                "description": "攻击造成<@ba.kw>法术伤害</>，可以造成<@ba.kw>元素损伤</>",
+                "canUseGeneralPotentialItem": true,
+                "canUseActivityPotentialItem": false,
+                "potentialItemId": "p_char_4102_threye",
+                "activityPotentialItemId": null,
+                "classicPotentialItemId": null,
+                "nationId": "sami",
+                "groupId": null,
+                "teamId": null,
+                "displayNumber": "SI06",
+                "tokenKey": null,
+                "appellation": "Valarqvin",
+                "position": "RANGED",
+                "tagList": [
+                    "元素"
+                ],
+                "itemUsage": "萨卡兹独眼巨人凛视，走出冰封的岩窟。",
+                "itemDesc": "她看见终局，她寻找起因。",
+                "itemObtainApproach": "活动获得",
+                "isNotObtainable": false,
+                "isSpChar": false,
+                "maxPotentialLevel": 5,
+                "rarity": "TIER_5",
+                "profession": "SUPPORT",
+                "subProfessionId": "ritualist",
+                "trait": null,
+                "phases": [
+                    {
+                        "characterPrefabKey": "char_4102_threye",
+                        "rangeId": "y-2",
+                        "maxLevel": 50,
+                        "attributesKeyFrames": [
+                            {
+                                "level": 1,
+                                "data": {
+                                    "maxHp": 429,
+                                    "atk": 202,
+                                    "def": 46,
+                                    "magicResistance": 5.0,
+                                    "cost": 13,
+                                    "blockCnt": 1,
+                                    "moveSpeed": 1.0,
+                                    "attackSpeed": 100.0,
+                                    "baseAttackTime": 1.6,
+                                    "respawnTime": 70,
+                                    "hpRecoveryPerSec": 0.0,
+                                    "spRecoveryPerSec": 1.0,
+                                    "maxDeployCount": 1,
+                                    "maxDeckStackCnt": 0,
+                                    "tauntLevel": 0,
+                                    "massLevel": 0,
+                                    "baseForceLevel": 0,
+                                    "stunImmune": false,
+                                    "silenceImmune": false,
+                                    "sleepImmune": false,
+                                    "frozenImmune": false,
+                                    "levitateImmune": false
+                                }
+                            },
+                            {
+                                "level": 50,
+                                "data": {
+                                    "maxHp": 632,
+                                    "atk": 289,
+                                    "def": 67,
+                                    "magicResistance": 5.0,
+                                    "cost": 13,
+                                    "blockCnt": 1,
+                                    "moveSpeed": 1.0,
+                                    "attackSpeed": 100.0,
+                                    "baseAttackTime": 1.6,
+                                    "respawnTime": 70,
+                                    "hpRecoveryPerSec": 0.0,
+                                    "spRecoveryPerSec": 1.0,
+                                    "maxDeployCount": 1,
+                                    "maxDeckStackCnt": 0,
+                                    "tauntLevel": 0,
+                                    "massLevel": 0,
+                                    "baseForceLevel": 0,
+                                    "stunImmune": false,
+                                    "silenceImmune": false,
+                                    "sleepImmune": false,
+                                    "frozenImmune": false,
+                                    "levitateImmune": false
+                                }
+                            }
+                        ],
+                        "evolveCost": null
+                    },
+                    {
+                        "characterPrefabKey": "char_4102_threye",
+                        "rangeId": "y-2",
+                        "maxLevel": 70,
+                        "attributesKeyFrames": [
+                            {
+                                "level": 1,
+                                "data": {
+                                    "maxHp": 632,
+                                    "atk": 289,
+                                    "def": 67,
+                                    "magicResistance": 10.0,
+                                    "cost": 15,
+                                    "blockCnt": 1,
+                                    "moveSpeed": 1.0,
+                                    "attackSpeed": 100.0,
+                                    "baseAttackTime": 1.6,
+                                    "respawnTime": 70,
+                                    "hpRecoveryPerSec": 0.0,
+                                    "spRecoveryPerSec": 1.0,
+                                    "maxDeployCount": 1,
+                                    "maxDeckStackCnt": 0,
+                                    "tauntLevel": 0,
+                                    "massLevel": 0,
+                                    "baseForceLevel": 0,
+                                    "stunImmune": false,
+                                    "silenceImmune": false,
+                                    "sleepImmune": false,
+                                    "frozenImmune": false,
+                                    "levitateImmune": false
+                                }
+                            },
+                            {
+                                "level": 70,
+                                "data": {
+                                    "maxHp": 855,
+                                    "atk": 371,
+                                    "def": 88,
+                                    "magicResistance": 10.0,
+                                    "cost": 15,
+                                    "blockCnt": 1,
+                                    "moveSpeed": 1.0,
+                                    "attackSpeed": 100.0,
+                                    "baseAttackTime": 1.6,
+                                    "respawnTime": 70,
+                                    "hpRecoveryPerSec": 0.0,
+                                    "spRecoveryPerSec": 1.0,
+                                    "maxDeployCount": 1,
+                                    "maxDeckStackCnt": 0,
+                                    "tauntLevel": 0,
+                                    "massLevel": 0,
+                                    "baseForceLevel": 0,
+                                    "stunImmune": false,
+                                    "silenceImmune": false,
+                                    "sleepImmune": false,
+                                    "frozenImmune": false,
+                                    "levitateImmune": false
+                                }
+                            }
+                        ],
+                        "evolveCost": [
+                            {
+                                "id": "3271",
+                                "count": 4,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30062",
+                                "count": 3,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30022",
+                                "count": 3,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    },
+                    {
+                        "characterPrefabKey": "char_4102_threye",
+                        "rangeId": "y-2",
+                        "maxLevel": 80,
+                        "attributesKeyFrames": [
+                            {
+                                "level": 1,
+                                "data": {
+                                    "maxHp": 855,
+                                    "atk": 371,
+                                    "def": 88,
+                                    "magicResistance": 15.0,
+                                    "cost": 15,
+                                    "blockCnt": 1,
+                                    "moveSpeed": 1.0,
+                                    "attackSpeed": 100.0,
+                                    "baseAttackTime": 1.6,
+                                    "respawnTime": 70,
+                                    "hpRecoveryPerSec": 0.0,
+                                    "spRecoveryPerSec": 1.0,
+                                    "maxDeployCount": 1,
+                                    "maxDeckStackCnt": 0,
+                                    "tauntLevel": 0,
+                                    "massLevel": 0,
+                                    "baseForceLevel": 0,
+                                    "stunImmune": false,
+                                    "silenceImmune": false,
+                                    "sleepImmune": false,
+                                    "frozenImmune": false,
+                                    "levitateImmune": false
+                                }
+                            },
+                            {
+                                "level": 80,
+                                "data": {
+                                    "maxHp": 1097,
+                                    "atk": 447,
+                                    "def": 101,
+                                    "magicResistance": 15.0,
+                                    "cost": 15,
+                                    "blockCnt": 1,
+                                    "moveSpeed": 1.0,
+                                    "attackSpeed": 100.0,
+                                    "baseAttackTime": 1.6,
+                                    "respawnTime": 70,
+                                    "hpRecoveryPerSec": 0.0,
+                                    "spRecoveryPerSec": 1.0,
+                                    "maxDeployCount": 1,
+                                    "maxDeckStackCnt": 0,
+                                    "tauntLevel": 0,
+                                    "massLevel": 0,
+                                    "baseForceLevel": 0,
+                                    "stunImmune": false,
+                                    "silenceImmune": false,
+                                    "sleepImmune": false,
+                                    "frozenImmune": false,
+                                    "levitateImmune": false
+                                }
+                            }
+                        ],
+                        "evolveCost": [
+                            {
+                                "id": "3273",
+                                "count": 3,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30014",
+                                "count": 10,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30063",
+                                "count": 7,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    }
+                ],
+                "skills": [
+                    {
+                        "skillId": "skchr_threye_1",
+                        "overridePrefabKey": null,
+                        "overrideTokenKey": null,
+                        "levelUpCostCond": [
+                            {
+                                "unlockCond": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "lvlUpTime": 28800,
+                                "levelUpCost": [
+                                    {
+                                        "id": "3303",
+                                        "count": 5,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30074",
+                                        "count": 3,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30093",
+                                        "count": 4,
+                                        "type": "MATERIAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "unlockCond": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "lvlUpTime": 57600,
+                                "levelUpCost": [
+                                    {
+                                        "id": "3303",
+                                        "count": 6,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30054",
+                                        "count": 3,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30064",
+                                        "count": 4,
+                                        "type": "MATERIAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "unlockCond": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "lvlUpTime": 86400,
+                                "levelUpCost": [
+                                    {
+                                        "id": "3303",
+                                        "count": 10,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30145",
+                                        "count": 4,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "31054",
+                                        "count": 3,
+                                        "type": "MATERIAL"
+                                    }
+                                ]
+                            }
+                        ],
+                        "unlockCond": {
+                            "phase": "PHASE_0",
+                            "level": 1
+                        }
+                    },
+                    {
+                        "skillId": "skchr_threye_2",
+                        "overridePrefabKey": null,
+                        "overrideTokenKey": null,
+                        "levelUpCostCond": [
+                            {
+                                "unlockCond": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "lvlUpTime": 28800,
+                                "levelUpCost": [
+                                    {
+                                        "id": "3303",
+                                        "count": 5,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30054",
+                                        "count": 3,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30013",
+                                        "count": 3,
+                                        "type": "MATERIAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "unlockCond": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "lvlUpTime": 57600,
+                                "levelUpCost": [
+                                    {
+                                        "id": "3303",
+                                        "count": 6,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30084",
+                                        "count": 3,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30094",
+                                        "count": 5,
+                                        "type": "MATERIAL"
+                                    }
+                                ]
+                            },
+                            {
+                                "unlockCond": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "lvlUpTime": 86400,
+                                "levelUpCost": [
+                                    {
+                                        "id": "3303",
+                                        "count": 10,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "30155",
+                                        "count": 4,
+                                        "type": "MATERIAL"
+                                    },
+                                    {
+                                        "id": "31024",
+                                        "count": 3,
+                                        "type": "MATERIAL"
+                                    }
+                                ]
+                            }
+                        ],
+                        "unlockCond": {
+                            "phase": "PHASE_1",
+                            "level": 1
+                        }
+                    }
+                ],
+                "talents": [
+                    {
+                        "candidates": [
+                            {
+                                "unlockCondition": {
+                                    "phase": "PHASE_1",
+                                    "level": 1
+                                },
+                                "requiredPotentialRank": 0,
+                                "prefabKey": "2",
+                                "name": "揭示者",
+                                "description": "在【探索者的银凇止境】中，攻击附带相当于15%攻击力的<$ba.dt.apoptosis2>凋亡损伤</>",
+                                "rangeId": null,
+                                "blackboard": [
+                                    {
+                                        "key": "ep_damage_ratio",
+                                        "value": 0.15,
+                                        "valueStr": null
+                                    }
+                                ]
+                            },
+                            {
+                                "unlockCondition": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "requiredPotentialRank": 0,
+                                "prefabKey": "2",
+                                "name": "揭示者",
+                                "description": "在【探索者的银凇止境】中，攻击附带相当于30%攻击力的<$ba.dt.apoptosis2>凋亡损伤</>",
+                                "rangeId": null,
+                                "blackboard": [
+                                    {
+                                        "key": "ep_damage_ratio",
+                                        "value": 0.3,
+                                        "valueStr": null
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "candidates": [
+                            {
+                                "unlockCondition": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "requiredPotentialRank": 0,
+                                "prefabKey": "1",
+                                "name": "隐居者",
+                                "description": "攻击力+6%，攻击速度+6",
+                                "rangeId": null,
+                                "blackboard": [
+                                    {
+                                        "key": "atk",
+                                        "value": 0.06,
+                                        "valueStr": null
+                                    },
+                                    {
+                                        "key": "attack_speed",
+                                        "value": 6.0,
+                                        "valueStr": null
+                                    }
+                                ]
+                            },
+                            {
+                                "unlockCondition": {
+                                    "phase": "PHASE_2",
+                                    "level": 1
+                                },
+                                "requiredPotentialRank": 4,
+                                "prefabKey": "1",
+                                "name": "隐居者",
+                                "description": "攻击力+7%<@ba.talpu>(+1%)</>，攻击速度+7<@ba.talpu>(+1)</>",
+                                "rangeId": null,
+                                "blackboard": [
+                                    {
+                                        "key": "atk",
+                                        "value": 0.07,
+                                        "valueStr": null
+                                    },
+                                    {
+                                        "key": "attack_speed",
+                                        "value": 7.0,
+                                        "valueStr": null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "potentialRanks": [
+                    {
+                        "type": "BUFF",
+                        "description": "部署费用-1",
+                        "buff": {
+                            "attributes": {
+                                "abnormalFlags": null,
+                                "abnormalImmunes": null,
+                                "abnormalAntis": null,
+                                "abnormalCombos": null,
+                                "abnormalComboImmunes": null,
+                                "attributeModifiers": [
+                                    {
+                                        "attributeType": "COST",
+                                        "formulaItem": "ADDITION",
+                                        "value": -1.0,
+                                        "loadFromBlackboard": false,
+                                        "fetchBaseValueFromSourceEntity": false
+                                    }
+                                ]
+                            }
+                        },
+                        "equivalentCost": null
+                    },
+                    {
+                        "type": "BUFF",
+                        "description": "再部署时间-10秒",
+                        "buff": {
+                            "attributes": {
+                                "abnormalFlags": null,
+                                "abnormalImmunes": null,
+                                "abnormalAntis": null,
+                                "abnormalCombos": null,
+                                "abnormalComboImmunes": null,
+                                "attributeModifiers": [
+                                    {
+                                        "attributeType": "RESPAWN_TIME",
+                                        "formulaItem": "ADDITION",
+                                        "value": -10.0,
+                                        "loadFromBlackboard": false,
+                                        "fetchBaseValueFromSourceEntity": false
+                                    }
+                                ]
+                            }
+                        },
+                        "equivalentCost": null
+                    },
+                    {
+                        "type": "BUFF",
+                        "description": "部署费用-1",
+                        "buff": {
+                            "attributes": {
+                                "abnormalFlags": null,
+                                "abnormalImmunes": null,
+                                "abnormalAntis": null,
+                                "abnormalCombos": null,
+                                "abnormalComboImmunes": null,
+                                "attributeModifiers": [
+                                    {
+                                        "attributeType": "COST",
+                                        "formulaItem": "ADDITION",
+                                        "value": -1.0,
+                                        "loadFromBlackboard": false,
+                                        "fetchBaseValueFromSourceEntity": false
+                                    }
+                                ]
+                            }
+                        },
+                        "equivalentCost": null
+                    },
+                    {
+                        "type": "CUSTOM",
+                        "description": "第二天赋效果增强",
+                        "buff": null,
+                        "equivalentCost": null
+                    },
+                    {
+                        "type": "BUFF",
+                        "description": "部署费用-1",
+                        "buff": {
+                            "attributes": {
+                                "abnormalFlags": null,
+                                "abnormalImmunes": null,
+                                "abnormalAntis": null,
+                                "abnormalCombos": null,
+                                "abnormalComboImmunes": null,
+                                "attributeModifiers": [
+                                    {
+                                        "attributeType": "COST",
+                                        "formulaItem": "ADDITION",
+                                        "value": -1.0,
+                                        "loadFromBlackboard": false,
+                                        "fetchBaseValueFromSourceEntity": false
+                                    }
+                                ]
+                            }
+                        },
+                        "equivalentCost": null
+                    }
+                ],
+                "favorKeyFrames": [
+                    {
+                        "level": 0,
+                        "data": {
+                            "maxHp": 0,
+                            "atk": 0,
+                            "def": 0,
+                            "magicResistance": 0.0,
+                            "cost": 0,
+                            "blockCnt": 0,
+                            "moveSpeed": 0.0,
+                            "attackSpeed": 0.0,
+                            "baseAttackTime": 0.0,
+                            "respawnTime": 0,
+                            "hpRecoveryPerSec": 0.0,
+                            "spRecoveryPerSec": 0.0,
+                            "maxDeployCount": 0,
+                            "maxDeckStackCnt": 0,
+                            "tauntLevel": 0,
+                            "massLevel": 0,
+                            "baseForceLevel": 0,
+                            "stunImmune": false,
+                            "silenceImmune": false,
+                            "sleepImmune": false,
+                            "frozenImmune": false,
+                            "levitateImmune": false
+                        }
+                    },
+                    {
+                        "level": 50,
+                        "data": {
+                            "maxHp": 250,
+                            "atk": 30,
+                            "def": 0,
+                            "magicResistance": 0.0,
+                            "cost": 0,
+                            "blockCnt": 0,
+                            "moveSpeed": 0.0,
+                            "attackSpeed": 0.0,
+                            "baseAttackTime": 0.0,
+                            "respawnTime": 0,
+                            "hpRecoveryPerSec": 0.0,
+                            "spRecoveryPerSec": 0.0,
+                            "maxDeployCount": 0,
+                            "maxDeckStackCnt": 0,
+                            "tauntLevel": 0,
+                            "massLevel": 0,
+                            "baseForceLevel": 0,
+                            "stunImmune": false,
+                            "silenceImmune": false,
+                            "sleepImmune": false,
+                            "frozenImmune": false,
+                            "levitateImmune": false
+                        }
+                    }
+                ],
+                "allSkillLvlup": [
+                    {
+                        "unlockCond": {
+                            "phase": "PHASE_0",
+                            "level": 1
+                        },
+                        "lvlUpCost": [
+                            {
+                                "id": "3301",
+                                "count": 4,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    },
+                    {
+                        "unlockCond": {
+                            "phase": "PHASE_0",
+                            "level": 1
+                        },
+                        "lvlUpCost": [
+                            {
+                                "id": "3301",
+                                "count": 4,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30021",
+                                "count": 7,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    },
+                    {
+                        "unlockCond": {
+                            "phase": "PHASE_0",
+                            "level": 1
+                        },
+                        "lvlUpCost": [
+                            {
+                                "id": "3302",
+                                "count": 6,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30032",
+                                "count": 3,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    },
+                    {
+                        "unlockCond": {
+                            "phase": "PHASE_1",
+                            "level": 1
+                        },
+                        "lvlUpCost": [
+                            {
+                                "id": "3302",
+                                "count": 6,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30042",
+                                "count": 4,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    },
+                    {
+                        "unlockCond": {
+                            "phase": "PHASE_1",
+                            "level": 1
+                        },
+                        "lvlUpCost": [
+                            {
+                                "id": "3302",
+                                "count": 6,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30013",
+                                "count": 5,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    },
+                    {
+                        "unlockCond": {
+                            "phase": "PHASE_1",
+                            "level": 1
+                        },
+                        "lvlUpCost": [
+                            {
+                                "id": "3303",
+                                "count": 6,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "31043",
+                                "count": 3,
+                                "type": "MATERIAL"
+                            },
+                            {
+                                "id": "30033",
+                                "count": 3,
+                                "type": "MATERIAL"
+                            }
+                        ]
+                    }
+                ]
+            },
+        }
+        let PHASE = obj => {
+            switch (obj) {
+                case "PHASE_0":
+                    return "初始携带";
+                case "PHASE_1":
+                    return "精英化1";
+                case "PHASE_2":
+                    return "精英化2";
+            }
+        }
+        let LEVEL = obj => {
+            if (obj > 1) {
+                return "、等级" + obj;
+            }
+            return "";
+        }
+
+        $.each(char, (name, value) => {
+            $("#daihao").html(value.name);
+            $("#id").html(name);
+            $("#yingwenming").html(value.appellation);
+            $("#zhiye").html(zhiyelen(value.profession));
+            $("#xingji").html(star(value.rarity));
+            $("#bianhao").html(value.displayNumber);
+            $("#zhenying").html(nationIdLen(value.nationId));
+            if (value.groupId != null) {
+                $("#zhenying").html($("#zhenying").html() + "、" + nationIdLen(value.groupId));
+            }
+            if (value.teamId != null) {
+                $("#zhenying").html($("#zhenying").html() + "、" + nationIdLen(value.teamId));
+            }
+            if (value.position == "RANGED") {
+                $("#biaoqian").html(`远程位、`);
+            } else {
+                $("#biaoqian").html(`近战位、`);
+            }
+            if (value.tagList != null) {
+                for (let i = 0; i < value.tagList.length; i++) {
+                    $("#biaoqian").html($("#biaoqian").html() + value.tagList[i] + "、");
+                }
+            }
+            $("#biaoqian").html($("#biaoqian").html().slice(0, -1));
+            if (value.tokenKey != null) {
+                if (value.skills != "") {
+                    if (value.skills[0].overrideTokenKey != null) {
+                        $("#zhaohuanwu1").html(operator(value.skills[0].overrideTokenKey));
+                    } else {
+                        $("#zhaohuanwu1").html(operator(value.tokenKey));
+                    }
+                }
+                if (value.skills.length > 1 && operator(value.skills[1].overrideTokenKey) != operator(value.tokenKey)) {
+                    if (value.skills[1].overrideTokenKey != null) {
+                        $("#zhaohuanwu2").html(operator(value.skills[1].overrideTokenKey));
+                    }
+                }
+                if (value.skills.length > 2) {
+                    if (value.skills[2].overrideTokenKey != null && operator(value.skills[2].overrideTokenKey) != operator(value.tokenKey)) {
+                        $("#zhaohuanwu3").html(operator(value.skills[2].overrideTokenKey));
+                    }
+                }
+            }
+
+            // $("#hetong").html(`${value.itemUsage}&#60;br/>&#60;br/>''${value.itemDesc}''`);
+            $("#texing").html(replaceStr(value.description).slice(0, -5));
+            if (value.trait != null) {
+                let texingObj = {};
+                for (let i = 0; i < value.trait.candidates[0].blackboard.length; i++) {
+                    texingObj[value.trait.candidates[0].blackboard[i].key] = value.trait.candidates[0].blackboard[i].value;
+                    $("#texing").html(replaceStr(value.description).slice(0, -5).format(texingObj));
+                }
+                if (value.trait.candidates.length > 1) {
+                    for (let i = 0; i < value.trait.candidates[1].blackboard.length; i++) {
+                        texingObj[value.trait.candidates[1].blackboard[i].key] = value.trait.candidates[1].blackboard[i].value;
+                        $("#texing").html(`${$("#texing").html()}&#60;br/>${replaceStr(value.description).slice(0, -5).format(texingObj)}(${PHASE(value.trait.candidates[1].unlockCondition.phase)})`);
+                    }
+                }
+                if (value.trait.candidates.length > 2) {
+                    for (let i = 0; i < value.trait.candidates[2].blackboard.length; i++) {
+                        texingObj[value.trait.candidates[2].blackboard[i].key] = value.trait.candidates[2].blackboard[i].value;
+                        $("#texing").html(`${$("#texing").html()}&#60;br/>${replaceStr(value.description).slice(0, -5).format(texingObj)}(${PHASE(value.trait.candidates[2].unlockCondition.phase)})`);
+                    }
+                }
+
+                $("#texingRange").html(rangeLen(value.trait.candidates[0].rangeId));
+            }
+            $("#fenzhi").html(subProf(value.subProfessionId));
+            $("#hp0").html(value.phases[0].attributesKeyFrames[0].data.maxHp);
+            $("#atk0").html(value.phases[0].attributesKeyFrames[0].data.atk);
+            $("#def0").html(value.phases[0].attributesKeyFrames[0].data.def);
+            $("#mgc0").html(value.phases[0].attributesKeyFrames[0].data.magicResistance);
+            $("#remake").html(value.phases[0].attributesKeyFrames[0].data.respawnTime);
+            $("#cost").html(value.phases[0].attributesKeyFrames[0].data.cost);
+            let rdcCost = 0;
+            for (let i = 0; i < value.potentialRanks.length; i++) {
+                if (value.potentialRanks[i].description == "部署费用-1") {
+                    rdcCost++;
+                }
+            }
+            if (star(value.rarity) >= 4) {
+                $("#costPro").html(value.phases[2].attributesKeyFrames[1].data.cost - rdcCost);
+                $("#zudang").html(`${value.phases[0].attributesKeyFrames[1].data.blockCnt}→${value.phases[1].attributesKeyFrames[1].data.blockCnt}→${value.phases[2].attributesKeyFrames[1].data.blockCnt}`);
+            } else if (star(value.rarity) == 3) {
+                $("#costPro").html(value.phases[1].attributesKeyFrames[1].data.cost - rdcCost);
+                $("#zudang").html(`${value.phases[0].attributesKeyFrames[1].data.blockCnt}→${value.phases[1].attributesKeyFrames[1].data.blockCnt}`);
+            } else if (star(value.rarity) < 3) {
+                $("#costPro").html(value.phases[0].attributesKeyFrames[1].data.cost - rdcCost);
+                $("#zudang").html(value.phases[0].attributesKeyFrames[1].data.blockCnt);
+            }
+            $("#gongsu").html(value.phases[0].attributesKeyFrames[0].data.attackSpeed);
+            $("#gongjijiange").html(value.phases[0].attributesKeyFrames[0].data.baseAttackTime);
+            $("#range0").html(rangeLen(value.phases[0].rangeId));
+            $("#hp0max").html(value.phases[0].attributesKeyFrames[1].data.maxHp);
+            $("#atk0max").html(value.phases[0].attributesKeyFrames[1].data.atk);
+            $("#def0max").html(value.phases[0].attributesKeyFrames[1].data.def);
+            $("#mgc0max").html(value.phases[0].attributesKeyFrames[1].data.magicResistance);
+            $("#elt1level").html(value.phases[0].maxLevel);
+            if (star(value.rarity) > 2) {
+
+
+                $("#elt1up").html(`属性上限提升`);
+                if (value.phases[1].attributesKeyFrames[0].data.cost - value.phases[0].attributesKeyFrames[0].data.cost > 0) {
+                    $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;增加部署费用{{color|ff6801|${value.phases[1].attributesKeyFrames[0].data.cost - value.phases[0].attributesKeyFrames[0].data.cost}}}`);
+                }
+                // 四五六星技能增加
+                if (star(value.rarity) > 3) {
+                    $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;获得新技能{{color|00b0ff|${skill(value.skills[1].skillId)}}}`);
+                }
+                // 有无天赋提升？
+                const hasPhase0AndPhase1 = value.talents[0].candidates.some(obj =>
+                    obj.unlockCondition.phase == "PHASE_0"
+                ) && value.talents[0].candidates.some(obj =>
+                    obj.unlockCondition.phase == "PHASE_1"
+                );
+                // 呃呃，你说是，那就是
+                if (hasPhase0AndPhase1 == true) {
+                    $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;天赋{{color|00b0ff|${value.talents[0].candidates[0].name}}}获得提升`);
+                }
+                // 第二天赋判定
+                let hasPhase0AndPhase1_2 = "";
+                if (value.talents.length > 1) {
+                    hasPhase0AndPhase1_2 = value.talents[1].candidates.some(obj =>
+                        obj.unlockCondition.phase == "PHASE_0"
+                    ) && value.talents[1].candidates.some(obj =>
+                        obj.unlockCondition.phase == "PHASE_1"
+                    );
+                    // 确实
+                    if (hasPhase0AndPhase1_2 == true) {
+                        $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;天赋{{color|00b0ff|${value.talents[1].candidates[0].name}}}获得提升`);
+                    } else if(value.talents[1].candidates[0].unlockCondition.phase != "PHASE_2" && hasPhase0AndPhase1_2 == false){
+                        $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;新获得天赋{{color|00b0ff|${value.talents[1].candidates[0].name}}}`);
+                    }
+
+                }
+                console.log(hasPhase0AndPhase1)
+                const features1 = () => {
+                    if (value.trait != null) {
+                        for (let i = 0; i < value.trait.candidates.length; i++) {
+                            if (PHASE(value.trait.candidates[i].unlockCondition.phase) == "精英化1") {
+                                return `&#60;br/&#62;{{color|00b0ff|特性}}更新`;
+
+                            }
+                        }
+                    }
+                    return "";
+                };
+                if (hasPhase0AndPhase1 != true) {
+                    $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;新获得天赋{{color|00b0ff|${value.talents[0].candidates[0].name}}}`);
+                }
+                if (hasPhase0AndPhase1_2 != true && value.talents > 1) {
+                    $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;新获得天赋{{color|00b0ff|${value.talents[1].candidates[0].name}}}`);
+                }
+
+                if (star(value.rarity) > 2) {
+                    if (value.phases[0].rangeId != value.phases[1].rangeId) {
+                        $("#elt1up").html(`${$("#elt1up").html()}&#60;br/&#62;攻击范围扩大`);
+                    }
+                    $("#hp1max").html(value.phases[1].attributesKeyFrames[1].data.maxHp);
+                    $("#atk1max").html(value.phases[1].attributesKeyFrames[1].data.atk);
+                    $("#def1max").html(value.phases[1].attributesKeyFrames[1].data.def);
+                    $("#mgc1max").html(value.phases[1].attributesKeyFrames[1].data.magicResistance);
+                    $("#range1").html(rangeLen(value.phases[1].rangeId));
+                }
+                $("#elt1up").html($("#elt1up").html() + features1());
+            }
+            // 材料
+            if (value.profession != "TOKEN") {
+                if (star(value.rarity) == 6) {
+                    $("#elt1mtrl").html(`{{data|龙门币|30000}}`);
+                    for (let i = 0; i < value.phases[1].evolveCost.length; i++) {
+                        $("#elt1mtrl").html(`${$("#elt1mtrl").html()}{{data|${ms(value.phases[1].evolveCost[i].id)}|${value.phases[1].evolveCost[i].count}}}`);
+                    }
+                } else if (star(value.rarity) == 5) {
+                    $("#elt1mtrl").html(`{{data|龙门币|20000}}`);
+                    for (let i = 0; i < value.phases[1].evolveCost.length; i++) {
+                        $("#elt1mtrl").html(`${$("#elt1mtrl").html()}{{data|${ms(value.phases[1].evolveCost[i].id)}|${value.phases[1].evolveCost[i].count}}}`);
+                    }
+                } else if (star(value.rarity) == 4) {
+                    $("#elt1mtrl").html(`{{data|龙门币|15000}}`);
+                    for (let i = 0; i < value.phases[1].evolveCost.length; i++) {
+                        $("#elt1mtrl").html(`${$("#elt1mtrl").html()}{{data|${ms(value.phases[1].evolveCost[i].id)}|${value.phases[1].evolveCost[i].count}}}`);
+                    }
+                } else if (star(value.rarity) == 3) {
+                    $("#elt1mtrl").html(`{{data|龙门币|10000}}`)
+                }
+                // 精2
+
+                if (star(value.rarity) > 3) {
+
+                    $("#elt2level").html(value.phases[1].maxLevel);
+                    const costUp = () => {
+                        if (value.phases[2].attributesKeyFrames[1].data.cost !== value.phases[1].attributesKeyFrames[1].data.cost) {
+                            return `&#60;br/&#62;增加部署费用{{color|ff6801|${value.phases[2].attributesKeyFrames[1].data.cost - value.phases[1].attributesKeyFrames[1].data.cost}}}`;
+                        }
+                        return "";
+                    };
+
+                    const newSkill = () => {
+                        if (value.skills.length > 2) {
+                            if (value.skills[2].unlockCond.phase == "PHASE_2") {
+                                return `&#60;br/&#62;获得新技能{{color|00b0ff|${skill(value.skills[2].skillId)}}}`;
+                            }
+                        }
+                        return "";
+                    };
+
+                    const hasPhase1AndPhase2 = value.talents[0].candidates.some(obj =>
+                        obj.unlockCondition.phase == "PHASE_1"
+                    ) && value.talents[0].candidates.some(obj =>
+                        obj.unlockCondition.phase == "PHASE_2"
+                    );
+
+                    const talentUp = () => {
+                        if (hasPhase1AndPhase2 == true) {
+                            return `&#60;br/&#62;天赋{{color|00b0ff|${value.talents[0].candidates[0].name}}}获得提升`
+                        }
+                        return "";
+                    };
+                    let hasPhase1AndPhase2_2 = "";
+                    if (value.talents.length > 1) {
+                        hasPhase1AndPhase2_2 = value.talents[1].candidates.some(obj =>
+                            obj.unlockCondition.phase == "PHASE_1"
+                        ) && value.talents[1].candidates.some(obj =>
+                            obj.unlockCondition.phase == "PHASE_2"
+                        );
+
+                    }
+
+                    const talentUp2 = () => {
+                        if (hasPhase1AndPhase2_2 == true) {
+                            return `&#60;br/&#62;天赋{{color|00b0ff|${value.talents[1].candidates[0].name}}}获得提升`;
+                        }
+                        return "";
+                    };
+                    const newTalent2 = () => {
+                        if (value.talents.length > 1) {
+                            if (hasPhase1AndPhase2_2 == false) {
+                                return `&#60;br/&#62;新获得天赋{{color|00b0ff|${value.talents[1].candidates[0].name}}}`;
+                            }
+                        }
+                        return "";
+                    };
+                    const rangeUp = () => {
+                        if (value.phases[2].rangeId != value.phases[1].rangeId) {
+                            return `&#60;br/&#62;攻击范围扩大`;
+                        }
+                        return "";
+                    };
+                    const features2 = () => {
+                        if (value.trait != null) {
+                            for (let i = 0; i < value.trait.candidates.length; i++) {
+                                if (PHASE(value.trait.candidates[i].unlockCondition.phase) == "精英化2") {
+                                    return `&#60;br/&#62;{{color|00b0ff|特性}}更新`;
+
+                                }
+                            }
+                        }
+                        return "";
+                    };
+                    $("#elt2up").html(`属性上限提升${costUp()}${newSkill()}${talentUp()}${talentUp2()}${newTalent2()}${rangeUp()}${features2()}`);
+                    if (star(value.rarity) == 6) {
+                        $("#elt2mtrl").html(`{{data|龙门币|180000}}&#60;`)
+                        for (let i = 0; i < value.phases[2].evolveCost.length; i++) {
+                            $("#elt2mtrl").html(`${$("#elt2mtrl").html()}{{data|${ms(value.phases[2].evolveCost[i].id)}|${value.phases[2].evolveCost[i].count}}}`);
+                        }
+                    }
+                    if (star(value.rarity) == 5) {
+                        $("#elt2mtrl").html(`{{data|龙门币|120000}}&#60;br/>`)
+                        for (let i = 0; i < value.phases[2].evolveCost.length; i++) {
+                            $("#elt2mtrl").html(`${$("#elt2mtrl").html()}{{data|${ms(value.phases[2].evolveCost[i].id)}|${value.phases[2].evolveCost[i].count}}}`);
+                        }
+                    }
+                    if (star(value.rarity) == 4) {
+                        $("#elt2mtrl").html(`{{data|龙门币|60000}}&#60;br/>`)
+                        for (let i = 0; i < value.phases[2].evolveCost.length; i++) {
+                            $("#elt2mtrl").html(`${$("#elt2mtrl").html()}{{data|${ms(value.phases[2].evolveCost[i].id)}|${value.phases[2].evolveCost[i].count}}}`);
+                        }
+                    }
+                }
+                $("#hp2max").html(value.phases[2].attributesKeyFrames[1].data.maxHp);
+                $("#atk2max").html(value.phases[2].attributesKeyFrames[1].data.atk);
+                $("#def2max").html(value.phases[2].attributesKeyFrames[1].data.def);
+                $("#mgc2max").html(value.phases[2].attributesKeyFrames[1].data.magicResistance);
+                $("#range2").html(rangeLen(value.phases[2].rangeId));
+
+                for (let j = 0; j < value.skills[0].levelUpCostCond[0].levelUpCost.length; j++) {
+                    $("#skill1mtrl78").html(`${$("#skill1mtrl78").html()}{{data|${ms(value.skills[0].levelUpCostCond[0].levelUpCost[j].id)}|${value.skills[0].levelUpCostCond[0].levelUpCost[j].count}}}`);
+                }
+                for (let j = 0; j < value.skills[0].levelUpCostCond[1].levelUpCost.length; j++) {
+                    $("#skill1mtrl89").html(`${$("#skill1mtrl89").html()}{{data|${ms(value.skills[0].levelUpCostCond[1].levelUpCost[j].id)}|${value.skills[0].levelUpCostCond[1].levelUpCost[j].count}}}`);
+                }
+                for (let j = 0; j < value.skills[0].levelUpCostCond[2].levelUpCost.length; j++) {
+                    $("#skill1mtrl910").html(`${$("#skill1mtrl910").html()}{{data|${ms(value.skills[0].levelUpCostCond[2].levelUpCost[j].id)}|${value.skills[0].levelUpCostCond[2].levelUpCost[j].count}}}`);
+                }
+                for (let j = 0; j < value.skills[1].levelUpCostCond[0].levelUpCost.length; j++) {
+                    $("#skill2mtrl78").html(`${$("#skill2mtrl78").html()}{{data|${ms(value.skills[1].levelUpCostCond[0].levelUpCost[j].id)}|${value.skills[1].levelUpCostCond[0].levelUpCost[j].count}}}`);
+                }
+                for (let j = 0; j < value.skills[1].levelUpCostCond[1].levelUpCost.length; j++) {
+                    $("#skill2mtrl89").html(`${$("#skill2mtrl89").html()}{{data|${ms(value.skills[1].levelUpCostCond[1].levelUpCost[j].id)}|${value.skills[1].levelUpCostCond[1].levelUpCost[j].count}}}`);
+                }
+                for (let j = 0; j < value.skills[1].levelUpCostCond[2].levelUpCost.length; j++) {
+                    $("#skill2mtrl910").html(`${$("#skill2mtrl910").html()}{{data|${ms(value.skills[1].levelUpCostCond[2].levelUpCost[j].id)}|${value.skills[1].levelUpCostCond[2].levelUpCost[j].count}}}`);
+                }
+                if (star(value.rarity) == 6) {
+                    for (let j = 0; j < value.skills[2].levelUpCostCond[0].levelUpCost.length; j++) {
+                        $("#skill3mtrl78").html(`${$("#skill3mtrl78").html()}{{data|${ms(value.skills[2].levelUpCostCond[0].levelUpCost[j].id)}|${value.skills[2].levelUpCostCond[0].levelUpCost[j].count}}}`);
+                    }
+                    for (let j = 0; j < value.skills[2].levelUpCostCond[1].levelUpCost.length; j++) {
+                        $("#skill3mtrl89").html(`${$("#skill3mtrl89").html()}{{data|${ms(value.skills[2].levelUpCostCond[1].levelUpCost[j].id)}|${value.skills[2].levelUpCostCond[1].levelUpCost[j].count}}}`);
+                    }
+                    for (let j = 0; j < value.skills[2].levelUpCostCond[2].levelUpCost.length; j++) {
+                        $("#skill3mtrl910").html(`${$("#skill3mtrl910").html()}{{data|${ms(value.skills[2].levelUpCostCond[2].levelUpCost[j].id)}|${value.skills[2].levelUpCostCond[2].levelUpCost[j].count}}}`);
+                    }
+                }
+            }
+            let reqRank = obj => {
+                switch (obj) {
+                    case 0:
+                        return "";
+                    case 1:
+                        return "、潜能2";
+                    case 2:
+                        return "、潜能3";
+                    case 3:
+                        return "、潜能4";
+                    case 4:
+                        return "、潜能5";
+                    case 5:
+                        return "、潜能6";
+                }
+            }
+            let ifnt = obj => {
+                if (obj == -1) {
+                    return "";
+                } else {
+                    return obj;
+                }
+                return "";
+            }
+            if (value.talents != null) {
+                $("#tlt1range").html(rangeLen(value.talents[0].candidates[0].rangeId))
+                $("#talent1").html(value.talents[0].candidates[0].name);
+                $("#talent1Unlc").html(PHASE(value.talents[0].candidates[0].unlockCondition.phase) + reqRank(value.talents[0].candidates[0].requiredPotentialRank));
+                $("#talent1Desc").html(replaceStr(value.talents[0].candidates[0].description).slice(0, -5));
+                if (value.talents[0].candidates.length > 1) {
+                    $("#talent1Up1").html(value.talents[0].candidates[1].name);
+                    $("#talent1Up1Unlc").html(PHASE(value.talents[0].candidates[1].unlockCondition.phase) + reqRank(value.talents[0].candidates[1].requiredPotentialRank));
+                    $("#talent1Up1Desc").html(replaceStr(value.talents[0].candidates[1].description).slice(0, -5));
+                    if (value.talents[0].candidates.length > 2) {
+                        $("#talent1Up2").html(value.talents[0].candidates[2].name);
+                        $("#talent1Up2Unlc").html(PHASE(value.talents[0].candidates[2].unlockCondition.phase) + reqRank(value.talents[0].candidates[2].requiredPotentialRank));
+                        $("#talent1Up2Desc").html(replaceStr(value.talents[0].candidates[2].description).slice(0, -5));
+                        if (value.talents[0].candidates.length > 3) {
+                            $("#talent1Up3").html(value.talents[0].candidates[3].name);
+                            $("#talent1Up3Unlc").html(PHASE(value.talents[0].candidates[3].unlockCondition.phase) + reqRank(value.talents[0].candidates[3].requiredPotentialRank));
+                            $("#talent1Up3Desc").html(replaceStr(value.talents[0].candidates[3].description).slice(0, -5));
+                            if (value.talents[0].candidates.length > 4) {
+                                $("#talent1Up4").html(value.talents[0].candidates[4].name);
+                                $("#talent1Up4Unlc").html(PHASE(value.talents[0].candidates[4].unlockCondition.phase) + reqRank(value.talents[0].candidates[4].requiredPotentialRank));
+                                $("#talent1Up4Desc").html(replaceStr(value.talents[0].candidates[4].description).slice(0, -5));
+                                if (value.talents[0].candidates.length > 5) {
+                                    $("#talent5Up3").html(value.talents[0].candidates[5].name);
+                                    $("#talent5Up3Unlc").html(PHASE(value.talents[0].candidates[5].unlockCondition.phase) + reqRank(value.talents[0].candidates[5].requiredPotentialRank));
+                                    $("#talent5Up3Desc").html(replaceStr(value.talents[0].candidates[5].description).slice(0, -5));
+                                }
+                            }
+                        }
+                    }
+                }
+                if (value.talents.length > 1) {
+                    $("#tlt2range").html(rangeLen(value.talents[1].candidates[0].rangeId))
+                    $("#talent2").html(value.talents[1].candidates[0].name);
+                    $("#talent2Desc").html(replaceStr(value.talents[1].candidates[0].description).slice(0, -5));
+                    $("#talent2Unlc").html(PHASE(value.talents[1].candidates[0].unlockCondition.phase) + reqRank(value.talents[1].candidates[0].requiredPotentialRank));
+                    if (value.talents[1].candidates.length > 1) {
+                        $("#talent2Up1").html(value.talents[1].candidates[1].name);
+                        $("#talent2Up1Desc").html(replaceStr(value.talents[1].candidates[1].description).slice(0, -5));
+                        $("#talent2Up1Unlc").html(PHASE(value.talents[1].candidates[1].unlockCondition.phase) + reqRank(value.talents[1].candidates[1].requiredPotentialRank));
+                        if (value.talents[1].candidates.length > 2) {
+                            $("#talent2Up2").html(value.talents[1].candidates[2].name);
+                            $("#talent2Up2Desc").html(replaceStr(value.talents[1].candidates[2].description).slice(0, -5));
+                            $("#talent2Up2Unlc").html(PHASE(value.talents[1].candidates[2].unlockCondition.phase) + reqRank(value.talents[1].candidates[2].requiredPotentialRank));
+                            if (value.talents[1].candidates.length > 3) {
+                                $("#talent2Up3").html(value.talents[1].candidates[3].name);
+                                $("#talent2Up3Desc").html(replaceStr(value.talents[1].candidates[3].description).slice(0, -5));
+                                $("#talent2Up3Unlc").html(PHASE(value.talents[1].candidates[3].unlockCondition.phase) + reqRank(value.talents[1].candidates[3].requiredPotentialRank));
+                                if (value.talents[1].candidates.length > 4) {
+                                    $("#talent2Up4").html(value.talents[1].candidates[4].name);
+                                    $("#talent2Up4Desc").html(replaceStr(value.talents[1].candidates[4].description).slice(0, -5));
+                                    $("#talent2Up4Unlc").html(PHASE(value.talents[1].candidates[4].unlockCondition.phase) + reqRank(value.talents[1].candidates[4].requiredPotentialRank));
+                                    if (value.talents[1].candidates.length > 5) {
+                                        $("#talent2Up5").html(value.talents[1].candidates[5].name);
+                                        $("#talent2Up5Desc").html(replaceStr(value.talents[1].candidates[5].description).slice(0, -5));
+                                        $("#talent2Up5Unlc").html(PHASE(value.talents[1].candidates[5].unlockCondition.phase) + reqRank(value.talents[1].candidates[5].requiredPotentialRank));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (value.profession != "TOKEN") {
+                if (value.potentialRanks != null) {
+                    $("#rank1").html(value.potentialRanks[0].description);
+                    if (value.potentialRanks.length > 1) {
+                        $("#rank2").html(value.potentialRanks[1].description);
+                    }
+                    if (value.potentialRanks.length > 2) {
+                        $("#rank3").html(value.potentialRanks[2].description);
+                    }
+                    if (value.potentialRanks.length > 3) {
+                        $("#rank4").html(value.potentialRanks[3].description);
+                    }
+                    if (value.potentialRanks.length > 4) {
+                        $("#rank5").html(value.potentialRanks[4].description);
+                    }
+                }
+                if (value.allSkillLvlup != "") {
+                    for (let i = 0; i < value.allSkillLvlup[0].lvlUpCost.length; i++) {
+                        $("#mtrl1").html(`${$("#mtrl1").html()}{{data|${ms(value.allSkillLvlup[0].lvlUpCost[i].id)}|${value.allSkillLvlup[0].lvlUpCost[i].count}}}`);
+                    }
+                    for (let i = 0; i < value.allSkillLvlup[1].lvlUpCost.length; i++) {
+                        $("#mtrl2").html(`${$("#mtrl2").html()}{{data|${ms(value.allSkillLvlup[1].lvlUpCost[i].id)}|${value.allSkillLvlup[1].lvlUpCost[i].count}}}`);
+                    }
+                    for (let i = 0; i < value.allSkillLvlup[2].lvlUpCost.length; i++) {
+                        $("#mtrl3").html(`${$("#mtrl3").html()}{{data|${ms(value.allSkillLvlup[2].lvlUpCost[i].id)}|${value.allSkillLvlup[2].lvlUpCost[i].count}}}`);
+                    }
+                    for (let i = 0; i < value.allSkillLvlup[3].lvlUpCost.length; i++) {
+                        $("#mtrl4").html(`${$("#mtrl4").html()}{{data|${ms(value.allSkillLvlup[3].lvlUpCost[i].id)}|${value.allSkillLvlup[3].lvlUpCost[i].count}}}`);
+                    }
+                    for (let i = 0; i < value.allSkillLvlup[4].lvlUpCost.length; i++) {
+                        $("#mtrl5").html(`${$("#mtrl5").html()}{{data|${ms(value.allSkillLvlup[4].lvlUpCost[i].id)}|${value.allSkillLvlup[4].lvlUpCost[i].count}}}`);
+                    }
+                    for (let i = 0; i < value.allSkillLvlup[5].lvlUpCost.length; i++) {
+                        $("#mtrl6").html(`${$("#mtrl6").html()}{{data|${ms(value.allSkillLvlup[5].lvlUpCost[i].id)}|${value.allSkillLvlup[5].lvlUpCost[i].count}}}`);
+                    }
+                }
+                if (value.favorKeyFrames != null) {
+                    $("#tstHp").html("+" + value.favorKeyFrames[1].data.maxHp);
+                    $("#tstAtk").html("+" + value.favorKeyFrames[1].data.atk);
+                    $("#tstDef").html("+" + value.favorKeyFrames[1].data.def);
+                    $("#tstMgk").html("+" + value.favorKeyFrames[1].data.magicResistance);
+                }
+            }
+            // $("#skill1Name").html();
+            // $("#skill2Name").html();
+            // $("#skill3Name").html();
+            // skSpTyp()回复方式
+            // skTyp()触发方式
+            if (star(value.rarity) > 2) {
+                $.getJSON("/zh_CN/gamedata/excel/skill_table.json", skillData => {
+                    $.each(skillData, (skillName, skillValue) => {
+                        // 变量的值赋值
+                        const attributes = obj => {
+                            let atts = {};
+                            for (let i = 0; i < obj.length; i++) {
+                                atts[obj[i].key] = obj[i].value;
+                            }
+                            return atts;
+                        }
+                        if (value.skills[0].skillId == skillValue.skillId) {
+                            $("#skill1Name").html(skillValue.levels[0].name);
+                            $("#skill1Range").html(rangeLen(skillValue.levels[0].rangeId));
+                            $("#skill1jihui").html(skSpTyp(skillValue.levels[0].spData.spType));
+                            $("#skill1chufa").html(skTyp(skillValue.levels[0].skillType));
+                            if (value.profession != "TOKEN") {
+                                $("#skill1Desc1").html(replaceStr(skillValue.levels[0].description.format(attributes(skillValue.levels[0].blackboard))).slice(0, -5));
+                            }
+                            $("#skill1Sp1").html(skillValue.levels[0].spData.spCost);
+                            $("#skill1chushisp1").html(skillValue.levels[0].spData.initSp);
+                            $("#skill1chixu1").html(ifnt(skillValue.levels[0].duration));
+
+                            if (value.profession != "TOKEN") {
+                                $("#skill1Desc2").html(replaceStr(skillValue.levels[1].description.format(attributes(skillValue.levels[1].blackboard))).slice(0, -5));
+                            }
+                            $("#skill1Sp2").html(skillValue.levels[1].spData.spCost);
+                            $("#skill1chushisp2").html(skillValue.levels[1].spData.initSp);
+                            $("#skill1chixu2").html(ifnt(skillValue.levels[1].duration));
+
+                            if (value.profession != "TOKEN") {
+                                $("#skill1Desc3").html(replaceStr(skillValue.levels[2].description.format(attributes(skillValue.levels[2].blackboard))).slice(0, -5));
+                            }
+                            $("#skill1Sp3").html(skillValue.levels[2].spData.spCost);
+                            $("#skill1chushisp3").html(skillValue.levels[2].spData.initSp);
+                            $("#skill1chixu3").html(ifnt(skillValue.levels[2].duration));
+
+                            if (value.profession != "TOKEN") {
+                                $("#skill1Desc4").html(replaceStr(skillValue.levels[3].description.format(attributes(skillValue.levels[3].blackboard))).slice(0, -5));
+                            }
+                            $("#skill1Sp4").html(skillValue.levels[3].spData.spCost);
+                            $("#skill1chushisp4").html(skillValue.levels[3].spData.initSp);
+                            $("#skill1chixu4").html(ifnt(skillValue.levels[3].duration));
+
+                            if (value.profession != "TOKEN") {
+                                $("#skill1Desc5").html(replaceStr(skillValue.levels[4].description.format(attributes(skillValue.levels[4].blackboard))).slice(0, -5));
+                            }
+                            $("#skill1Sp5").html(skillValue.levels[4].spData.spCost);
+                            $("#skill1chushisp5").html(skillValue.levels[4].spData.initSp);
+                            $("#skill1chixu5").html(ifnt(skillValue.levels[4].duration));
+
+                            if (value.profession != "TOKEN") {
+                                $("#skill1Desc6").html(replaceStr(skillValue.levels[5].description.format(attributes(skillValue.levels[5].blackboard))).slice(0, -5));
+                            }
+                            $("#skill1Sp6").html(skillValue.levels[5].spData.spCost);
+                            $("#skill1chushisp6").html(skillValue.levels[5].spData.initSp);
+                            $("#skill1chixu6").html(ifnt(skillValue.levels[5].duration));
+
+                            if (value.profession != "TOKEN") {
+                                $("#skill1Desc7").html(replaceStr(skillValue.levels[6].description.format(attributes(skillValue.levels[6].blackboard))).slice(0, -5));
+                            }
+                            $("#skill1Sp7").html(skillValue.levels[6].spData.spCost);
+                            $("#skill1chushisp7").html(skillValue.levels[6].spData.initSp);
+                            $("#skill1chixu7").html(ifnt(skillValue.levels[6].duration));
+
+                            if (star(value.rarity) > 3) {
+                                if (value.profession != "TOKEN") {
+                                    $("#skill1Desc8").html(replaceStr(skillValue.levels[7].description.format(attributes(skillValue.levels[7].blackboard))).slice(0, -5));
+                                }
+                                $("#skill1Sp8").html(skillValue.levels[7].spData.spCost);
+                                $("#skill1chushisp8").html(skillValue.levels[7].spData.initSp);
+                                $("#skill1chixu8").html(ifnt(skillValue.levels[7].duration));
+
+                                if (value.profession != "TOKEN") {
+                                    $("#skill1Desc9").html(replaceStr(skillValue.levels[8].description.format(attributes(skillValue.levels[8].blackboard))).slice(0, -5));
+                                }
+                                $("#skill1Sp9").html(skillValue.levels[8].spData.spCost);
+                                $("#skill1chushisp9").html(skillValue.levels[8].spData.initSp);
+                                $("#skill1chixu9").html(ifnt(skillValue.levels[8].duration));
+
+                                if (value.profession != "TOKEN") {
+                                    $("#skill1Desc10").html(replaceStr(skillValue.levels[9].description.format(attributes(skillValue.levels[9].blackboard))).slice(0, -5));
+                                }
+                                $("#skill1Sp10").html(skillValue.levels[9].spData.spCost);
+                                $("#skill1chushisp10").html(skillValue.levels[9].spData.initSp);
+                                $("#skill1chixu10").html(ifnt(skillValue.levels[9].duration));
+                            }
+                        }
+                        if (star(value.rarity) > 3) {
+                            if (value.skills[1].skillId == skillValue.skillId) {
+                                $("#skill2Name").html(skillValue.levels[0].name);
+                                $("#skill2Range").html(rangeLen(skillValue.levels[0].rangeId));
+                                $("#skill2jihui").html(skSpTyp(skillValue.levels[0].spData.spType));
+                                $("#skill2chufa").html(skTyp(skillValue.levels[0].skillType));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill2Desc1").html(replaceStr(skillValue.levels[0].description.format(attributes(skillValue.levels[0].blackboard))).slice(0, -5));
+                                }
+                                $("#skill2Sp1").html(skillValue.levels[0].spData.spCost);
+                                $("#skill2chushisp1").html(skillValue.levels[0].spData.initSp);
+                                $("#skill2chixu1").html(ifnt(skillValue.levels[0].duration));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill2Desc2").html(replaceStr(skillValue.levels[1].description.format(attributes(skillValue.levels[1].blackboard))).slice(0, -5));
+                                }
+                                $("#skill2Sp2").html(skillValue.levels[1].spData.spCost);
+                                $("#skill2chushisp2").html(skillValue.levels[1].spData.initSp);
+                                $("#skill2chixu2").html(ifnt(skillValue.levels[1].duration));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill2Desc3").html(replaceStr(skillValue.levels[2].description.format(attributes(skillValue.levels[2].blackboard))).slice(0, -5));
+                                }
+                                $("#skill2Sp3").html(skillValue.levels[2].spData.spCost);
+                                $("#skill2chushisp3").html(skillValue.levels[2].spData.initSp);
+                                $("#skill2chixu3").html(ifnt(skillValue.levels[2].duration));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill2Desc4").html(replaceStr(skillValue.levels[3].description.format(attributes(skillValue.levels[3].blackboard))).slice(0, -5));
+                                }
+                                $("#skill2Sp4").html(skillValue.levels[3].spData.spCost);
+                                $("#skill2chushisp4").html(skillValue.levels[3].spData.initSp);
+                                $("#skill2chixu4").html(ifnt(skillValue.levels[3].duration));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill2Desc5").html(replaceStr(skillValue.levels[4].description.format(attributes(skillValue.levels[4].blackboard))).slice(0, -5));
+                                }
+                                $("#skill2Sp5").html(skillValue.levels[4].spData.spCost);
+                                $("#skill2chushisp5").html(skillValue.levels[4].spData.initSp);
+                                $("#skill2chixu5").html(ifnt(skillValue.levels[4].duration));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill2Desc6").html(replaceStr(skillValue.levels[5].description.format(attributes(skillValue.levels[5].blackboard))).slice(0, -5));
+                                }
+                                $("#skill2Sp6").html(skillValue.levels[5].spData.spCost);
+                                $("#skill2chushisp6").html(skillValue.levels[5].spData.initSp);
+                                $("#skill2chixu6").html(ifnt(skillValue.levels[5].duration));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill2Desc7").html(replaceStr(skillValue.levels[6].description.format(attributes(skillValue.levels[6].blackboard))).slice(0, -5));
+                                }
+                                $("#skill2Sp7").html(skillValue.levels[6].spData.spCost);
+                                $("#skill2chushisp7").html(skillValue.levels[6].spData.initSp);
+                                $("#skill2chixu7").html(ifnt(skillValue.levels[6].duration));
+
+                                if (star(value.rarity) > 3) {
+                                    if (value.profession != "TOKEN") {
+                                        $("#skill2Desc8").html(replaceStr(skillValue.levels[7].description.format(attributes(skillValue.levels[7].blackboard))).slice(0, -5));
+                                    }
+                                    $("#skill2Sp8").html(skillValue.levels[7].spData.spCost);
+                                    $("#skill2chushisp8").html(skillValue.levels[7].spData.initSp);
+                                    $("#skill2chixu8").html(ifnt(skillValue.levels[7].duration));
+                                    if (value.profession != "TOKEN") {
+                                        $("#skill2Desc9").html(replaceStr(skillValue.levels[8].description.format(attributes(skillValue.levels[8].blackboard))).slice(0, -5));
+                                    }
+                                    $("#skill2Sp9").html(skillValue.levels[8].spData.spCost);
+                                    $("#skill2chushisp9").html(skillValue.levels[8].spData.initSp);
+                                    $("#skill2chixu9").html(ifnt(skillValue.levels[8].duration));
+                                    if (value.profession != "TOKEN") {
+                                        $("#skill2Desc10").html(replaceStr(skillValue.levels[9].description.format(attributes(skillValue.levels[9].blackboard))).slice(0, -5));
+                                    }
+                                    $("#skill2Sp10").html(skillValue.levels[9].spData.spCost);
+                                    $("#skill2chushisp10").html(skillValue.levels[9].spData.initSp);
+                                    $("#skill2chixu10").html(ifnt(skillValue.levels[9].duration));
+                                }
+                            }
+                        }
+                        if (value.skills.length == 3) {
+                            if (value.skills[2].skillId == skillValue.skillId) {
+                                $("#skill3Name").html(skillValue.levels[0].name);
+                                $("#skill3Range").html(rangeLen(skillValue.levels[0].rangeId));
+                                $("#skill3jihui").html(skSpTyp(skillValue.levels[0].spData.spType));
+                                $("#skill3chufa").html(skTyp(skillValue.levels[0].skillType));
+                                if (value.profession != "TOKEN") {
+                                    $("#skill3Desc1").html(replaceStr(skillValue.levels[0].description.format(attributes(skillValue.levels[0].blackboard))).slice(0, -5));
+                                }
+                                $("#skill3Sp1").html(skillValue.levels[0].spData.spCost);
+                                $("#skill3chixu1").html(ifnt(skillValue.levels[0].duration));
+                                $("#skill3chushisp1").html(skillValue.levels[0].spData.initSp);
+                                if (value.profession != "TOKEN") {
+                                    $("#skill3Desc2").html(replaceStr(skillValue.levels[1].description.format(attributes(skillValue.levels[1].blackboard))).slice(0, -5));
+                                }
+                                $("#skill3Sp2").html(skillValue.levels[1].spData.spCost);
+                                $("#skill3chixu2").html(ifnt(skillValue.levels[1].duration));
+                                $("#skill3chushisp2").html(skillValue.levels[1].spData.initSp);
+                                if (value.profession != "TOKEN") {
+                                    $("#skill3Desc3").html(replaceStr(skillValue.levels[2].description.format(attributes(skillValue.levels[2].blackboard))).slice(0, -5));
+                                }
+                                $("#skill3Sp3").html(skillValue.levels[2].spData.spCost);
+                                $("#skill3chixu3").html(ifnt(skillValue.levels[2].duration));
+                                $("#skill3chushisp3").html(skillValue.levels[2].spData.initSp);
+                                if (value.profession != "TOKEN") {
+                                    $("#skill3Desc4").html(replaceStr(skillValue.levels[3].description.format(attributes(skillValue.levels[3].blackboard))).slice(0, -5));
+                                }
+                                $("#skill3Sp4").html(skillValue.levels[3].spData.spCost);
+                                $("#skill3chixu4").html(ifnt(skillValue.levels[3].duration));
+                                $("#skill3chushisp4").html(skillValue.levels[3].spData.initSp);
+                                if (value.profession != "TOKEN") {
+                                    $("#skill3Desc5").html(replaceStr(skillValue.levels[4].description.format(attributes(skillValue.levels[4].blackboard))).slice(0, -5));
+                                }
+                                $("#skill3Sp5").html(skillValue.levels[4].spData.spCost);
+                                $("#skill3chixu5").html(ifnt(skillValue.levels[4].duration));
+                                $("#skill3chushisp5").html(skillValue.levels[4].spData.initSp);
+                                if (value.profession != "TOKEN") {
+                                    $("#skill3Desc6").html(replaceStr(skillValue.levels[5].description.format(attributes(skillValue.levels[5].blackboard))).slice(0, -5));
+                                }
+                                $("#skill3Sp6").html(skillValue.levels[5].spData.spCost);
+                                $("#skill3chixu6").html(ifnt(skillValue.levels[5].duration));
+                                $("#skill3chushisp6").html(skillValue.levels[5].spData.initSp);
+                                if (value.profession != "TOKEN") {
+                                    $("#skill3Desc7").html(replaceStr(skillValue.levels[6].description.format(attributes(skillValue.levels[6].blackboard))).slice(0, -5));
+                                }
+                                $("#skill3Sp7").html(skillValue.levels[6].spData.spCost);
+                                $("#skill3chixu7").html(ifnt(skillValue.levels[6].duration));
+                                $("#skill3chushisp7").html(skillValue.levels[6].spData.initSp);
+
+                                if (star(value.rarity) > 3) {
+                                    if (value.profession != "TOKEN") {
+                                        $("#skill3Desc8").html(replaceStr(skillValue.levels[7].description.format(attributes(skillValue.levels[7].blackboard))).slice(0, -5));
+                                    }
+                                    $("#skill3Sp8").html(skillValue.levels[7].spData.spCost);
+                                    $("#skill3chixu8").html(ifnt(skillValue.levels[7].duration));
+                                    $("#skill3chushisp8").html(skillValue.levels[7].spData.initSp);
+                                    if (value.profession != "TOKEN") {
+                                        $("#skill3Desc9").html(replaceStr(skillValue.levels[8].description.format(attributes(skillValue.levels[8].blackboard))).slice(0, -5));
+                                    }
+                                    $("#skill3Sp9").html(skillValue.levels[8].spData.spCost);
+                                    $("#skill3chixu9").html(ifnt(skillValue.levels[8].duration));
+                                    $("#skill3chushisp9").html(skillValue.levels[8].spData.initSp);
+                                    if (value.profession != "TOKEN") {
+                                        $("#skill3Desc10").html(replaceStr(skillValue.levels[9].description.format(attributes(skillValue.levels[9].blackboard))).slice(0, -5));
+                                    }
+                                    $("#skill3Sp10").html(skillValue.levels[9].spData.spCost);
+                                    $("#skill3chixu10").html(ifnt(skillValue.levels[9].duration));
+                                    $("#skill3chushisp10").html(skillValue.levels[9].spData.initSp);
+                                }
+                            }
+                        }
+                    })
+                })
+            }
+            $.getJSON("zh_CN/gamedata/excel/building_data.json", buildingData => {
+                $.each(buildingData.chars, (buildingName, buildingChar) => {
+                    $.each(buildingData.buffs, (buildingSkillName, buildingSkillValue) => {
+                        if (name == buildingName) {
+                            if (buildingChar.buffChar[0].buffData[0].buffId == buildingSkillName) {
+                                $("#buildSkill1").html(buildingSkillValue.buffName);
+                                $("#buildSkill1Unlc").html(PHASE(buildingChar.buffChar[0].buffData[0].cond.phase) + LEVEL(buildingChar.buffChar[0].buffData[0].cond.level));
+                                $("#buildSkill1With").html(bldSk(buildingSkillValue.roomType));
+                                $("#buildSkill1Func").html(replaceStr(buildingSkillValue.description).slice(0, -5));
+                            }
+                            if (buildingChar.buffChar[0].buffData.length > 1) {
+                                if (buildingChar.buffChar[0].buffData[1].buffId == buildingSkillName) {
+                                    $("#buildSkill1Up1").html(buildingSkillValue.buffName);
+                                    $("#buildSkill1Up1Unlc").html(PHASE(buildingChar.buffChar[0].buffData[1].cond.phase) + LEVEL(buildingChar.buffChar[0].buffData[1].cond.level));
+                                    $("#buildSkill1Up1With").html(bldSk(buildingSkillValue.roomType));
+                                    $("#buildSkill1Up1Func").html(replaceStr(buildingSkillValue.description).slice(0, -5));
+                                }
+                            }
+                            if (buildingChar.buffChar[0].buffData.length > 2) {
+                                if (buildingChar.buffChar[0].buffData[2].buffId == buildingSkillName) {
+                                    $("#buildSkill1Up2").html(buildingSkillValue.buffName);
+                                    $("#buildSkill1Up2Unlc").html(PHASE(buildingChar.buffChar[0].buffData[2].cond.phase) + LEVEL(buildingChar.buffChar[0].buffData[2].cond.level));
+                                    $("#buildSkill1Up2With").html(bldSk(buildingSkillValue.roomType));
+                                    $("#buildSkill1Up2Func").html(replaceStr(buildingSkillValue.description).slice(0, -5));
+                                }
+                            }
+                            if (buildingChar.buffChar.length > 1) {
+                                if (buildingChar.buffChar[1].buffData != "") {
+                                    if (buildingChar.buffChar[1].buffData[0].buffId == buildingSkillName) {
+                                        $("#buildSkill2").html(buildingSkillValue.buffName);
+                                        $("#buildSkill2Unlc").html(PHASE(buildingChar.buffChar[1].buffData[0].cond.phase) + LEVEL(buildingChar.buffChar[1].buffData[0].cond.level));
+                                        $("#buildSkill2With").html(bldSk(buildingSkillValue.roomType));
+                                        $("#buildSkill2Func").html(replaceStr(buildingSkillValue.description).slice(0, -5));
+                                    }
+                                    if (buildingChar.buffChar[1].buffData.length > 1) {
+                                        if (buildingChar.buffChar[1].buffData[1].buffId == buildingSkillName) {
+                                            $("#buildSkill2Up1").html(buildingSkillValue.buffName);
+                                            $("#buildSkill2Up1Unlc").html(PHASE(buildingChar.buffChar[1].buffData[1].cond.phase) + LEVEL(buildingChar.buffChar[1].buffData[1].cond.level));
+                                            $("#buildSkill2Up1With").html(bldSk(buildingSkillValue.roomType));
+                                            $("#buildSkill2Up1Func").html(replaceStr(buildingSkillValue.description).slice(0, -5));
+                                        }
+                                    }
+                                    if (buildingChar.buffChar[1].buffData.length > 2) {
+                                        if (buildingChar.buffChar[1].buffData[2].buffId == buildingSkillName) {
+                                            $("#buildSkill2Up2").html(buildingSkillValue.buffName);
+                                            $("#buildSkill2Up2Unlc").html(PHASE(buildingChar.buffChar[1].buffData[2].cond.phase) + LEVEL(buildingChar.buffChar[1].buffData[2].cond.level));
+                                            $("#buildSkill2Up2With").html(bldSk(buildingSkillValue.roomType));
+                                            $("#buildSkill2Up2Func").html(replaceStr(buildingSkillValue.description).slice(0, -5));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    })
+                })
+            })
+
+            $.getJSON("zh_CN/gamedata/excel/handbook_info_table.json", handbook => {
+                $.each(handbook.handbookDict, (Id, info) => {
+                    if (name == Id) {
+                        for (let i = 0; i < info.storyTextAudio.length; i++) {
+                            if (info.storyTextAudio[i].storyTitle == "基础档案") {
+                                if (info.storyTextAudio[i].stories[0].storyText.indexOf("【代号】") != -1) {
+
+                                    if(info.storyTextAudio[i].stories[0].storyText.search("本人表示无确切日期") == -1){
+                                        $("#shengri").html(info.storyTextAudio[i].stories[0].storyText.match(/【生日】(.+)\n/)[1]);
+                                        $("#yue").html(info.storyTextAudio[i].stories[0].storyText.match(/【生日】(\d+)月/)[1]);
+                                        $("#ri").html(info.storyTextAudio[i].stories[0].storyText.match(/【生日】\d+月(\d+)日/)[1]);
+                                    }
+                                    $("#xingbie").html(info.storyTextAudio[i].stories[0].storyText.match(/【性别】(.+)\n/)[1]);
+                                    $("#zhongzu").html(info.storyTextAudio[i].stories[0].storyText.match(/【种族】(.+)\n/)[1]);
+                                    $("#chushen").html(info.storyTextAudio[i].stories[0].storyText.match(/【出身地】(.+)\n/)[1]);
+                                    $("#shengao").html(info.storyTextAudio[i].stories[0].storyText.match(/【身高】(.+)\n/)[1]);
+                                    if (info.storyTextAudio[i].stories[0].storyText.search("【表演经验】") != -1) {
+                                        $("#biaoyanjingyan").html(info.storyTextAudio[i].stories[0].storyText.match(/【表演经验】(.+)\n/)[1]);
+                                    }
+                                    if (info.storyTextAudio[i].stories[0].storyText.search("【战斗经验】") != -1) {
+                                        $("#zhandoujingyan").html(info.storyTextAudio[i].stories[0].storyText.match(/【战斗经验】(.+)\n/)[1]);
+                                    }
+                                    $("#ganranDesc").html(info.storyTextAudio[i].stories[0].storyText.match(/【矿石病感染情况】\n(.+)/)[1]);
+                                    $("#shengao").html(info.storyTextAudio[i].stories[0].storyText.match(/【身高】(.+)\n/)[1]);
+                                    if (info.storyTextAudio[i].stories[0].storyText.search("参照医学检测报告，确认为感染者。") == -1) {
+                                        $("#ganran").html("否");
+                                    } else {
+                                        $("#ganran").html("是");
+                                    }
+                                } else if (info.storyTextAudio[i].stories[0].storyText.indexOf("【型号】") != -1) {
+                                    $("#shedingxingbie").html(info.storyTextAudio[i].stories[0].storyText.match(/【设定性别】(.+)\n/)[1]);
+                                    $("#ganran").html("否");
+                                    $("#zhongliang").html(info.storyTextAudio[i].stories[0].storyText.match(/【重量】(.+)\n/)[1]);
+                                    $("#weihubaogao").html(info.storyTextAudio[i].stories[0].storyText.match(/【维护检测报告】\n(.+)/)[1]);
+                                    $("#chuchangri").html(info.storyTextAudio[i].stories[0].storyText.match(/【出厂日】(.+)\n/)[1]);
+                                    $("#yue").html(info.storyTextAudio[i].stories[0].storyText.match(/【出厂日】(\d+)月/)[1]);
+                                    $("#ri").html(info.storyTextAudio[i].stories[0].storyText.match(/【出厂日】\d+月(\d+)日/)[1]);
+                                    $("#gaodu").html(info.storyTextAudio[i].stories[0].storyText.match(/【高度】(.+)\n/)[1]);
+                                    $("#zhizaoshang").html(info.storyTextAudio[i].stories[0].storyText.match(/【制造商】(.+)\n/)[1]);
+                                    $("#chandi").html(info.storyTextAudio[i].stories[0].storyText.match(/【产地】(.+)\n/)[1]);
+                                    $("#chuchangshijian").html(info.storyTextAudio[i].stories[0].storyText.match(/【出厂时间】(.+)\n/)[1]);
+
+                                }
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "综合体检测试") {
+                                $("#qiangdu").html(info.storyTextAudio[i].stories[0].storyText.match(/【物理强度】(.+)\n/)[1]);
+                                $("#jidong").html(info.storyTextAudio[i].stories[0].storyText.match(/【战场机动】(.+)\n/)[1]);
+                                $("#naishou").html(info.storyTextAudio[i].stories[0].storyText.match(/【生理耐受】(.+)\n/)[1]);
+                                $("#guihua").html(info.storyTextAudio[i].stories[0].storyText.match(/【战术规划】(.+)\n/)[1]);
+                                $("#jiqiao").html(info.storyTextAudio[i].stories[0].storyText.match(/【战斗技巧】(.+)\n/)[1]);
+                                $("#shiyingxing").html(info.storyTextAudio[i].stories[0].storyText.match(/【源石技艺适应性】(.+)/)[1]);
+                            } else if (info.storyTextAudio[i].storyTitle == "综合性能检测结果") {
+                                $("#zuigaosudu").html(info.storyTextAudio[i].stories[0].storyText.match(/【最高速度】(.+)\n/)[1]);
+                                $("#paponengli").html(info.storyTextAudio[i].stories[0].storyText.match(/【爬坡能力】(.+)\n/)[1]);
+                                $("#zhidongxiaoneng").html(info.storyTextAudio[i].stories[0].storyText.match(/【制动效能】(.+)\n/)[1]);
+                                $("#tongguoxing").html(info.storyTextAudio[i].stories[0].storyText.match(/【通过性】(.+)\n/)[1]);
+                                $("#xuhang").html(info.storyTextAudio[i].stories[0].storyText.match(/【续航】(.+)\n/)[1]);
+                                $("#jiegouwendingxing").html(info.storyTextAudio[i].stories[0].storyText.match(/【结构稳定性】(.+)/)[1]);
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "临床诊断分析") {
+                                $("#zhenduanfenxi").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "源石技艺评定") {
+                                $("#jiyipingding").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "客观履历") {
+                                $("#lvli").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "档案资料一") {
+                                $("#ziliao1").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "档案资料二") {
+                                $("#ziliao2").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "档案资料三") {
+                                $("#ziliao3").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                            if (info.storyTextAudio[i].storyTitle == "档案资料四") {
+                                $("#ziliao4").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                            // if (info.storyTextAudio[i].storyTitle == "档案资料五") {
+                            //     $("#ziliao5").html(info.storyTextAudio[i].stories[0].storyText);
+                            // }
+                            if (info.storyTextAudio[i].storyTitle == "晋升记录") {
+                                $("#jinshengjilu").html(replaceStr(info.storyTextAudio[i].stories[0].storyText).slice(0, -5));
+                            }
+                        }
+                        if (info.handbookAvgList != "") {
+                            $("#muli1").html(info.handbookAvgList[0].storySetName);
+                            $("#muli1Unlc").html(`提升至[[文件:精英化${info.handbookAvgList[0].unlockParam[0].unlockParam1}logo.png|30px|link=]]提升至精英阶段${info.handbookAvgList[0].unlockParam[0].unlockParam1}等级${info.handbookAvgList[0].unlockParam[0].unlockParam2}&#60;br/>[[文件:信赖logo.png|25px|link=]]提升信赖至${info.handbookAvgList[0].unlockParam[1].unlockParam1}`);
+                            $("#muli1Desc").html(info.handbookAvgList[0].avgList[0].storyIntro);
+                            if (info.handbookAvgList > 1) {
+                                $("#muli2").html(info.handbookAvgList[1].storySetName);
+                                $("#muli2Unlc").html(`提升至[[文件:精英化${info.handbookAvgList[1].unlockParam[0].unlockParam1}logo.png|30px|link=]]提升至精英阶段${info.handbookAvgList[1].unlockParam[0].unlockParam1}等级${info.handbookAvgList[1].unlockParam[0].unlockParam2}&#60;br/>[[文件:信赖logo.png|25px|link=]]提升信赖至${info.handbookAvgList[1].unlockParam[1].unlockParam1}`);
+                                $("#muli2Desc").html(info.handbookAvgList[1].avgList[0].storyIntro);
+                            }
+                            if (info.handbookAvgList > 2) {
+                                $("#muli3").html(info.handbookAvgList[2].storySetName);
+                                $("#muli3Unlc").html(`提升至[[文件:精英化${info.handbookAvgList[2].unlockParam[0].unlockParam1}logo.png|30px|link=]]提升至精英阶段${info.handbookAvgList[2].unlockParam[0].unlockParam1}等级${info.handbookAvgList[2].unlockParam[0].unlockParam2}&#60;br/>[[文件:信赖logo.png|25px|link=]]提升信赖至${info.handbookAvgList[2].unlockParam[1].unlockParam1}`);
+                                $("#muli3Desc").html(info.handbookAvgList[2].avgList[0].storyIntro);
+                            }
+                        }
+                    }
+                })
+            })
+
+            // $.getJSON("zh_CN/gamedata/excel/item_table.json", itemData => {
+            //     $.each(itemData.items, (itemName, itemValue) => {
+            //         if (value.potentialItemId == itemName) {
+            //             $("#xinwu").html(`${itemValue.usage}&#60;br/>&#60;br/>''${itemValue.description}''`);
+            //         }
+            //         if (value.name + "的私人信件" == itemValue.name) {
+            //             $("#xinjian").html(`${itemValue.usage}&#60;br/>&#60;br/>''${itemValue.description}''`)
+            //         }
+            //     })
+            // })
+
+            $.getJSON("zh_CN/gamedata/excel/charword_table.json", charword => {
+                $.each(charword.charWords, (id, content) => {
+                    if (name == content.charId) {
+                        if (content.voiceTitle == "任命助理") {
+                            $("#taici1Title").html(content.voiceTitle);
+                            $("#taici1").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "交谈1") {
+                            $("#taici2Title").html(content.voiceTitle);
+                            $("#taici2").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "交谈2") {
+                            $("#taici3Title").html(content.voiceTitle);
+                            $("#taici3").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "交谈3") {
+                            $("#taici4Title").html(content.voiceTitle);
+                            $("#taici4").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "晋升后交谈1") {
+                            $("#taici5Title").html(content.voiceTitle);
+                            $("#taici5").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "晋升后交谈2") {
+                            $("#taici6Title").html(content.voiceTitle);
+                            $("#taici6").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "信赖提升后交谈1") {
+                            $("#taici7Title").html(content.voiceTitle);
+                            $("#taici7").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "信赖提升后交谈2") {
+                            $("#taici8Title").html(content.voiceTitle);
+                            $("#taici8").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "信赖提升后交谈3") {
+                            $("#taici9Title").html(content.voiceTitle);
+                            $("#taici9").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "闲置") {
+                            $("#taici10Title").html(content.voiceTitle);
+                            $("#taici10").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "干员报到") {
+                            $("#taici11Title").html(content.voiceTitle);
+                            $("#taici11").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "观看作战记录") {
+                            $("#taici12Title").html(content.voiceTitle);
+                            $("#taici12").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "精英化晋升1") {
+                            $("#taici13Title").html(content.voiceTitle);
+                            $("#taici13").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "精英化晋升2") {
+                            $("#taici14Title").html(content.voiceTitle);
+                            $("#taici14").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "编入队伍") {
+                            $("#taici15Title").html(content.voiceTitle);
+                            $("#taici15").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "任命队长") {
+                            $("#taici16Title").html(content.voiceTitle);
+                            $("#taici16").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "行动出发") {
+                            $("#taici17Title").html(content.voiceTitle);
+                            $("#taici17").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "行动开始") {
+                            $("#taici18Title").html(content.voiceTitle);
+                            $("#taici18").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "选中干员1") {
+                            $("#taici19Title").html(content.voiceTitle);
+                            $("#taici19").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "选中干员2") {
+                            $("#taici20Title").html(content.voiceTitle);
+                            $("#taici20").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "部署1") {
+                            $("#taici21Title").html(content.voiceTitle);
+                            $("#taici21").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "部署2") {
+                            $("#taici22Title").html(content.voiceTitle);
+                            $("#taici22").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "作战中1") {
+                            $("#taici23Title").html(content.voiceTitle);
+                            $("#taici23").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "作战中2") {
+                            $("#taici24Title").html(content.voiceTitle);
+                            $("#taici24").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "作战中3") {
+                            $("#taici25Title").html(content.voiceTitle);
+                            $("#taici25").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "作战中4") {
+                            $("#taici26Title").html(content.voiceTitle);
+                            $("#taici26").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "完成高难行动") {
+                            $("#taici27Title").html(content.voiceTitle);
+                            $("#taici27").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "3星结束行动") {
+                            $("#taici28Title").html(content.voiceTitle);
+                            $("#taici28").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "非3星结束行动") {
+                            $("#taici29Title").html(content.voiceTitle);
+                            $("#taici29").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "行动失败") {
+                            $("#taici30Title").html(content.voiceTitle);
+                            $("#taici30").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "进驻设施") {
+                            $("#taici31Title").html(content.voiceTitle);
+                            $("#taici31").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "戳一下") {
+                            $("#taici32Title").html(content.voiceTitle);
+                            $("#taici32").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "信赖触摸") {
+                            $("#taici33Title").html(content.voiceTitle);
+                            $("#taici33").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "标题") {
+                            $("#taici34Title").html(content.voiceTitle);
+                            $("#taici34").html(content.voiceText);
+                        }
+                        if (content.voiceTitle == "问候") {
+                            $("#taici35Title").html(content.voiceTitle);
+                            $("#taici35").html(content.voiceText);
+                        }
+                    }
+                })
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

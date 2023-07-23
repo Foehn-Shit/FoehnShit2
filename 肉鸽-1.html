@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <span id="a1"></span>
+  <h1>boss</h1>
+  <span id="a3"></span>
+  ===========================<br />
+
+  <span id="a2"></span>
+  <script src="/js/taicireplace.js"></script>
+  <script src="/js/replaceStr.js"></script>
+  <script src="/js/jQuery.js"></script>
+  <script src="js/enemyId.js"></script>
+
+  <script>
+    var a = {
+      "stages": {
+       
+        "ro3_e_1_1": {
+          "id": "ro3_e_1_1",
+          "linkedStageId": "ro3_n_1_1",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_1-1",
+          "code": "ISW-NO",
+          "name": "死囚之夜",
+          "loadingPicId": "loading_SM_RL",
+          "description": "无价值的哥伦比亚死囚脚戴镣铐沉入萨米的泥沼中，在那之后，沼泽中便时常传来镣铐拖地的诡异声响。\\n<@rolv.rem>场地中有阻挡敌人的<城防路障></>",
+          "eliteDesc": "附加条件：将会出现更多精英敌人，敌人的攻击力、防御力和生命值提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_1_2": {
+          "id": "ro3_e_1_2",
+          "linkedStageId": "ro3_n_1_2",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_1-2",
+          "code": "ISW-NO",
+          "name": "度假村冤魂",
+          "loadingPicId": "loading_SM_RL",
+          "description": "哥哥溺亡在浴缸里，弟弟被一颗苹果噎死，看门的佣兵被荆棘刺穿，这栋屋子就此荒废。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_1_3": {
+          "id": "ro3_e_1_3",
+          "linkedStageId": "ro3_n_1_3",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_1-3",
+          "code": "ISW-NO",
+          "name": "苔手",
+          "loadingPicId": "loading_SM_RL",
+          "description": "一只只苔藓碎屑组成的手印出现在墙壁、树干与衣物上。叙拉古黑手党最喜欢的印记，以一种独特的形式出现在了萨米。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_1_4": {
+          "id": "ro3_e_1_4",
+          "linkedStageId": "ro3_n_1_4",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_1-4",
+          "code": "ISW-NO",
+          "name": "待宰的兽群",
+          "loadingPicId": "loading_SM_RL",
+          "description": "不知何时，兽群的首领被替换成了怪异的人类，野兽们害怕得瑟瑟发抖，但仍对领头人的命令言听计从。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现更多敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_2_1": {
+          "id": "ro3_e_2_1",
+          "linkedStageId": "ro3_n_2_1",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_2-1",
+          "code": "ISW-NO",
+          "name": "没有尽头的路",
+          "loadingPicId": "loading_SM_RL",
+          "description": "外乡人很难分辨萨米的场景，于是他们在自认为相同的地方一遍又一遍走过，再也找不到出口。",
+          "eliteDesc": "附加条件：敌人的防御力和生命值提升，移动速度提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_2_2": {
+          "id": "ro3_e_2_2",
+          "linkedStageId": "ro3_n_2_2",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_2-2",
+          "code": "ISW-NO",
+          "name": "低空机动",
+          "loadingPicId": "loading_SM_RL",
+          "description": "这片树林被改造成了低空飞行实验场，该地的负责人热情邀请了你和你的科考队员参加这场演习。\\n<@rolv.rem>场地中有喷出气流的<源石流发生装置></>",
+          "eliteDesc": "附加条件：敌人的攻击力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_2_3": {
+          "id": "ro3_e_2_3",
+          "linkedStageId": "ro3_n_2_3",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_2-3",
+          "code": "ISW-NO",
+          "name": "幽影与鬼魅",
+          "loadingPicId": "loading_SM_RL",
+          "description": "林中留下的投影装置偶尔会映照出一些熟悉的幻影，没有人注意到，一个个影子正走出装置，在森林里徒步。",
+          "eliteDesc": "附加条件：敌人的攻击力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_2_4": {
+          "id": "ro3_e_2_4",
+          "linkedStageId": "ro3_n_2_4",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_2-4",
+          "code": "ISW-NO",
+          "name": "违和",
+          "loadingPicId": "loading_SM_RL",
+          "description": "据说，队伍中总会有那么个不被在意的人，队伍在山林里多走上几圈，他就会被悄悄替换，而队友们对此一无所知。\\n<@rolv.rem>场地中有提供费用及上限的<街头应急储备></>",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_2_5": {
+          "id": "ro3_e_2_5",
+          "linkedStageId": "ro3_n_2_5",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_2-5",
+          "code": "ISW-NO",
+          "name": "虫虫别回头",
+          "loadingPicId": "loading_SM_RL",
+          "description": "源石虫们向前爬行，完全不知道自己背后有什么东西正跟着它们一起前行。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现更多敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_3_1": {
+          "id": "ro3_e_3_1",
+          "linkedStageId": "ro3_n_3_1",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_3-1",
+          "code": "ISW-NO",
+          "name": "弄假成真",
+          "loadingPicId": "loading_SM_RL",
+          "description": "不要在萨米播撒谎言，一旦有人信以为真，它就会成真。",
+          "eliteDesc": "附加条件：敌人的攻击力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_3_2": {
+          "id": "ro3_e_3_2",
+          "linkedStageId": "ro3_n_3_2",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_3-2",
+          "code": "ISW-NO",
+          "name": "饥渴祭坛",
+          "loadingPicId": "loading_SM_RL",
+          "description": "正因从每一个路过的个体中索取了燃料，这个萨卡兹祭坛才能在无人看管的情况下一直运行到现在。\\n<@rolv.rem>场地中有对敌我造成伤害的<源石祭坛></>",
+          "eliteDesc": "附加条件：敌人的生命值提升，移动速度提升，场地内装置发生变化",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_3_3": {
+          "id": "ro3_e_3_3",
+          "linkedStageId": "ro3_n_3_3",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_3-3",
+          "code": "ISW-NO",
+          "name": "狡兽九窟",
+          "loadingPicId": "loading_SM_RL",
+          "description": "有传言说，一种野兽会为巢穴准备九个出口以备逃生。但现在的问题在于，你陷在它的巢穴中，却不知道敌人会从何处出现。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值大幅度提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_3_4": {
+          "id": "ro3_e_3_4",
+          "linkedStageId": "ro3_n_3_4",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_3-4",
+          "code": "ISW-NO",
+          "name": "冰海疑影",
+          "loadingPicId": "loading_SM_RL",
+          "description": "你当然知道海洋与水手不会出现在冰原上，但你却不觉得有任何违和的地方。认知错误，正是最常见的坍缩范式。\\n<@rolv.rem>场地中有使我方单位防御力减半的<腐蚀地面>。</>",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值大幅度提升，移动速度提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_3_5": {
+          "id": "ro3_e_3_5",
+          "linkedStageId": "ro3_n_3_5",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_3-5",
+          "code": "ISW-NO",
+          "name": "咫尺天涯",
+          "loadingPicId": "loading_SM_RL",
+          "description": "山脉间的相对距离被折叠后又拉长，以致原本一步就能抵达的地方，现在得耗费许多时间。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_3_6": {
+          "id": "ro3_e_3_6",
+          "linkedStageId": "ro3_n_3_6",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_3-6",
+          "code": "ISW-NO",
+          "name": "思维折断",
+          "loadingPicId": "loading_SM_RL",
+          "description": "眼前的敌人像是延迟过高的影像般不停高速位移。你烦恼于应对之法，正想挠挠脑袋，却发现刚刚举起的手已经伸到了后背上。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_4_1": {
+          "id": "ro3_e_4_1",
+          "linkedStageId": "ro3_n_4_1",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_4-1",
+          "code": "ISW-NO",
+          "name": "公司纠葛",
+          "loadingPicId": "loading_SM_RL",
+          "description": "哥伦比亚的科技巨头们虽然签署了合约共同探索冰原，但它们积怨已久，难免会有人想用些不正当的手段来打击对手。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_4_2": {
+          "id": "ro3_e_4_2",
+          "linkedStageId": "ro3_n_4_2",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_4-2",
+          "code": "ISW-NO",
+          "name": "应用测试",
+          "loadingPicId": "loading_SM_RL",
+          "description": "这处莱茵科考站正在测试一些科技在寒冷地带的使用情况以便进行改良。你们很荣幸成为第一批实际测试人员。\\n<@rolv.rem>场地中有吸收实验产物激活的<动力装甲></>",
+          "eliteDesc": "附加条件：敌人的防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_4_3": {
+          "id": "ro3_e_4_3",
+          "linkedStageId": "ro3_n_4_3",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_4-3",
+          "code": "ISW-NO",
+          "name": "坍缩体的午后",
+          "loadingPicId": "loading_SM_RL",
+          "description": "你觉得自己的队伍就像是一只掉在多索雷斯沙滩上的巨型源石虫，而那些坍缩体才是原本在这里度假观光的游客。\\n<@rolv.rem>场地中有使我方单位防御力减半的<腐蚀地面>。</>",
+          "eliteDesc": "附加条件：敌人的生命值提升，攻击速度和攻击范围提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_4_4": {
+          "id": "ro3_e_4_4",
+          "linkedStageId": "ro3_n_4_4",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_4-4",
+          "code": "ISW-NO",
+          "name": "大迁徙",
+          "loadingPicId": "loading_SM_RL",
+          "description": "动物们都想离北方的灾异远些，而你就在它们南迁的必经之路上。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_4_5": {
+          "id": "ro3_e_4_5",
+          "linkedStageId": "ro3_n_4_5",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_4-5",
+          "code": "ISW-NO",
+          "name": "以守代攻",
+          "loadingPicId": "loading_SM_RL",
+          "description": "你被躯壳们困在了一座千疮百孔的堡垒中，或许周围散落的资源能让你从这轮袭击中存活下来。\\n<@rolv.rem>场地中有阻挡敌人行进路线的<障碍物></>",
+          "eliteDesc": "附加条件：敌人的生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_4_6": {
+          "id": "ro3_e_4_6",
+          "linkedStageId": "ro3_n_4_6",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_4-6",
+          "code": "ISW-NO",
+          "name": "杂音干扰",
+          "loadingPicId": "loading_SM_RL",
+          "description": "自从通讯设备接入冰原，你总能听到他人言语间夹杂了几个毫无意义的字词，你没放在心上——直到另外一支探险队把你们当作了兽群。\\n<@rolv.rem>场地中有发射敌方佣兵无人机的<可移动战术机库>。</>",
+          "eliteDesc": "附加条件：敌人的攻击力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_4_7": {
+          "id": "ro3_e_4_7",
+          "linkedStageId": "ro3_n_4_7",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_4-7",
+          "code": "ISW-NO",
+          "name": "禁区",
+          "loadingPicId": "loading_SM_RL",
+          "description": "乌萨斯人不会听你的辩解，只要你进入了他们设立的禁区，他们就会使用武力驱逐你。\\n<@rolv.rem>场地中有使我方不会成为敌人远程攻击目标的<草丛></>",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_5_1": {
+          "id": "ro3_e_5_1",
+          "linkedStageId": "ro3_n_5_1",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_5-1",
+          "code": "ISW-NO",
+          "name": "乐理之灾",
+          "loadingPicId": "loading_SM_RL",
+          "description": "惨遭扭曲的曲调与声响化作了你脑海中最了解音乐的群体。它们要用这根从曲谱上拆下的线，将你生生切裂。\\n<@rolv.rem>我方技力自然回复被<废能干扰>降低，但能由<重整束流>恢复</>",
+          "eliteDesc": "附加条件：敌人的攻击力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_5_2": {
+          "id": "ro3_e_5_2",
+          "linkedStageId": "ro3_n_5_2",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_5-2",
+          "code": "ISW-NO",
+          "name": "生人勿近",
+          "loadingPicId": "loading_SM_RL",
+          "description": "地上是腐烂的树，天空中是钢铁与死亡的蚊蝇，生命在此不受欢迎。\\n<@rolv.rem>场地中有产生食腐使徒的<汲营枯枝></>",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，场地内装置发生变化",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_5_3": {
+          "id": "ro3_e_5_3",
+          "linkedStageId": "ro3_n_5_3",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_5-3",
+          "code": "ISW-NO",
+          "name": "混乱的表象",
+          "loadingPicId": "loading_SM_RL",
+          "description": "不要被那无规则的表象给欺骗了，守住你的战线与思维，不要让它们有机可乘。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_5_4": {
+          "id": "ro3_e_5_4",
+          "linkedStageId": "ro3_n_5_4",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_5-4",
+          "code": "ISW-NO",
+          "name": "求敌得敌",
+          "loadingPicId": "loading_SM_RL",
+          "description": "在冰原上远远看到一队影子，千万不要以最坏的情况去揣测那阴影究竟是什么，毕竟，你并不想在这种环境下“得偿所愿”。",
+          "eliteDesc": "附加条件：敌人的生命值和移动速度提升，部分地块无法部署",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_5_5": {
+          "id": "ro3_e_5_5",
+          "linkedStageId": "ro3_n_5_5",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_5-5",
+          "code": "ISW-NO",
+          "name": "亡者行军",
+          "loadingPicId": "loading_SM_RL",
+          "description": "你对于死亡最富生命力的理解，来自深池那支从不停歇的军队。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，出现新的精英敌人",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_5_6": {
+          "id": "ro3_e_5_6",
+          "linkedStageId": "ro3_n_5_6",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_5-6",
+          "code": "ISW-NO",
+          "name": "何处无山海",
+          "loadingPicId": "loading_SM_RL",
+          "description": "大地宽广，大海无边，巨兽自然不仅存于大炎，于是这些人越过雪山，驶入江河，寻找着隐于八荒之内的古老生灵。\\n<@rolv.rem>场地中有强化敌方的<山海密语仪></>",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，敌人技能增强",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_5_7": {
+          "id": "ro3_e_5_7",
+          "linkedStageId": "ro3_n_5_7",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_5-7",
+          "code": "ISW-NO",
+          "name": "本能污染",
+          "loadingPicId": "loading_SM_RL",
+          "description": "对于活着的东西，躯壳一视同仁。\\n<@rolv.rem>场地中有会损失生命但大幅提升攻击力和攻击速度的<活性源石>。</>",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，部分地块无法部署",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_6_1": {
+          "id": "ro3_e_6_1",
+          "linkedStageId": "ro3_n_6_1",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_6-1",
+          "code": "ISW-NO",
+          "name": "霜与沙",
+          "loadingPicId": "loading_SM_RL",
+          "description": "居住在大地尽头入口的两个种族同时以躯壳的形态出现在此地。或许，冰原与沙漠的尽头，并无二致。",
+          "eliteDesc": "附加条件：敌人的攻击力、防御力和生命值提升，移动速度提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        },
+        "ro3_e_6_2": {
+          "id": "ro3_e_6_2",
+          "linkedStageId": "ro3_n_6_2",
+          "levelId": "Obt/Roguelike/RO3/level_rogue3_6-2",
+          "code": "ISW-NO",
+          "name": "生灵的终点",
+          "loadingPicId": "loading_SM_RL",
+          "description": "寒灾的存在本身就是一种警告：如果再不为了生命而战，就将如它一般迎来终结。\\n<@rolv.rem>场地中有喷出气流的<源石流发生装置></>",
+          "eliteDesc": "附加条件：敌人的攻击力、法术抗性和生命值提升，攻击范围提升",
+          "isBoss": 0,
+          "isElite": 1,
+          "difficulty": "FOUR_STAR",
+          "capsulePool": null,
+          "capsuleProb": 0.0,
+          "vutresProb": [],
+          "boxProb": [
+            0.15,
+            0.15
+          ],
+          "specialNodeId": null
+        }
+      }
+
+    }
+
+
+
+    function iF(obj) {
+      if (obj == null) {
+        return "";
+      } else if (obj != null) {
+        return obj;
+      }
+      return undefined;
+    }
+    let z = "";
+    let tagList = "";
+    for (x in a.stages) {
+      $.getJSON("/zh_CN/gamedata/levels/" + a.stages[x].levelId + ".json", data => {
+        for (let v = 0; v < data.enemyDbRefs.length; v++) {
+          z += enemyId(data.enemyDbRefs[v].id) + "、";
+        };
+        for (let tag = 0; tag < data.mapData.tags.length; tag++) {
+          tagList +=  data.mapData.tags[tag];
+        }
+        z = z.slice(0, -1).replace(/、undefined/g,"");
+        a1.innerHTML += a.stages[x].code + " " + a.stages[x].name + "<br/>" +
+          " {{肉鸽关卡<br />  " +
+          "|stageId=" + a.stages[x].id.replace(/\_e\_/g,"_n_") + "<br/>" +
+          "|关卡名=" + a.stages[x].code + "<br/>" +
+          "|行动名=" + a.stages[x].name + "<br/>" +
+          "|备注=" + "<br/>" +
+          "|备注2=" + "<br/>" +
+          "|部署上限=" + data.options.characterLimit + "<br/>" +
+          "|cost0=" + data.options.initialCost + "<br/>" +
+          "|介绍=" + replaceStr(a.stages[x].description).slice(0, -5) + "<br/>" +
+          "|特殊条件=" + iF(a.stages[x].eliteDesc).replace(/附加条件：/g, "") + "<br/>" +
+          "|敌方情报=" + z + "<br/>" +
+          "|mapTag=" + tagList + "<br/>" +
+          "}}" + "<br/>" +
+          "<br/>";
+
+        a2.innerHTML += a.stages[x].code + " " + a.stages[x].name + "=" + "<br/>" +
+          "{{:" + a.stages[x].code + " " + a.stages[x].name + "}}" + "<br/>" +
+          "|-|" + "<br/>";
+        if (Boolean(a.stages[x].specialNodeId) == true) {
+          a3.innerHTML += a.stages[x].code + " " + a.stages[x].name + "<br/>" +
+            " {{肉鸽关卡<br />  " +
+            "|stageId=" + a.stages[x].id + "<br/>" +
+            "|关卡名=" + a.stages[x].code + "<br/>" +
+            "|行动名=" + a.stages[x].name + "<br/>" +
+            "|备注=" + "<br/>" +
+            "|备注2=" + "<br/>" +
+            "|部署上限=" + data.options.characterLimit + "<br/>" +
+            "|cost0=" + data.options.initialCost + "<br/>" +
+            "|介绍=" + replaceStr(a.stages[x].description).slice(0, -5) + "<br/>" +
+            "|特殊条件=" + iF(a.stages[x].eliteDesc).replace(/附加条件：/g, "") + "<br/>" +
+            "|敌方情报=" + z +"<br/>" +
+            "|mapTag=" + tagList + "<br/>" +
+            "}}" + "<br/>" +
+            "<br/>"
+        }
+        z = "";
+        tagList = "";
+      })
+      // console.log(Boolean(a.stages[x].specialNodeId))
+    }
+
+
+  </script>
+
+</body>
+
+</html>

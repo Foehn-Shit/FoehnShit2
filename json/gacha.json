@@ -1,0 +1,435 @@
+{
+    "stages": [
+        {
+            "pointMissions": [
+                {
+                    "pointCount": 1,
+                    "shopCoin": 160,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 2,
+                    "shopCoin": 160,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 3,
+                    "shopCoin": 160,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 4,
+                    "shopCoin": 120,
+                    "runeCoin": 1
+                },
+                {
+                    "pointCount": 5,
+                    "shopCoin": 120,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 6,
+                    "shopCoin": 120,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 7,
+                    "shopCoin": 80,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 8,
+                    "shopCoin": 80,
+                    "runeCoin": 1
+                },
+                {
+                    "pointCount": 9,
+                    "shopCoin": 80,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 10,
+                    "shopCoin": 60,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 11,
+                    "shopCoin": 60,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 12,
+                    "shopCoin": 60,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 13,
+                    "shopCoin": 40,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 14,
+                    "shopCoin": 40,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 15,
+                    "shopCoin": 40,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 16,
+                    "shopCoin": 20,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 17,
+                    "shopCoin": 20,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 18,
+                    "shopCoin": 20,
+                    "runeCoin": 0
+                }
+            ],
+            "clearMissions": [
+                {
+                    "shopCoin": 100,
+                    "runes": [
+                        "enemy_reid_1",
+                        "char_hp_2"
+                    ]
+                },
+                {
+                    "shopCoin": 100,
+                    "runes": [
+                        "enemy_hp_1",
+                        "char_attackspeed_2"
+                    ]
+                },
+                {
+                    "shopCoin": 100,
+                    "runes": [
+                        "char_cost_guardsupporter_1",
+                        "enemy_def_1",
+                        "char_atk_3"
+                    ]
+                },
+                {
+                    "shopCoin": 100,
+                    "runes": [
+                        "char_respawntime_1",
+                        "char_hp_1",
+                        "enemy_reid_3"
+                    ]
+                },
+                {
+                    "shopCoin": 100,
+                    "runes": [
+                        "global_lifepoint_1",
+                        "global_costrecovery_2",
+                        "enemy_hp_3"
+                    ]
+                },
+                {
+                    "shopCoin": 100,
+                    "runes": [
+                        "enemy_hp_1",
+                        "enemy_atk_3",
+                        "enemy_reid_4"
+                    ]
+                }
+            ],
+            "id": "level_rune_14-01",
+            "code": "荒野",
+            "name": " 无名庇护所",
+            "desc": " 一座荒野中的藏身之所，古老的萨卡兹祭坛仍在运行。这里不欢迎外人，自然也不会善待拿着武器的罗德岛干员。\\n<@lv.item><源石祭坛></>周期性向四周释放脉冲波，对我军与敌军造成伤害",
+            "runes": {
+                "enemy_reid_1": {
+                    "unlock": 0,
+                    "name": "复仇：无败利刃I",
+                    "desc": "<“复仇者”>的生命值提升60%，生命值低于一半时攻击力额外提升30%",
+                    "points": 1
+                },
+                "enemy_reid_2": {
+                    "unlock": 8,
+                    "name": "复仇：无败利刃II",
+                    "desc": "<“复仇者”>的生命值提升100%，生命值低于一半时攻击力额外提升50%，重生后获得5秒无敌时间",
+                    "points": 2
+                },
+                "enemy_reid_3": {
+                    "unlock": 18,
+                    "name": "复仇：无败利刃III",
+                    "desc": "<“复仇者”>的生命值提升150%，获得抵抗，生命值低于一半时攻击力额外提升100%且受到的伤害减少30%，重生后获得15秒无敌时间",
+                    "points": 3
+                },
+                "enemy_reid_4": {
+                    "unlock": 18,
+                    "name": "复仇：火与钢",
+                    "desc": "<“复仇者”>的生命值提升150%，获得抵抗，攻击速度提升100，生命值低于一半时攻击力额外提升100%且受到的伤害减少60%，重生后获得20秒无敌时间",
+                    "points": 3
+                },
+                "enemy_atk_1": {
+                    "unlock": 0,
+                    "name": "源石环境：刺激I",
+                    "desc": "所有敌人的攻击力提升30%",
+                    "points": 1
+                },
+                "enemy_atk_2": {
+                    "unlock": 6,
+                    "name": "源石环境：刺激II",
+                    "desc": "所有敌人的攻击力提升50%",
+                    "points": 2
+                },
+                "enemy_atk_3": {
+                    "unlock": 18,
+                    "name": "源石环境：刺激III",
+                    "desc": "所有敌人的攻击力提升80%",
+                    "points": 3
+                },
+                "enemy_hp_1": {
+                    "unlock": 0,
+                    "name": "源石环境：活性I",
+                    "desc": "所有敌人的生命值提升40%",
+                    "points": 1
+                },
+                "enemy_hp_2": {
+                    "unlock": 6,
+                    "name": "源石环境：活性II",
+                    "desc": "所有敌人的生命值提升80%",
+                    "points": 2
+                },
+                "enemy_hp_3": {
+                    "unlock": 18,
+                    "name": "源石环境：活性III",
+                    "desc": "所有敌人的生命值提升120%",
+                    "points": 3
+                },
+                "char_atk_2": {
+                    "unlock": 4,
+                    "name": "环境：高价值目标II",
+                    "desc": "所有我方单位的攻击力降低30%",
+                    "points": 2
+                },
+                "char_atk_3": {
+                    "unlock": 18,
+                    "name": "环境：高价值目标III",
+                    "desc": "所有我方单位的攻击力降低50%",
+                    "points": 3
+                },
+                "char_attackspeed_2": {
+                    "unlock": 8,
+                    "name": "源石环境：疲惫加剧",
+                    "desc": "所有我方单位攻击速度-40",
+                    "points": 2
+                },
+                "char_hp_1": {
+                    "unlock": 0,
+                    "name": "源石环境：侵蚀I",
+                    "desc": "所有我方单位的生命值上限降低20%",
+                    "points": 1
+                },
+                "char_hp_2": {
+                    "unlock": 4,
+                    "name": "源石环境：侵蚀II",
+                    "desc": "所有我方单位的生命值上限降低40%",
+                    "points": 2
+                },
+                "char_hp_3": {
+                    "unlock": 18,
+                    "name": "源石环境：侵蚀III",
+                    "desc": "所有我方单位的生命值上限降低55%",
+                    "points": 3
+                },
+                "char_cost_guardsupporter_1": {
+                    "unlock": 0,
+                    "name": "目标：应急合约",
+                    "desc": "近卫和辅助干员的部署费用提升至2倍",
+                    "points": 1
+                },
+                "char_cost_casterspecial_1": {
+                    "unlock": 0,
+                    "name": "目标：应急合约",
+                    "desc": "术师和特种干员的部署费用提升至2倍",
+                    "points": 1
+                },
+                "char_exclude_guardsupporter_2": {
+                    "unlock": 12,
+                    "name": "目标：战略调度",
+                    "desc": "禁止部署近卫和辅助干员",
+                    "points": 2
+                },
+                "char_exclude_casterspecial_2": {
+                    "unlock": 12,
+                    "name": "目标：战略调度",
+                    "desc": "禁止部署术师和特种干员",
+                    "points": 2
+                },
+                "global_costrecovery_1": {
+                    "unlock": 0,
+                    "name": "目标：深度渗透I",
+                    "desc": "部署费用的自然回复速度降低25%",
+                    "points": 1
+                },
+                "global_costrecovery_2": {
+                    "unlock": 6,
+                    "name": "目标：深度渗透II",
+                    "desc": "部署费用的自然回复速度降低50%",
+                    "points": 2
+                },
+                "global_squadnum_1": {
+                    "unlock": 0,
+                    "name": "目标：隐秘行动I",
+                    "desc": "最多可编入10名干员进入作战",
+                    "points": 1
+                },
+                "global_squadnum_2": {
+                    "unlock": 8,
+                    "name": "目标：隐秘行动II",
+                    "desc": "最多可编入7名干员进入作战",
+                    "points": 2
+                },
+                "global_pcharnum_2": {
+                    "unlock": 8,
+                    "name": "环境：交战区II",
+                    "desc": "可同时部署的单位数量减少至5",
+                    "points": 2
+                },
+                "global_lifepoint_1": {
+                    "unlock": 0,
+                    "name": "目标：最后防线",
+                    "desc": "我方防御点可承受的敌方数量变为1",
+                    "points": 1
+                },
+                "enemy_def_1": {
+                    "unlock": 0,
+                    "name": "反装甲I",
+                    "desc": "所有敌人的防御力提升200",
+                    "points": 1
+                },
+                "char_respawntime_1": {
+                    "unlock": 0,
+                    "name": "目标：效率低下I",
+                    "desc": "我方所有单位再部署时间延长75%",
+                    "points": 1
+                }
+            }
+        },
+        {
+            "pointMissions": [
+                {
+                    "pointCount": 0,
+                    "shopCoin": 5,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 1,
+                    "shopCoin": 20,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 2,
+                    "shopCoin": 18,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 3,
+                    "shopCoin": 16,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 4,
+                    "shopCoin": 14,
+                    "runeCoin": 1
+                },
+                {
+                    "pointCount": 5,
+                    "shopCoin": 12,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 6,
+                    "shopCoin": 10,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 7,
+                    "shopCoin": 6,
+                    "runeCoin": 0
+                },
+                {
+                    "pointCount": 8,
+                    "shopCoin": 4,
+                    "runeCoin": 1
+                }
+            ],
+            "clearMissions": [
+                {
+                    "shopCoin": 40,
+                    "runes": [
+                        "enemy_stmgun_bmod_3"
+                    ]
+                }
+            ],
+            "id": "level_rune_14-02",
+            "code": " 维多利亚",
+            "name": " 迷雾战区",
+            "desc": "雾气笼罩伦蒂尼姆，萨卡兹隐匿其间。注意警戒，小心前行，不要在敌人的偷袭下乱了阵脚。",
+            "runes": {
+                "buff_char_hpdef": {
+                    "name": "协同战术：备战",
+                    "desc": "所有我方单位的防御力增加50%，生命值增加100%",
+                    "points": 0
+                },
+                "enemy_stmgun_bmod_3": {
+                    "name": "自行炮：游击改装III",
+                    "desc": "所有<伦蒂尼姆城防自行炮>提前出现在战场上，攻击力提升20%，攻击速度提升20，攻击范围提升至整个战场，技能伤害提升80%",
+                    "points": 3
+                },
+                "enemy_stmgun_amod_3": {
+                    "name": "自行炮：重火力改装III",
+                    "desc": "所有<伦蒂尼姆城防自行炮>出现的位置变化，攻击力提升70%，攻击速度提升50，技能释放间隔缩短80%，攻击范围提升30%，技能伤害提升15%",
+                    "points": 3
+                },
+                "enemy_atk_2": {
+                    "name": "源石环境：刺激II",
+                    "desc": "所有敌人的攻击力提升35%",
+                    "points": 2
+                },
+                "enemy_hp_2": {
+                    "name": "源石环境：活性II",
+                    "desc": "所有敌人的生命值提升80%",
+                    "points": 2
+                },
+                "char_atk_2": {
+                    "name": "环境：高价值目标II",
+                    "desc": "所有我方单位的攻击力降低30%",
+                    "points": 2
+                },
+                "char_hp_3": {
+                    "name": "源石环境：侵蚀III",
+                    "desc": "所有我方单位的生命值上限降低60%",
+                    "points": 3
+                },
+                "global_costrecovery_1": {
+                    "name": "目标：深度渗透I",
+                    "desc": "部署费用的自然回复速度降低25%",
+                    "points": 1
+                },
+                "global_forbidloc_right_1": {
+                    "name": "环境：右侧施工",
+                    "desc": "战场右侧的3个位置无法部署我方单位",
+                    "points": 1
+                },
+                "enemy_polluteddmg_1": {
+                    "name": "环境：腐烂",
+                    "desc": "<污染秽蚀>的伤害提升至400%",
+                    "points": 1
+                }
+            }
+        }
+    ],
+    "code": 0,
+    "msg": ""
+}

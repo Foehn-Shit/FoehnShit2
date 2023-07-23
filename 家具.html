@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {{家具套装<br />
+    |套装名=<span id="a2"></span><br />
+    |描述=<span id="a3"></span><br />
+    |套装总计价格源石=<span id="a4"></span><br />
+    |套装总计价格家具零件=<span id="a5" class="a5"></span><br />
+    |套装单件总计氛围=<span id="a6" class="a6"></span><br />
+    |主题1=<span id="a7" class="a7"></span><br />
+    |主题1套件数量=<span id="a8"></span><br />
+    |主题1氛围=<span id="a9"></span><br />
+    |主题2=<span id="a10" class="a10"></span><br />
+    |主题2套件数量=<span id="a11"></span><br />
+    |主题2氛围=<span id="a12"></span><br />
+    |主题3=<span id="a13" class="a13"></span><br />
+    |主题3套件数量=<span id="a14"></span><br />
+    |主题3氛围=<span id="a15"></span><br />
+    |主题4=<span id="a16" class="a16"></span><br />
+    |主题4套件数量=<span id="a17"></span><br />
+    |主题4氛围=<span id="a18"></span><br />
+    |主题5=<span id="a19" class="a19"></span><br />
+    |主题5套件数量=<span id="a20"></span><br />
+    |主题5氛围=<span id="a21"></span><br />
+    <span id="a22"></span>
+    }}<br />
+    ==主题套件==<br />
+    <br />
+    ====<span class="a7"></span>====<br />
+    <br />
+    {{套装主题|<span class="a7"></span>}}<br />
+    <br />
+    ====<span class="a10"></span>====<br />
+    <br />
+    {{套装主题|<span class="a10"></span>}}<br />
+    <br />
+    ====<span class="a13"></span>====<br />
+    <br />
+    {{套装主题|<span class="a13"></span>}}<br />
+    <br />
+    ====<span class="a16"></span>====<br />
+    <br />
+    {{套装主题|<span class="a16"></span>}}<br />
+    <span id="groupN"></span>
+    <br />
+    <br />
+    <div id="box4"></div>
+    <br />
+    <br />
+
+    <div id="box5"></div>
+    <script src="/js/jQuery.js"></script>
+    <!-- <script src="/js/app.js"></script> -->
+    <script>
+        const general = {
+     "furni_set_snowVenue": {
+                "id": "furni_set_snowVenue",
+                "sortId": 75,
+                "name": "“冷冽节奏”体验馆",
+                "themeType": "NORMAL",
+                "desc": "冷酷冰爽的冰原生活，在此呈现。不要走开，还有说唱。",
+                "quickSetup": [
+                    {
+                        "furnitureId": "furni_snowVenue_showcase_01",
+                        "pos0": 0,
+                        "pos1": 0,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_board1_01",
+                        "pos0": 3,
+                        "pos1": 4,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_iceCube_01",
+                        "pos0": 0,
+                        "pos1": 4,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_waterCooler_01",
+                        "pos0": 5,
+                        "pos1": 0,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_ceilingLamp1_01",
+                        "pos0": 5,
+                        "pos1": 1,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_banner_01",
+                        "pos0": 10,
+                        "pos1": 5,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_table1_01",
+                        "pos0": 10,
+                        "pos1": 3,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_chair_01",
+                        "pos0": 9,
+                        "pos1": 6,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_box_01",
+                        "pos0": 16,
+                        "pos1": 6,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_board2_01",
+                        "pos0": 17,
+                        "pos1": 0,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_stool_01",
+                        "pos0": 21,
+                        "pos1": 7,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_carpet_01",
+                        "pos0": 21,
+                        "pos1": 1,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_iceHouse_01",
+                        "pos0": 22,
+                        "pos1": 0,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_ceilingLamp2_01",
+                        "pos0": 27,
+                        "pos1": 7,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_shelf_01",
+                        "pos0": 29,
+                        "pos1": 3,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_table2_01",
+                        "pos0": 24,
+                        "pos1": 7,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_wallpaper_01",
+                        "pos0": 0,
+                        "pos1": 0,
+                        "dir": 0
+                    },
+                    {
+                        "furnitureId": "furni_snowVenue_floor_01",
+                        "pos0": 0,
+                        "pos1": 10,
+                        "dir": 0
+                    }
+                ],
+                "groups": [
+                    "furni_set_snowVenue_1",
+                    "furni_set_snowVenue_2",
+                    "furni_set_snowVenue_3",
+                    "furni_set_snowVenue_4"
+                ],
+                "furnitures": [
+                    "furni_snowVenue_showcase_01",
+                    "furni_snowVenue_board1_01",
+                    "furni_snowVenue_iceCube_01",
+                    "furni_snowVenue_waterCooler_01",
+                    "furni_snowVenue_ceilingLamp1_01",
+                    "furni_snowVenue_banner_01",
+                    "furni_snowVenue_table1_01",
+                    "furni_snowVenue_chair_01",
+                    "furni_snowVenue_box_01",
+                    "furni_snowVenue_board2_01",
+                    "furni_snowVenue_stool_01",
+                    "furni_snowVenue_carpet_01",
+                    "furni_snowVenue_iceHouse_01",
+                    "furni_snowVenue_ceilingLamp2_01",
+                    "furni_snowVenue_shelf_01",
+                    "furni_snowVenue_table2_01",
+                    "furni_snowVenue_wallpaper_01",
+                    "furni_snowVenue_floor_01"
+                ]
+            }
+        }
+
+
+
+        // ================================================================================
+        $.getJSON("/json/furni.json", function (furniPrice) {
+            $.getJSON("/zh_CN/gamedata/excel/building_data.json", function (furni) {
+                // 源石价格
+                function priceDiaCount(obj) {
+                    var priDia = [];
+                    var id = [];
+                    for (let i = 0; i < furniPrice.goods.length; i++) {
+                        priDia.push(furniPrice.goods[i].originPriceDia)
+                        id.push(furniPrice.goods[i].furniId)
+                    }
+                    for (let p = 0; p < id.length; p++) {
+                        if (obj == id[p]) {
+                            return priDia[p]
+                        }
+                    }
+                }
+                // 家具币价格
+                function priceCoinCount(obj) {
+                    var priCoin = [];
+                    var id = [];
+                    for (let i = 0; i < furniPrice.goods.length; i++) {
+                        priCoin.push(furniPrice.goods[i].originPriceCoin)
+                        id.push(furniPrice.goods[i].furniId)
+                    }
+                    for (let p = 0; p < id.length; p++) {
+                        if (obj == id[p]) {
+                            return priCoin[p]
+                        }
+                    }
+                }
+                // 家具数量
+                let frncnt = obj => {
+                    let furnicnt = {};
+                    for (let g in furni.customData.furnitures) {
+                        furnicnt[furni.customData.furnitures[g].id] = furni.customData.furnitures[g].quantity;
+                    }
+                    let cnt = 0;
+                    $.each(furnicnt, (name, count) => {
+                        if (obj == name) {
+                            cnt = count;
+                        }
+                        // console.log(count)
+                    })
+                    return cnt;
+                }
+                // 主题名称
+                function furniGroup(obj) {
+                    let en = [];
+                    let cn = [];
+                    for (x in furni.customData.groups) {
+                        en.push(furni.customData.groups[x].id);
+                        cn.push(furni.customData.groups[x].name);
+                    }
+                    for (let i = 0; i < en.length; i++) {
+                        if (obj == en[i]) {
+                            return cn[i];
+                        }
+                    }
+                }
+                // 主题单个家具名称
+                function furniFurnitures(obj) {
+                    let en = [];
+                    let cn = [];
+                    for (x in furni.customData.furnitures) {
+                        en.push(furni.customData.furnitures[x].id);
+                        cn.push(furni.customData.furnitures[x].name);
+                    }
+                    for (let i = 0; i < en.length; i++) {
+                        if (obj == en[i]) {
+                            return cn[i];
+                        }
+                    }
+                }
+
+                // 家具稀有度
+                function furniRarity(obj) {
+                    let en = [];
+                    let star = [];
+                    for (x in furni.customData.furnitures) {
+                        en.push(furni.customData.furnitures[x].id);
+                        star.push(furni.customData.furnitures[x].rarity);
+                    }
+                    for (let i = 0; i < en.length; i++) {
+                        if (obj == en[i]) {
+                            return en[i] + "  " + furniFurnitures(en[i]) + "  " + star[i] + "星";
+                        }
+                    }
+                }
+
+
+                for (let y in general) {
+                    $("#a2").html(general[y].name);
+                    $("#a3").html(general[y].desc);
+                    $(".a7").html(furniGroup(general[y].groups[0]));
+                    $(".a10").html(furniGroup(general[y].groups[1]));
+                    $(".a13").html(furniGroup(general[y].groups[2]));
+                    $(".a16").html(furniGroup(general[y].groups[3]));
+                    for (let g in furni.customData.groups) {
+
+                        if (general[y].groups[0] == furni.customData.groups[g].id) {
+                            $("#a8").html(furni.customData.groups[g].furniture.length)
+                            $("#a9").html(furni.customData.groups[g].comfort);
+                        }
+                        if (general[y].groups[1] == furni.customData.groups[g].id) {
+                            $("#a11").html(furni.customData.groups[g].furniture.length);
+                            $("#a12").html(furni.customData.groups[g].comfort);
+                        }
+                        if (general[y].groups[2] == furni.customData.groups[g].id) {
+                            $("#a14").html(furni.customData.groups[g].furniture.length);
+                            $("#a15").html(furni.customData.groups[g].comfort);
+                        }
+                        if (general[y].groups[3] == furni.customData.groups[g].id) {
+                            $("#a17").html(furni.customData.groups[g].furniture.length);
+                            $("#a18").html(furni.customData.groups[g].comfort);
+                        }
+
+
+
+                        if (general[y].groups.length >= 5) {
+                            $("#groupN").html(`<br />===<span class="a19"></span>===<br />
+                                <br />
+                                {{套装主题|<span class="a19"></span>}}<br />`)
+                            $(".a19").html(furniGroup(general[y].groups[4]));
+                            if (general[y].groups[4] == furni.customData.groups[g].id) {
+                                $("#a20").html(furni.customData.groups[g].comfort);
+                                $("#a21").html(furni.customData.groups[g].comfort);
+                            }
+                        }
+
+                    }
+
+                    for (let z in furni.customData.furnitures) {
+                        for (let i = 0; i < general[y].furnitures.length; i++) {
+                            for (let j = 0; j < general[y].groups.length; j++) {
+                                if (general[y].furnitures[i] == furni.customData.furnitures[z].id) {
+                                    $("#box4").html($("#box4").html() + furniFurnitures(general[y].furnitures[i]) + "<br/>" +
+                                        "{{家具图鉴" + "<br/>" +
+                                        "|家具名={{PAGENAME}}" + "<br/>" +
+                                        "|itemid=" + furni.customData.furnitures[z].id + "<br/>" +
+                                        "|套装=" + general[y].name + "<br/>" +
+                                        "|所属主题=" + furniGroup(furni.customData.furnitures[z].groupId) + "<br/>" +
+                                        "|位置=" + type(furni.customData.furnitures[z].type) + "<br/>" +
+                                        "|类型=" + subTypes(furni.customData.furnitures[z].subType) + "<br/>" +
+                                        "|获取方式=" + approach(furni.customData.furnitures[z].obtainApproach) + "<br/>" +
+                                        "|氛围=" + furni.customData.furnitures[z].comfort + "<br/>" +
+                                        "|源石价格=" + isUndefined(priceDiaCount(general[y].furnitures[i])) + "<br/>" +
+                                        "|家具零件价格=" + isUndefined(priceCoinCount(furni.customData.furnitures[z].id)) + "<br/>" +
+                                        "|分解家具零件=" + zero(furni.customData.furnitures[z].processedProductCount) + "<br/>" +
+                                        "|描述=" + furni.customData.furnitures[z].description + "<br/>" +
+                                        "}}" + "<br/>" + "<br/>" + "<br/>");
+                                    $("#a22").html($("#a22").html() + `|家具名${i + 1}=${furniFurnitures(general[y].furnitures[i])}<br/>
+                                    |数量${i + 1}=${furni.customData.furnitures[z].quantity}<br/>
+                                    |单价${i + 1}=${isUndefined(priceCoinCount(furni.customData.furnitures[z].id))}<br/>
+                                    |氛围${i + 1}=${furni.customData.furnitures[z].comfort * furni.customData.furnitures[z].quantity}<br/>`)
+                                    $("#box5").html(
+                                        $("#box5").html() + furniRarity(furni.customData.furnitures[z].id) + "<br/>"
+                                    )
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // ===================================================================
+                for (let y in general) {
+                    for (let i = 0; i < general[y].furnitures.length; i++) {
+                        let priDia = [];
+                        let priCoin = [];
+                        let id = [];
+                        var sum = 0;
+                        let priDiaArr = [];
+                        var priCoinArr = [];
+                        // let frncnt = [];
+                        for (let i = 0; i < furniPrice.goods.length; i++) {
+                            priDia.push(furniPrice.goods[i].originPriceDia);
+                            priCoin.push(furniPrice.goods[i].originPriceCoin);
+                            id.push(furniPrice.goods[i].furniId);
+                            // frncnt.push(furniPrice.goods[i].count);
+                        }
+                        for (let p = 0; p < id.length; p++) {
+                            if (general[y].furnitures[i] == id[p]) {
+                                $("#a4").html($("#a4").html() + (priDia[p] * frncnt(id[p])) + ",");
+                                $(".a5").html($(".a5").html() + (priCoin[p] * frncnt(id[p])) + ",");
+                            }
+                        }
+
+                    }
+                }
+                $("#a4").html().slice(0, -1);
+                priDiaArr = $("#a4").html().split(",");
+                for (let i = 0; i < priDiaArr.length; i++) {
+                    sum = sum + Number(priDiaArr[i]);
+                }
+                $("#a4").html(sum);
+                sum = 0;
+                $(".a5").html().slice(0, -1);
+                priCoinArr = $(".a5").html().split(",");
+                for (let i = 0; i < priCoinArr.length; i++) {
+                    sum = sum + Number(priCoinArr[i]);
+                }
+                $(".a5").html(sum);
+                sum = 0;
+                // ================================================================
+                // 总氛围
+                for (let y in general) {
+                    for (let i = 0; i < general[y].furnitures.length; i++) {
+                        let cft = [];
+                        let id = [];
+                        let frncnt = [];
+                        var cftArr = [];
+                        for (let g in furni.customData.furnitures) {
+                            cft.push(furni.customData.furnitures[g].comfort);
+                            id.push(furni.customData.furnitures[g].id);
+                            frncnt.push(furni.customData.furnitures[g].quantity);
+                        }
+                        for (let q = 0; q < id.length; q++) {
+                            if (general[y].furnitures[i] == id[q]) {
+                                $(".a6").html($(".a6").html() + (cft[q] * frncnt[q]) + ",");
+                            }
+                        }
+                    }
+                }
+                $(".a6").html($(".a6").html().slice(0, -1));
+                cftArr = $(".a6").html().split(",");
+                for (let i = 0; i < cftArr.length; i++) {
+                    sum = sum + Number(cftArr[i]);
+                }
+                $(".a6").html(sum);
+                // ==============================================================================
+            })
+        })
+
+
+        function type(obj1) {
+            var position = [];
+            var name = [];
+            $.ajaxSettings.async = false;
+            $.getJSON("/zh_CN/gamedata/excel/building_data.json", type => {
+                for (let xxx in type.customData.types) {
+                    position.push(type.customData.types[xxx].type);
+                    name.push(type.customData.types[xxx].name);
+                }
+            })
+            for (let iii = 0; iii < position.length; iii++) {
+                if(obj1 == position[iii]){
+                    return name[iii];
+                }
+            }
+        }
+
+        let subTypes = obj2 => {
+            var sub = [];
+            var name2 = [];
+            $.ajaxSettings.async = false;
+            $.getJSON("/zh_CN/gamedata/excel/building_data.json", type => {
+                for(let ggg in type.customData.subTypes){
+                    sub.push(type.customData.subTypes[ggg].subType);
+                    name2.push(type.customData.subTypes[ggg].name);
+                }
+            })
+            for (let hhh = 0; hhh < sub.length; hhh++) {
+                if (obj2 == sub[hhh]) {
+                    return name2[hhh];
+                }else if(obj2 == 0){
+                    return "";
+                }
+            }
+            return "";
+        }
+
+        function zero(obj) {
+            if (obj == 0) {
+                return "";
+            } else {
+                return obj;
+            }
+        }
+
+        function approach(obj) {
+            switch (obj) {
+                case "家具商店限时购买":
+                    return "限时采购";
+                case "活动获得":
+                    return "活动奖励";
+                case "部分关卡幸运掉落":
+                    return "幸运掉落";
+                case "初始配套":
+                    return "初始";
+                case "家具商店购买":
+                    return "家具商店";
+                case "活动获得":
+                    return "活动奖励";
+                default:
+                    return obj
+            }
+            // if (obj == "家具商店限时购买") {
+            //     return "限时采购";
+            // } else if (obj == "活动获得") {
+            //     return "活动奖励";
+            // }else if (obj == "部分关卡幸运掉落"){
+            //     return "幸运掉落";
+            // }else {
+            //     return obj;
+            // }
+
+        }
+
+        function isUndefined(obj) {
+            if (obj == undefined) {
+                return "";
+            } else {
+                return obj;
+            }
+        }
+    </script>
+</body>
+
+</html>

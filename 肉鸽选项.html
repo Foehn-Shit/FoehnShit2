@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<script src="/js/jQuery.js"></script>
+<script src="/js/operator.js"></script>
+<script src="/js/cailiao.js"></script>
+<script src="/js/uniequip.js"></script>
+<script src="/js/replaceStr.js"></script>
+<script src="js/format.js"></script>
+
+<body>
+    <div id="a1"></div>
+    <script>
+        const Major = {
+            "scene_ro2_trade3_enter": {
+                "id": "scene_ro2_trade3_enter",
+                "title": "海嗣学者",
+                "description": "一位老阿戈尔人正在向你讲述对付海嗣的要诀，据他所说，他曾隶属于一个专门研究海嗣行为的科学院，然而科学院被海嗣毁灭，他也被洋流带离了家乡。幸好，这里也有人在抵抗海嗣，这样他的研究就还能派上点用场。现在，他收集了些恐鱼尸体并以此制作装备，他希望你可以使用它，为这件实验品收集更多数据。",
+                "background": "pic_rogue_2_36",
+                "titleIcon": null,
+                "useHiddenMusic": false
+            }
+        }
+        const Minor = {
+            "scene_ro2_trade3_1": {
+                "id": "scene_ro2_trade3_1",
+                "title": "海嗣学者",
+                "description": "见你接受了他的实验品，他欣慰地笑了，他向你讲解了这个东西的使用要点，并在最后提了一句：“如果这东西活过来一定要立刻破坏掉，明白吗？”",
+                "background": "pic_rogue_2_36",
+                "titleIcon": null,
+                "useHiddenMusic": false
+            },
+            "scene_ro2_trade3_2": {
+                "id": "scene_ro2_trade3_2",
+                "title": "海嗣学者",
+                "description": "如果他的研究真的能派上用场，他的城市就不会被摧毁。所以你拒绝成为他的实验者。",
+                "background": "pic_rogue_2_36",
+                "titleIcon": null,
+                "useHiddenMusic": false
+            }
+        };
+        var idArr = [];
+        var descArr = [];
+        var backgrndArr = [];
+        var resulta = "";
+        for (let nb in Minor) {
+            idArr.push(Minor[nb].id);
+            descArr.push(Minor[nb].description);
+            backgrndArr.push(Minor[nb].description);
+        }
+        $.getJSON("/zh_CN/gamedata/excel/roguelike_topic_table.json", data => {
+            $.each(data.details.rogue_2.choices, (name, desc) => {
+                for (let x in Major) {
+                    $("#a1").html(
+                        `==${Major[x].title}==<br/>
+            {| class="wikitable" style="width:100%"<br/>
+            |colspan=2|[[file:${Major[x].background}.png|600px|center|link=]]<br/>
+            |-<br/>
+            !colspan=2|${Major[x].description}<br/>
+            `)
+                }
+                for (let ion = 0; ion < idArr.length; ion++) {
+                    if (idArr[ion] == desc.nextSceneId) {
+                        resulta += `|-<br/>
+            |rowspan=2|choice${ion + 1}<br/>
+            |'''${desc.title}'''&#060;br/&#062;${replaceStr(desc.description).slice(0, -5)}<br/>
+            |-<br/>
+            !${desc.description}<br/>
+            |${descArr[ion]}<br/>
+            `
+                    }
+                }
+            })
+        })
+        a1.innerHTML += resulta + "|}"
+    </script>
+
+</body>
+
+</html>

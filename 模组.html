@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模组</title>
+  <style>
+    * {
+      background-color: black;
+      color: #d7d7d7;
+      width: 100%;
+
+    }
+
+    #container {
+      padding-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    |模组名=<span id="a51"></span><br />
+    |模组解锁任务1=<span id="a52"></span><br />
+    |模组解锁任务2=<span id="a53"></span><br />
+    |模组解锁材料=<span id="a54"></span><br />
+    |基础数值变化=<span id="a55"></span><br />
+    |分支特性更新=<span id="a56"></span><br />
+    <br />
+    <br />
+    <br />
+    开启{{color|0098DC|模组系统}}
+    <br />
+    {{模组/干员}}
+    <br />
+    <br />
+    <span id="name0"></span><br />
+    {{模组/个<br />
+    |模组实装日期=<span id="r25"></span><br />
+    |equipId=<span id="l1"></span><br />
+    |模组名=<span id="df1"></span><br />
+    |所属干员=<span id="df4"></span><br />
+    |顺序=<span id="sq1"></span><br />
+    |图片名=证章<br />
+    |类型=<span id="df2"></span><br />
+    |描述=<span id="df3"></span><br />
+    }}<br />
+    <br />
+    <br />
+    <br />
+    <span id="name1"></span><br />
+    <!-- &nbsp;-->{{模组/个<br />
+    |模组名=<span id="r21"></span><br />
+    |equipId=<span id="l2"></span><br />
+    |所属干员=<span id="df5"></span><br />
+    |模组实装日期=<span id="r23"></span><br />
+    |升级系统实装日期=<span id="r24"></span><br />
+    |顺序=<span id="sq2"></span><br />
+    |图片名=<span id="r14"></span><br />
+    |类型=<span id="r15"></span><br />
+    |任务=<span id="r16"></span><br />
+    |解锁材料=<span id="r17"></span><br />
+    |解锁等级=<span id="r18"></span><br />
+    |特性=<span id="r19"></span><br />
+    <span id="rg"></span>
+    |基础数值加成=<span id="r20"></span><br />
+    |一级={{模组/级<br />
+    |等级=1<br />
+    |基础数值=<span id="r1"></span><br />
+    |天赋名=<span id="r2"></span><br />
+    |天赋描述=<span id="r3"></span><br />
+    |潜能效果=<span id="rqrr1"></span><br />
+    |潜能等级=<span id="rqrr2"></span><br />
+    |新增=<span id="rqrr3"></span><br />
+    }}<br />
+    |二级={{模组/级<br />
+    |等级=2<br />
+    |基础数值=<span id="r5"></span><br />
+    |天赋名=<span id="r6"></span><br />
+    |天赋描述=<span id="r7"></span><br />
+    |潜能效果=<span id="rqrr4"></span><br />
+    |潜能等级=<span id="rqrr5"></span><br />
+    |新增=<span id="rqrr6"></span><br />
+    |升级材料=<span id="r8"></span><br />
+    }}<br />
+    |三级={{模组/级<br />
+    |等级=3<br />
+    |基础数值=<span id="r9"></span><br />
+    |天赋名=<span id="r10"></span><br />
+    |天赋描述=<span id="r11"></span><br />
+    |潜能效果=<span id="rqrr7"></span><br />
+    |潜能等级=<span id="rqrr8"></span><br />
+    |新增=<span id="rqrr9"></span><br />
+    |升级材料=<span id="r12"></span><br />
+    }}<br />
+    |描述=<span id="r13"></span><br />
+    |材料总计=<span id="r22"></span><br />
+    }}<br />
+    <br />
+  </div>
+  <script src="/js/jQuery.js"></script>
+  <script src="js/operator.js"></script>
+  <script src="/js/cailiao.js"></script>
+  <script src="/js/skTyp.js"></script>
+  <script src="/js/skSpTyp.js"></script>
+  <script src="/js/profLen.js"></script>
+  <script src="/js/replaceStr.js"></script>
+  <script src="/js/rangeId.js"></script>
+  <script src="/js/taicireplace.js"></script>
+  <script src="/js/nationid.js"></script>
+  <script src="/js/zhiye.js"></script>
+  <script src="/js/skill.js"></script>
+  <script src="/js/buildingskill.js"></script>
+  <script src="/js/skTyp.js"></script>
+  <script src="/js/skSpTyp.js"></script>
+  <script src="/js/template.js"></script>
+  <script src="/js/replaceAttribute.js"></script>
+  <script src="/js/talent.js"></script>
+  <script src="/js/format.js"></script>
+  <script>
+    //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //  !     模组 改为a1,a2 有第三模组就把a2改成第三个模组     !
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // 
+    const uniequip = {
+   "a1": {
+        "uniEquipId": "uniequip_001_sntlla",
+        "uniEquipName": "寒檀证章",
+        "uniEquipIcon": "uniequip_001_sntlla",
+        "uniEquipDesc": "干员寒檀擅长对复数敌人造成法术杀伤\n根据外勤部门决议\n在外勤任务中划分为术师干员，行使扩散术师职责\n特别颁发此证章\n以兹证明",
+        "typeIcon": "original",
+        "typeName1": "ORIGINAL",
+        "typeName2": null,
+        "equipShiningColor": "grey",
+        "showEvolvePhase": "PHASE_2",
+        "unlockEvolvePhase": "PHASE_0",
+        "charId": "char_341_sntlla",
+        "tmplId": null,
+        "showLevel": 1,
+        "unlockLevel": 0,
+        "unlockFavorPoint": 0,
+        "missionList": [],
+        "itemCost": null,
+        "type": "INITIAL",
+        "uniEquipGetTime": 1688616000,
+        "charEquipOrder": 0
+      },
+      "a2": {
+        "uniEquipId": "uniequip_002_sntlla",
+        "uniEquipName": "“冰焰”",
+        "uniEquipIcon": "uniequip_002_sntlla",
+        "uniEquipDesc": "寒檀一口气喝尽了燃着火焰的酒精，呼出了一串冰寒雪花。\n这内里的火热与澎湃，让她有些惊讶。\n萨米没有这种东西。\n她没离开萨米多久，和罗德岛上的人关系也算不上融洽，如果不是因为急性矿石病发作需要休养，她也不会继续待在这里。\n更不会坐在酒吧里，喝上一杯特调酒。\n旁边的位置来了个不受欢迎的家伙，一个乌萨斯。\n他在那热情地打招呼，丝毫不拿寒檀当外人。\n当然，在寒檀听来，那只是个粗鲁乌萨斯的自言自语。\n她有过承诺，不会在罗德岛上主动对乌萨斯动手，但这不代表她会隐藏自己的不满。\n于是周边的气温骤降了好几度。\n乌萨斯意识到了什么，闭上了嘴，点了杯葡萄汁，又请了寒檀一杯特调。\n她不接受。\n在酒保递上特调松手的瞬间，一杯焰火变成了一杯冰。\n乌萨斯从寒檀面前拿回了那杯特调，开始想办法让它重新融成酒。\n这很困难，尤其是当身旁的萨满还孜孜不倦地让杯中酒水保持冰冷时。\n一场偶遇，成了一场角力。\n一个想要破冰的乌萨斯，和一个封在冰中的菲林。\n他们耗了很久，直到酒吧常客都离开，直到酒保准备打烊。\n最终，为了赶走这两个人，酒保拿走了那杯冰酒。\n无声的争斗暂时落下帷幕。\n寒檀一言不发准备离开，而那位“乌萨斯”却突然叫住了寒檀——以一个她十分熟悉的声音。\n她在罗德岛上的第一个朋友，一个干员，一位菲林。\n寒檀回过头去，发现她刚刚摘下伪装，露出了菲林耳朵。\n她伪装了性别、性格，尤其种族，寒檀知道她在这方面的特长，她不接受这样的恶作剧。\n“所以如果是我，你就能喝下这杯酒？”她不知道从哪里变出了一杯特调，顶上还燃着冰蓝色的火焰。\n“如果我是个乌萨斯，我们甚至不能成为朋友？\n“这就是你吗，寒檀，把一个国家给你的苦难丢给一个善良的陌生人，只因他长了一对圆圆的耳朵？”\n寒檀本来想斥责她儿戏与不负责任，但看着她湿漉漉的头发，又联想到自己的行为，寒檀没有反驳。\n她的仇恨没那么容易平息，但与此同时，她也是个理智的人。\n“来一点吗？”菲林喝下半杯特调，吐出了蓝色的火焰，随后，她把剩下的半杯递给了寒檀。\n寒檀接过杯子一饮而尽。\n当她再次张口时，明亮的火光在空中转瞬即逝。",
+        "typeIcon": "spc-y",
+        "typeName1": "SPC",
+        "typeName2": "Y",
+        "equipShiningColor": "grey",
+        "showEvolvePhase": "PHASE_2",
+        "unlockEvolvePhase": "PHASE_2",
+        "charId": "char_341_sntlla",
+        "tmplId": null,
+        "showLevel": 1,
+        "unlockLevel": 50,
+        "unlockFavorPoint": 10070,
+        "missionList": [
+          "uniequip_002_sntlla_1",
+          "uniequip_002_sntlla_2"
+        ],
+        "itemCost": {
+          "1": [
+            {
+              "id": "mod_unlock_token",
+              "count": 2,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "31024",
+              "count": 3,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 40000,
+              "type": "GOLD"
+            }
+          ],
+          "2": [
+            {
+              "id": "mod_unlock_token",
+              "count": 2,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "mod_update_token_1",
+              "count": 20,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30034",
+              "count": 4,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 50000,
+              "type": "GOLD"
+            }
+          ],
+          "3": [
+            {
+              "id": "mod_unlock_token",
+              "count": 2,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "mod_update_token_2",
+              "count": 8,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "30024",
+              "count": 5,
+              "type": "MATERIAL"
+            },
+            {
+              "id": "4001",
+              "count": 60000,
+              "type": "GOLD"
+            }
+          ]
+        },
+        "type": "ADVANCED",
+        "uniEquipGetTime": 1688616000,
+        "charEquipOrder": 2
+      } 
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var buildingskill = {
+      "skill": {
+        "charId": "char_1032_excu2",
+        "maxManpower": 8640000,
+        "buffChar": [
+          {
+            "buffData": [
+              {
+                "buffId": "manu_formula_spd[030]",
+                "cond": {
+                  "phase": "PHASE_0",
+                  "level": 1
+                }
+              },
+              {
+                "buffId": "manu_formula_spd[031]",
+                "cond": {
+                  "phase": "PHASE_2",
+                  "level": 1
+                }
+              }
+            ]
+          },
+          {
+            "buffData": [
+              {
+                "buffId": "manu_formula_limit[020]",
+                "cond": {
+                  "phase": "PHASE_2",
+                  "level": 1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "b1": {
+        "buffId": "manu_formula_spd[030]",
+        "buffName": "公证所教习α",
+        "buffIcon": "manufacture",
+        "skillIcon": "bskill_man_exp4",
+        "sortId": 3821,
+        "buffColor": "#ffd800",
+        "textColor": "#333333",
+        "buffCategory": "OUTPUT",
+        "roomType": "MANUFACTURE",
+        "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+20%</>"
+      },
+      "b2": {
+        "buffId": "manu_formula_spd[031]",
+        "buffName": "公证所教习β",
+        "buffIcon": "manufacture",
+        "skillIcon": "bskill_man_exp2",
+        "sortId": 3822,
+        "buffColor": "#ffd800",
+        "textColor": "#333333",
+        "buffCategory": "OUTPUT",
+        "roomType": "MANUFACTURE",
+        "description": "进驻制造站时，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+30%</>"
+      },
+      "c1": {
+        "buffId": "manu_formula_limit[020]",
+        "buffName": "合理利用",
+        "buffIcon": "manufacture",
+        "skillIcon": "bskill_man_exp&limit3",
+        "sortId": 3303,
+        "buffColor": "#ffd800",
+        "textColor": "#333333",
+        "buffCategory": "OUTPUT",
+        "roomType": "MANUFACTURE",
+        "description": "进驻制造站时，生产<@cc.kw>作战记录</>类配方时，仓库容量上限<@cc.vup>+4</>"
+      }
+    };
+    //任务
+    if (Boolean(uniequip.a1) == true) {
+      df1.innerHTML = uniequip.a1.uniEquipName;
+      df2.innerHTML = uniequip.a1.typeName1;
+      df3.innerHTML = taicireplace(uniequip.a1.uniEquipDesc);
+      $("#df4").html(operator(uniequip.a1.charId));
+      $("#df5").html(operator(uniequip.a2.charId));
+    }
+    $.getJSON("/zh_CN/gamedata/excel/uniequip_table.json", function (uniequipMission1) {
+      var id = [];
+      var desc = [];
+      for (x in uniequipMission1.missionList) {
+        id.push(uniequipMission1.missionList[x].uniEquipMissionId);
+        desc.push(uniequipMission1.missionList[x].desc);
+      }
+      for (let i = 0; i < id.length; i++) {
+        if (uniequip.a2.missionList[0] == id[i]) {
+          $("#r16").html(desc[i] + ";" + "&#60br/&#62");
+          $("#a52").html(desc[i]);
+        }
+        if (uniequip.a2.missionList[1] == id[i]) {
+          $("#r16").html($("#r16").html() + desc[i] + ";");
+          $("#a53").html(desc[i]);
+        }
+      }
+    })
+
+    var time = new Date(uniequip.a1.uniEquipGetTime * 1000);
+    var time2 = new Date(uniequip.a2.uniEquipGetTime * 1000);
+    function checkTimeAvailble(obj) {
+      if (obj < 10) {
+        return "0" + obj;
+      } else {
+        return obj;
+      }
+    };
+    // 时间
+    $("#r25").html(time.getFullYear() + "年" +
+      checkTimeAvailble(time.getMonth() + 1) + "月" +
+      checkTimeAvailble(time.getDate()) + "日");
+    $("#r23").html(time2.getFullYear() + "年" +
+      checkTimeAvailble(time2.getMonth() + 1) + "月" +
+      checkTimeAvailble(time2.getDate()) + "日");
+    $("#r24").html($("#r23").html());
+    //属性
+    for (x in uniequip) {
+      // console.log(uniequip[x].hasOwnProperty("phases"))
+      if (!uniequip[x].hasOwnProperty("phases") == true) {
+        continue;
+      }
+      // 模组特性
+      // a10.innerHTML = replaceStr(uniequip[x].phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription);
+      // 模组特性
+      // a11.innerHTML = tampLen(uniequip[x].phases[0].parts[1].addOrOverrideTalentDataBundle.candidates[0].rangeId);
+      // 基础数值加成
+      // a12.innerHTML = attReplace(uniequip[x].phases[0].attributeBlackboard[0].key) + "{{color|0098DC|+" + uniequip[x].phases[0].attributeBlackboard[0].value + "}}" + "<br/>" +
+      attReplace(uniequip[x].phases[0].attributeBlackboard[1].key) + "{{color|0098DC|+" + uniequip[x].phases[0].attributeBlackboard[1].value + "}}";
+      // 数值变化
+      // a55.innerHTML = attReplace(uniequip[x].phases[0].attributeBlackboard[0].key) + "{{color|0098DC|+" + uniequip[x].phases[0].attributeBlackboard[0].value + "}}" + "<br/>" +
+      //   attReplace(uniequip[x].phases[0].attributeBlackboard[1].key) + "{{color|0098DC|+" + uniequip[x].phases[0].attributeBlackboard[1].value + "}}";
+      // 分支更新
+
+    }
+    // 解锁材料
+    // a8.innerHTML = "{{data|" + ms(uniequip.a2.itemCost[0].id) + "|" + uniequip.a2.itemCost[0].count + "}}" +
+    //     "{{data|" + ms(uniequip.a2.itemCost[1].id) + "|" + uniequip.a2.itemCost[1].count + "}}" +
+    //     "{{data|" + ms(uniequip.a2.itemCost[2].id) + "|" + uniequip.a2.itemCost[2].count + "}}";
+
+
+    // 解锁等级
+    // a9.innerHTML = "精英" + uniequip.a2.unlockEvolvePhase +
+    //     " " + "Lv." + uniequip.a2.unlockLevel;
+    // 模组描述
+    // a13.innerHTML = taicireplace(uniequip.a2.uniEquipDesc);
+    // 模组名
+    $("#a51").html(uniequip.a2.uniEquipName);
+    for (let i = 0; i < uniequip.a2.itemCost["1"].length; i++) {
+      // 模组解锁材料
+      $("#a54").html($("#a54").html() + "{{data|" + ms(uniequip.a2.itemCost['1'][i].id) + "|" + uniequip.a2.itemCost['1'][i].count + "}}");
+    }
+
+    // 名称   开始  结束
+    function sliceStr(a1, a2, a3) {
+      return a1.slice(a2, a3);
+    }
+
+    $.getJSON("/zh_CN/gamedata/excel/battle_equip_table.json", function (uniequipData1) {
+      $.each(uniequipData1, function (i, v) {
+        if (i == uniequip.a2.uniEquipId) {
+          for (let i = 0; i < v.phases[0].attributeBlackboard.length; i++) {
+            // 基础数值
+            r1.innerHTML += attReplace(v.phases[0].attributeBlackboard[i].key) + "{{color|0098DC|" + " + " +
+              v.phases[0].attributeBlackboard[i].value + "}}" + ",";
+            a55.innerHTML += attReplace(v.phases[0].attributeBlackboard[i].key) + "{{color|0098DC|" + " + " +
+              v.phases[0].attributeBlackboard[i].value + "}}" + "&#060;br/&#062;";
+          }
+          // 去除最后的点
+          r1.innerHTML = sliceStr(r1.innerHTML, 0, -1);
+          // 天赋名
+          // if (v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].name != null) {
+          //   r2.innerHTML = v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[1].name;
+          // } else {
+          //   if (v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates == null && v.phases[1].parts.length >= 2) {
+          //     $("#r2").html(v.phases[1].parts[2].addOrOverrideTalentDataBundle.candidates[0].name);
+          //   } else {
+          //     $("#r2").html(v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates[0].name);
+          //   }
+          // }
+
+
+          if (v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates.length == 1 && v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates[0].name != null) {
+            $("#r2").html(v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates[0].name)
+          } else {
+            if (v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates.length > 1 && v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates[1].name != null) {
+              $("#r2").html(v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates[1].name)
+            } else {
+              if (v.phases[1].parts[2].addOrOverrideTalentDataBundle.candidates.length == 1 && v.phases[1].parts[2].addOrOverrideTalentDataBundle.candidates[0].name != null) {
+                $("#r2").html(v.phases[1].parts[2].addOrOverrideTalentDataBundle.candidates[0].name)
+              } else {
+                $("#r2").html(v.phases[1].parts[2].addOrOverrideTalentDataBundle.candidates[1].name)
+              }
+            }
+          }
+
+
+
+          // 天赋描述
+          try {
+            $("#r3").html(replaceStr(talents($("#r2").html())));
+            $("#r3").html($("#r3").html().slice(0, -4));
+            // 潜能效果
+            if (proTalents($("#r2").html()) != undefined) {
+              $("#rqrr1").html(sliceStr(replaceStr(proTalents($("#r2").html())), 0, -5));
+            }
+            // 潜能等级
+            $("#rqrr2").html(proRank($("#r2").html()) + 1);
+
+          } catch (error) {
+            console.log(123);
+          }
+          // 新增
+          if (v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].talentIndex != -1) {
+            $("#rqrr3").html("否");
+          } else {
+            $("#rqrr3").html("是");
+          }
+          for (let i = 0; i < v.phases[0].attributeBlackboard.length; i++) {
+            // 基础数值2
+            r5.innerHTML += attReplace(v.phases[1].attributeBlackboard[i].key) + "{{color|0098DC|" + " + " +
+              v.phases[1].attributeBlackboard[i].value + "}}" + ",";
+          }
+          // 去除最后的点
+          r5.innerHTML = sliceStr(r5.innerHTML, 0, -1);
+          // 天赋名2
+          // if (v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].name != null) {
+          //   r6.innerHTML = v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].name;
+          // } else {
+          //   if (v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates == null && v.phases[1].parts.length > 2) {
+          //     $("#r6").html(v.phases[1].parts[2].addOrOverrideTalentDataBundle.candidates[0].name);
+          //   } else {
+          //     $("#r6").html(v.phases[1].parts[1].addOrOverrideTalentDataBundle.candidates[0].name);
+          //   }
+          // }
+          $("#r6").html($("#r2").html());
+          // 天赋描述2
+          if (v.phases[1].parts.length > 1) {
+            if (v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription == "") {
+              $("#r7").html(sliceStr(replaceStr(v.phases[1].parts[v.phases[1].parts.length - 2].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+            } else {
+              $("#r7").html(sliceStr(replaceStr(v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+            }
+          } else {
+            $("#r7").html(sliceStr(replaceStr(v.phases[1].parts[0].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+          }
+          // 潜能效果2
+          if (v.phases[1].parts.length > 1) {
+            if (v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates.length > 1) {
+              if (v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription == "") {
+                console.log(456)
+                $("#rqrr4").html(sliceStr(replaceStr(v.phases[1].parts[v.phases[1].parts.length - 2].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+              } else {
+                $("#rqrr4").html(sliceStr(replaceStr(v.phases[1].parts[v.phases[1].parts.length - 1].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+              }
+            } else {
+              if (v.phases[1].parts[v.phases[1].parts.length - 2].addOrOverrideTalentDataBundle.candidates != null) {
+                if (v.phases[1].parts[v.phases[1].parts.length - 2].addOrOverrideTalentDataBundle.candidates.length > 1) {
+                  $("#rqrr4").html(sliceStr(replaceStr(v.phases[1].parts[v.phases[1].parts.length - 2].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+                } else {
+                  $("#rqrr4").html(sliceStr(replaceStr(v.phases[1].parts[v.phases[1].parts.length - 2].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+
+                }
+              }
+            }
+          } else {
+            if (v.phases[1].parts[0].addOrOverrideTalentDataBundle.candidates.length > 1) {
+              $("#rqrr4").html(sliceStr(replaceStr(v.phases[1].parts[0].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+            }
+          }
+
+          if ($("#r7").html() == $("#rqrr4").html()) {
+            $("#rqrr4").html("");
+          }
+          // 潜能等级2
+          $("#rqrr5").html($("#rqrr2").html());
+          // 新增2
+          $("#rqrr6").html($("#rqrr3").html());
+          for (let i = 0; i < v.phases[0].attributeBlackboard.length; i++) {
+            // 基础数值3
+            r9.innerHTML += attReplace(v.phases[2].attributeBlackboard[i].key) + "{{color|0098DC|" + " + " +
+              v.phases[2].attributeBlackboard[i].value + "}}" + ",";
+          }
+          // 去除最后的点
+          r9.innerHTML = sliceStr(r9.innerHTML, 0, -1);
+          // 天赋名3
+          // if (v.phases[2].parts[v.phases[2].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].name != null) {
+          //   r10.innerHTML = v.phases[2].parts[v.phases[2].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].name;
+          // } else {
+          //   if (v.phases[2].parts[1].addOrOverrideTalentDataBundle.candidates == null) {
+          //     $("#r10").html(v.phases[2].parts[2].addOrOverrideTalentDataBundle.candidates[0].name)
+          //   } else {
+          //     $("#r10").html(v.phases[2].parts[1].addOrOverrideTalentDataBundle.candidates[0].name)
+          //   }
+          // }
+          $("#r10").html($("#r2").html());
+          // 天赋描述3
+          if (v.phases[2].parts.length > 1) {
+            if (v.phases[2].parts[v.phases[2].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription == "") {
+              $("#r11").html(sliceStr(replaceStr(v.phases[2].parts[v.phases[2].parts.length - 2].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+            } else {
+              $("#r11").html(sliceStr(replaceStr(v.phases[2].parts[v.phases[2].parts.length - 1].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+            }
+          } else {
+            $("#r11").html(sliceStr(replaceStr(v.phases[2].parts[0].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+          }
+          // 潜能效果3
+          if (v.phases[2].parts.length > 1) {
+            if (v.phases[2].parts[v.phases[2].parts.length - 1].addOrOverrideTalentDataBundle.candidates.length > 1) {
+              if (v.phases[2].parts[v.phases[2].parts.length - 1].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription == "") {
+                $("#rqrr7").html(sliceStr(replaceStr(v.phases[2].parts[v.phases[2].parts.length - 2].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+              } else {
+                $("#rqrr7").html(sliceStr(replaceStr(v.phases[2].parts[v.phases[2].parts.length - 1].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+              }
+            } else {
+              if (v.phases[2].parts[v.phases[2].parts.length - 2].addOrOverrideTalentDataBundle.candidates != null) {
+                if (v.phases[2].parts[v.phases[2].parts.length - 2].addOrOverrideTalentDataBundle.candidates.length > 1) {
+                  $("#rqrr7").html(sliceStr(replaceStr(v.phases[2].parts[v.phases[2].parts.length - 2].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+                } else {
+                  $("#rqrr7").html(sliceStr(replaceStr(v.phases[2].parts[v.phases[2].parts.length - 2].addOrOverrideTalentDataBundle.candidates[0].upgradeDescription), 0, -5));
+                }
+              }
+            }
+          } else {
+            if (v.phases[2].parts[0].addOrOverrideTalentDataBundle.candidates.length > 1) {
+              $("#rqrr7").html(sliceStr(replaceStr(v.phases[2].parts[0].addOrOverrideTalentDataBundle.candidates[1].upgradeDescription), 0, -5));
+            }
+          }
+
+          if ($("#r11").html() == $("#rqrr7").html()) {
+            $("#rqrr7").html("");
+          }
+          // 潜能等级3
+          $("#rqrr8").html($("#rqrr2").html());
+          // 新增3
+          $("#rqrr9").html($("#rqrr3").html());
+          // 特性
+          var attut = {};
+          for (let i = 0; i < v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].blackboard.length; i++) {
+            attut[v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].blackboard[i].key] = v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].blackboard[i].value;
+          }
+          if (v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription != null) {
+            r19.innerHTML = replaceStr(v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription).format(attut);
+          } else if (v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].overrideDescripton != null) {
+            r19.innerHTML = replaceStr(v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].overrideDescripton).format(attut);
+          }
+          r18.innerHTML = "精英化2 Lv." + v.phases[0].parts[0].overrideTraitDataBundle.candidates[0].unlockCondition.level;
+          // 攻击范围
+          if (v.phases[0].parts.length > 1) {
+            if (v.phases[0].parts[1].addOrOverrideTalentDataBundle.candidates != null) {
+              if (v.phases[0].parts[1].addOrOverrideTalentDataBundle.candidates[0].rangeId != null) {
+                $("#rg").html("|攻击范围=" + rangeLen(v.phases[0].parts[1].addOrOverrideTalentDataBundle.candidates[0].rangeId) + "<br/>")
+              }
+            }
+          }
+        }
+      });
+
+      r19.innerHTML = r19.innerHTML.slice(0, -4);
+
+      // 升级材料2
+      for (let i = 0; i < uniequip.a2.itemCost['2'].length; i++) {
+        // r8.innerHTML += "{{data|" + ms(uniequip.a2.itemCost['2'][i].id) + "|" + uniequip.a2.itemCost['2'][i].count + "}}";
+        r8.innerHTML += ms(uniequip.a2.itemCost['2'][i].id) + "*" + uniequip.a2.itemCost['2'][i].count + ",";
+      }
+      r8.innerHTML = sliceStr(r8.innerHTML, 0, -1);
+      // 升级材料3
+      for (let i = 0; i < uniequip.a2.itemCost['3'].length; i++) {
+        r12.innerHTML += ms(uniequip.a2.itemCost['3'][i].id) + "*" + uniequip.a2.itemCost['3'][i].count + ",";
+      }
+      r12.innerHTML = sliceStr(r12.innerHTML, 0, -1);
+      // 描述
+      r13.innerHTML = taicireplace(uniequip.a2.uniEquipDesc);
+      // 模组名
+      r21.innerHTML = uniequip.a2.uniEquipName;
+      r14.innerHTML = r21.innerHTML;
+      // 模组类型
+      r15.innerHTML = uniequip.a2.typeName1 + "-" + uniequip.a2.typeName2;
+      // // 任务
+      // for (x in uniequipMission) {
+      //   r16.innerHTML += uniequipMission[x].desc + ";" + "&#60br/&#62";
+      // }
+      // // 去除最后的<br/>
+      // r16.innerHTML = sliceStr(r16.innerHTML, 0, -11);
+      // 解锁材料
+      for (let i = 0; i < uniequip.a2.itemCost['1'].length; i++) {
+        r17.innerHTML += ms(uniequip.a2.itemCost['1'][i].id) + "*" + uniequip.a2.itemCost['1'][i].count + ",";
+      }
+      r17.innerHTML = sliceStr(r17.innerHTML, 0, -1);
+
+      r20.innerHTML = r1.innerHTML;
+
+      // a52.innerHTML = r16.innerHTML;
+
+      a55.innerHTML = a55.innerHTML.slice(0, -11);
+      a56.innerHTML = r19.innerHTML;
+
+      // 默认模组
+
+
+      // 材料总计
+      // 数据块
+      var modt = uniequip.a2.itemCost['1'][0].count +
+        uniequip.a2.itemCost['2'][0].count +
+        uniequip.a2.itemCost['3'][0].count;
+      //龙门币
+      var money = uniequip.a2.itemCost['1'][2].count +
+        uniequip.a2.itemCost['2'][3].count +
+        uniequip.a2.itemCost['3'][3].count;
+      // 增补条
+      var modt2 = uniequip.a2.itemCost['2'][1].count;
+      // 增补仪
+      var modt3 = uniequip.a2.itemCost['3'][1].count;
+      // 合计
+      r22.innerHTML = ms(uniequip.a2.itemCost['1'][0].id) + "*" + modt + "," +
+        ms(uniequip.a2.itemCost['2'][1].id) + "*" + modt2 + "," +
+        ms(uniequip.a2.itemCost['3'][1].id) + "*" + modt3 + "," +
+        ms(uniequip.a2.itemCost['1'][1].id) + "*" + uniequip.a2.itemCost['1'][1].count + "," +
+        ms(uniequip.a2.itemCost['2'][2].id) + "*" + uniequip.a2.itemCost['2'][2].count + "," +
+        ms(uniequip.a2.itemCost['3'][2].id) + "*" + uniequip.a2.itemCost['3'][2].count + "," +
+        ms(uniequip.a2.itemCost['3'][3].id) + "*" + money;
+    })
+    // equipId
+    $("#l1").html(uniequip.a1.uniEquipId);
+    $("#l2").html(uniequip.a2.uniEquipId);
+    $("#sq1").html(uniequip.a1.uniEquipId.substr(uniequip.a1.uniEquipId.indexOf("_") + 3, 1) - 1);
+    $("#sq2").html((uniequip.a2.uniEquipId.substr(uniequip.a2.uniEquipId.indexOf("_") + 3, 1)) - 1);
+    $("#name0").html(operator(uniequip.a1.charId) + "/模组" + $("#sq1").html());
+    $("#name1").html(operator(uniequip.a2.charId) + "/模组" + $("#sq2").html());
+    function skill(obj) {
+      switch (obj) {
+        case 0:
+          return "初始携带";
+        case 1:
+          return "精英化1";
+        case 2:
+          return "精英化2";
+      }
+    }
+
+  </script>
+</body>
+
+</html>

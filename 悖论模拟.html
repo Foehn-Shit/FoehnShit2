@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  {{悖论模拟<br />
+  |干员=<span id="a1"></span><br />
+  |stageId=<span id="a11"></span><br />
+  |关卡名=<span id="a2"></span><br />
+  |备注=<span id="a3"></span><br />
+  |关卡解锁条件=<span id="a4"></span><br />
+  |首次掉落=<span id="a5"></span><br />
+  |己方情报=<span id="a6"></span><br />
+  |敌方情报=<span id="a7"></span><br />
+  |介绍=<span id="a8"></span><br />
+  |视频攻略=<span id="a9"></span><br />
+  |mapTag=<span id="a10"></span>&#060!--在关卡数据中查找 tag ，如果没有不用写，有就原样挪过来 多个tag使用顿号隔开--&#062<br />
+  }}
+  <script src="/js/jQuery.js"></script>
+  <script src="/js/skill.js"></script>
+  <script src="/js/uniequip.js"></script>
+  <script src="/js/operator.js"></script>
+  <script src="/js/replaceStr.js"></script>
+  <script src="/js/taicireplace.js"></script>
+  <script src="/js/enemyId.js"></script>
+  <script>
+    var stage = {
+      "char_135_halo": {
+        "charId": "char_135_halo",
+        "stageId": "mem_halo_1",
+        "levelId": "Obt/Memory/level_memory_halo_1",
+        "zoneId": "storyMission",
+        "code": "mem_halo_1",
+        "name": "群星闪烁相映",
+        "loadingPicId": "loading_DV_Headquarters",
+        "description": "埃琳娜甚至不用回头，就能知道姐姐一定会在背后守护着她，而她也会因此更加确信，不论何时，不论何地，总有一处真心的温暖仍然在支持自己。",
+        "unlockParam": [
+          {
+            "unlockType": "AWAKE",
+            "unlockParam1": "2",
+            "unlockParam2": "1",
+            "unlockParam3": null
+          }
+        ],
+        "rewardItem": [
+          {
+            "id": "4003",
+            "count": 200,
+            "type": "DIAMOND_SHD"
+          }
+        ],
+        "stageNameForShow": "特里蒙",
+        "zoneNameForShow": "哥伦比亚",
+        "picId": "story_loading_DV_Headquarters",
+        "stageGetTime": 1689667200
+      }
+    };
+
+    let phaseL = obj => {
+      switch (obj) {
+        case "PHASE_0":
+          return 0;
+        case "PHASE_1":
+          return 1;
+        case "PHASE_2":
+          return 2;
+      }
+      return obj;
+    }
+
+
+
+
+    $.ajaxSettings.async = false;
+    for (let g in stage) {
+      a1.innerHTML = operator(stage[g].charId);
+      $("#a11").html(stage[g].stageId);
+      a2.innerHTML = stage[g].name;
+      a4.innerHTML = "[[文件:精英化" + stage[g].unlockParam[0].unlockParam1 + "logo.png|30px|link=]]提升至精英阶段" + stage[g].unlockParam[0].unlockParam1 +
+        "等级" + stage[g].unlockParam[0].unlockParam2;
+      a5.innerHTML = "{{data|合成玉|200}}";
+      a8.innerHTML = replaceStr(stage[g].description);
+      //去点
+      a8.innerHTML = a8.innerHTML.slice(0, -1);
+      var charBasisName = stage[g].charId;
+      $.getJSON("/zh_CN/gamedata/levels/obt/memory/level_memory_" + stage[g].charId.substring(stage[g].charId.lastIndexOf("_") + 1) + "_1.json", function (data) {
+        if (data.predefines.characterCards.length != 0 ||
+          data.predefines.characterInsts.length != 0 ||
+          data.predefines.tokenInsts.length != 0) {
+          a3.innerHTML = "<以左下地块为（1,1）,坐标（y,x）>&#60;br/&#62;" + "<br/>";
+          // 可部署人员
+          if (data.predefines.characterCards.length != 0) {
+            a3.innerHTML += "可部署干员:&#60;br/&#62;";
+            for (let i = 0; i < data.predefines.characterCards.length; i++) {
+              if (operator(data.predefines.characterCards[i].inst.characterKey) != a1.innerHTML) {
+                a3.innerHTML += "<br/>*{{头像|" + (operator(data.predefines.characterCards[i].inst.characterKey)) + "}}：精英阶段" + phaseL(data.predefines.characterCards[i].inst.phase) + ",等级" + data.predefines.characterCards[i].inst.level + ",信赖" +
+                  data.predefines.characterCards[i].inst.favorPoint * 1e8 / 1e8 * 2 + "%" + rank(data.predefines.characterCards[i].inst.potentialRank) + "," +
+                  "携带" + data.predefines.characterCards[i].mainSkillLvl + "级【" + checkSkill(data.predefines.characterCards[i].inst.characterKey, data.predefines.characterCards[i].skillIndex) + "】技能"
+                if (data.predefines.characterCards[i].uniEquipIds != null) {
+                  a3.innerHTML += ",装备" + data.predefines.characterCards[i].uniEquipIds[0].level +
+                    "级[[" + operator(data.predefines.characterCards[i].inst.characterKey) +
+                    "\/模组" + ((data.predefines.characterCards[i].uniEquipIds[0].key).slice(11, 12) - 1) +
+                    "|" + uniequip(data.predefines.characterCards[i].uniEquipIds[0].key) + "]]模组";
+                };
+              }
+            }
+          };
+          // 已部署
+          if (data.predefines.characterInsts.length != 0) {
+            a3.innerHTML += "<br/>已部署干员:&#60;br/&#62;"
+            for (let i = 0; i < data.predefines.characterInsts.length; i++) {
+              a3.innerHTML += "<br/>*{{头像|" + operator(data.predefines.characterInsts[i].inst.characterKey) + "}}：位于(" + data.predefines.characterInsts[i].position.row + "," + data.predefines.characterInsts[i].position.col + "),精英阶段" + data.predefines.characterInsts[i].inst.phase + "等级" + data.predefines.characterInsts[i].inst.level + ",信赖" +
+                data.predefines.characterInsts[i].inst.favorPoint * 1e8 / 1e8 * 2 + "%" + rank(data.predefines.characterInsts[i].inst.potentialRank) + "," +
+                "携带" + data.predefines.characterInsts[i].mainSkillLvl + "级【" + checkSkill(data.predefines.characterInsts[i].inst.characterKey, data.predefines.characterInsts[i].skillIndex) + "】技能";
+              if (data.predefines.characterInsts[i].uniEquipIds != null) {
+                a3.innerHTML += ",装备" + data.predefines.characterInsts[i].uniEquipIds[0].level +
+                  "级[[" + operator(data.predefines.characterInsts[i].inst.characterKey) +
+                  "\/模组" + ((data.predefines.characterInsts[i].uniEquipIds[0].key).slice(11, 12) - 1) +
+                  "|" + uniequip(data.predefines.characterInsts[i].uniEquipIds[0].key) + "]]模组" + charDirection(data.predefines.characterInsts[i].direction);
+              } else {
+                a3.innerHTML += charDirection(data.predefines.characterInsts[i].direction)
+              }
+            }
+          }
+          // 已部署装置
+          function ifLevel1(obj) {
+            if (obj == 1) {
+              return ""
+            } else {
+              return ",等级" + obj
+            }
+          }
+          if (data.predefines.tokenInsts.length != 0) {
+            for (let u = 0; u < data.predefines.tokenInsts.length; u++) {
+              a3.innerHTML += "<br/>&#60;br/&#62;<[[" + operator(data.predefines.tokenInsts[u].inst.characterKey) + "]]>:" +
+                "位于(" + data.predefines.tokenInsts[u].position.row + "," + data.predefines.tokenInsts[u].position.col + ")" +
+                charDirection(data.predefines.tokenInsts[u].direction);
+            }
+          }
+          // 可部署装置
+          if (data.predefines.tokenCards.length != 0) {
+            for (let u = 0; u < data.predefines.tokenCards.length; u++) {
+              a3.innerHTML += "<br/>&#60;br/&#62;<br/>*" + "可使用" + data.predefines.tokenCards[u].initialCnt + "个[[" + operator(data.predefines.tokenCards[u].inst.characterKey) + "]]";
+            }
+          }
+        };
+        if (data.predefines.characterCards != null) {
+          for (let j = 0; j < data.predefines.characterCards.length; j++) {
+            if (operator(data.predefines.characterCards[j].inst.characterKey) != a1.innerHTML) {
+              a6.innerHTML += operator(data.predefines.characterCards[j].inst.characterKey) + "、";
+            }
+          }
+          a6.innerHTML = a6.innerHTML.slice(0, -1);
+        }
+        for (let m = 0; m < data.enemyDbRefs.length; m++) {
+          a7.innerHTML += enemyId(data.enemyDbRefs[m].id) + "、"
+        }
+        a7.innerHTML = a7.innerHTML.slice(0, -1);
+        if (data.mapData.tags != null) {
+          a10.innerHTML = data.mapData.tags;
+        }
+      })
+    }
+    // 备注
+    function rank(obj) {
+      if (obj == 0) {
+        return ""
+      } else {
+        return ",潜能等级" + (obj + 1)
+      }
+    }
+    function charDirection(obj) {
+      switch (obj) {
+        case 0:
+        case "UP":
+          return ",方向向上";
+        case 1:
+        case "RIGHT":
+          return ",方向向右";
+        case 2:
+        case "DOWN":
+          return ",方向向下";
+        case 3:
+        case "LEFT":
+          return ",方向向左";
+      }
+    };
+
+  </script>
+</body>
+
+</html>

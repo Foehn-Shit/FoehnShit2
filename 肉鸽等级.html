@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <script src="/js/jQuery.js"></script>
+    <script src="/js/cailiao.js"></script>
+    <script>
+        var level =  [
+            {
+              "id": "bp_level_1",
+              "level": 1,
+              "tokenNum": 200,
+              "nextTokenNum": 400,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 20000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_2",
+              "level": 2,
+              "tokenNum": 400,
+              "nextTokenNum": 600,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_3",
+              "level": 3,
+              "tokenNum": 600,
+              "nextTokenNum": 800,
+              "itemID": "30103",
+              "itemType": "MATERIAL",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_4",
+              "level": 4,
+              "tokenNum": 800,
+              "nextTokenNum": 1000,
+              "itemID": "3301",
+              "itemType": "MATERIAL",
+              "itemCount": 30,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_5",
+              "level": 5,
+              "tokenNum": 1000,
+              "nextTokenNum": 1200,
+              "itemID": "30064",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_6",
+              "level": 6,
+              "tokenNum": 1200,
+              "nextTokenNum": 1400,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 20000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_7",
+              "level": 7,
+              "tokenNum": 1400,
+              "nextTokenNum": 1600,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_8",
+              "level": 8,
+              "tokenNum": 1600,
+              "nextTokenNum": 1800,
+              "itemID": "31043",
+              "itemType": "MATERIAL",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_9",
+              "level": 9,
+              "tokenNum": 1800,
+              "nextTokenNum": 2000,
+              "itemID": "3302",
+              "itemType": "MATERIAL",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_10",
+              "level": 10,
+              "tokenNum": 2000,
+              "nextTokenNum": 2200,
+              "itemID": "30094",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_11",
+              "level": 11,
+              "tokenNum": 2200,
+              "nextTokenNum": 2400,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 20000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_12",
+              "level": 12,
+              "tokenNum": 2400,
+              "nextTokenNum": 2625,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_13",
+              "level": 13,
+              "tokenNum": 2625,
+              "nextTokenNum": 2850,
+              "itemID": "30023",
+              "itemType": "MATERIAL",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_14",
+              "level": 14,
+              "tokenNum": 2850,
+              "nextTokenNum": 3075,
+              "itemID": "3303",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_15",
+              "level": 15,
+              "tokenNum": 3075,
+              "nextTokenNum": 3300,
+              "itemID": "31024",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_16",
+              "level": 16,
+              "tokenNum": 3300,
+              "nextTokenNum": 3525,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 20000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_17",
+              "level": 17,
+              "tokenNum": 3525,
+              "nextTokenNum": 3750,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_18",
+              "level": 18,
+              "tokenNum": 3750,
+              "nextTokenNum": 3975,
+              "itemID": "31054",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_19",
+              "level": 19,
+              "tokenNum": 3975,
+              "nextTokenNum": 4200,
+              "itemID": "3301",
+              "itemType": "MATERIAL",
+              "itemCount": 30,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_20",
+              "level": 20,
+              "tokenNum": 4200,
+              "nextTokenNum": 4450,
+              "itemID": "30135",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_21",
+              "level": 21,
+              "tokenNum": 4450,
+              "nextTokenNum": 4700,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 30000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_22",
+              "level": 22,
+              "tokenNum": 4700,
+              "nextTokenNum": 4950,
+              "itemID": "30024",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_23",
+              "level": 23,
+              "tokenNum": 4950,
+              "nextTokenNum": 5200,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 15,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_24",
+              "level": 24,
+              "tokenNum": 5200,
+              "nextTokenNum": 5450,
+              "itemID": "30054",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_25",
+              "level": 25,
+              "tokenNum": 5450,
+              "nextTokenNum": 5700,
+              "itemID": "char_4102_threye",
+              "itemType": "CHAR",
+              "itemCount": 1,
+              "isGoodPrize": false,
+              "isGrandPrize": true
+            },
+            {
+              "id": "bp_level_26",
+              "level": 26,
+              "tokenNum": 5700,
+              "nextTokenNum": 5950,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 30000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_27",
+              "level": 27,
+              "tokenNum": 5950,
+              "nextTokenNum": 6200,
+              "itemID": "30145",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_28",
+              "level": 28,
+              "tokenNum": 6200,
+              "nextTokenNum": 6475,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 15,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_29",
+              "level": 29,
+              "tokenNum": 6475,
+              "nextTokenNum": 6750,
+              "itemID": "30104",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_30",
+              "level": 30,
+              "tokenNum": 6750,
+              "nextTokenNum": 7025,
+              "itemID": "p_char_4102_threye",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_31",
+              "level": 31,
+              "tokenNum": 7025,
+              "nextTokenNum": 7300,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 30000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_32",
+              "level": 32,
+              "tokenNum": 7300,
+              "nextTokenNum": 7575,
+              "itemID": "31044",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_33",
+              "level": 33,
+              "tokenNum": 7575,
+              "nextTokenNum": 7850,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 15,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_34",
+              "level": 34,
+              "tokenNum": 7850,
+              "nextTokenNum": 8125,
+              "itemID": "30034",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_35",
+              "level": 35,
+              "tokenNum": 8125,
+              "nextTokenNum": 8400,
+              "itemID": "p_char_4102_threye",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_36",
+              "level": 36,
+              "tokenNum": 8400,
+              "nextTokenNum": 8700,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 30000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_37",
+              "level": 37,
+              "tokenNum": 8700,
+              "nextTokenNum": 9000,
+              "itemID": "30115",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_38",
+              "level": 38,
+              "tokenNum": 9000,
+              "nextTokenNum": 9300,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 15,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_39",
+              "level": 39,
+              "tokenNum": 9300,
+              "nextTokenNum": 9600,
+              "itemID": "30084",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_40",
+              "level": 40,
+              "tokenNum": 9600,
+              "nextTokenNum": 9900,
+              "itemID": "p_char_4102_threye",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_41",
+              "level": 41,
+              "tokenNum": 9900,
+              "nextTokenNum": 10200,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 50000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_42",
+              "level": 42,
+              "tokenNum": 10200,
+              "nextTokenNum": 10500,
+              "itemID": "31064",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_43",
+              "level": 43,
+              "tokenNum": 10500,
+              "nextTokenNum": 10825,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 20,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_44",
+              "level": 44,
+              "tokenNum": 10825,
+              "nextTokenNum": 11150,
+              "itemID": "30074",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_45",
+              "level": 45,
+              "tokenNum": 11150,
+              "nextTokenNum": 11475,
+              "itemID": "p_char_4102_threye",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_46",
+              "level": 46,
+              "tokenNum": 11475,
+              "nextTokenNum": 11800,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 50000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_47",
+              "level": 47,
+              "tokenNum": 11800,
+              "nextTokenNum": 12200,
+              "itemID": "30125",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_48",
+              "level": 48,
+              "tokenNum": 12200,
+              "nextTokenNum": 12600,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 20,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_49",
+              "level": 49,
+              "tokenNum": 12600,
+              "nextTokenNum": 13000,
+              "itemID": "30014",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_50",
+              "level": 50,
+              "tokenNum": 13000,
+              "nextTokenNum": 13400,
+              "itemID": "p_char_4102_threye",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_51",
+              "level": 51,
+              "tokenNum": 13400,
+              "nextTokenNum": 13800,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 50000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_52",
+              "level": 52,
+              "tokenNum": 13800,
+              "nextTokenNum": 14200,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 20,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_53",
+              "level": 53,
+              "tokenNum": 14200,
+              "nextTokenNum": 14600,
+              "itemID": "31034",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_54",
+              "level": 54,
+              "tokenNum": 14600,
+              "nextTokenNum": 15000,
+              "itemID": "3301",
+              "itemType": "MATERIAL",
+              "itemCount": 30,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_55",
+              "level": 55,
+              "tokenNum": 15000,
+              "nextTokenNum": 15400,
+              "itemID": "30155",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_56",
+              "level": 56,
+              "tokenNum": 15400,
+              "nextTokenNum": 15800,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 50000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_57",
+              "level": 57,
+              "tokenNum": 15800,
+              "nextTokenNum": 16200,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 20,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_58",
+              "level": 58,
+              "tokenNum": 16200,
+              "nextTokenNum": 16600,
+              "itemID": "mod_update_token_1",
+              "itemType": "MATERIAL",
+              "itemCount": 60,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_59",
+              "level": 59,
+              "tokenNum": 16600,
+              "nextTokenNum": 17000,
+              "itemID": "3302",
+              "itemType": "MATERIAL",
+              "itemCount": 10,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_60",
+              "level": 60,
+              "tokenNum": 17000,
+              "nextTokenNum": 17400,
+              "itemID": "30044",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_61",
+              "level": 61,
+              "tokenNum": 17400,
+              "nextTokenNum": 17800,
+              "itemID": "4001",
+              "itemType": "GOLD",
+              "itemCount": 50000,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_62",
+              "level": 62,
+              "tokenNum": 17800,
+              "nextTokenNum": 18200,
+              "itemID": "2004",
+              "itemType": "CARD_EXP",
+              "itemCount": 20,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_63",
+              "level": 63,
+              "tokenNum": 18200,
+              "nextTokenNum": 18600,
+              "itemID": "30135",
+              "itemType": "MATERIAL",
+              "itemCount": 1,
+              "isGoodPrize": true,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_64",
+              "level": 64,
+              "tokenNum": 18600,
+              "nextTokenNum": 19000,
+              "itemID": "3303",
+              "itemType": "MATERIAL",
+              "itemCount": 3,
+              "isGoodPrize": false,
+              "isGrandPrize": false
+            },
+            {
+              "id": "bp_level_65",
+              "level": 65,
+              "tokenNum": 19000,
+              "nextTokenNum": -1,
+              "itemID": "avatar_activity_RL3_1",
+              "itemType": "PLAYER_AVATAR",
+              "itemCount": 1,
+              "isGoodPrize": false,
+              "isGrandPrize": true
+            }
+          ];
+        for(let i = 0; i < level.length; i++){
+            box1.innerHTML += "|" + level[i].level + "<br/>" + 
+                              "|" + "{{材料|" + ms(level[i].itemID) + "|" + level[i].itemCount + "}}<br/>"
+        };
+    </script>
+</body>
+
+</html>

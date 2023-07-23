@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            text-align: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <p id="a1"></p>
+    <p id="a2"></p>
+    <script src="js/jQuery.js"></script>
+    <script>
+        var a = {
+            "rogue_3_relic_legacy_16": {
+              "relicId": "rogue_3_relic_legacy_16",
+              "relicSortId": 1,
+              "relicGroupId": 1,
+              "orderId": "001",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_17": {
+              "relicId": "rogue_3_relic_legacy_17",
+              "relicSortId": 2,
+              "relicGroupId": 1,
+              "orderId": "002",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_18": {
+              "relicId": "rogue_3_relic_legacy_18",
+              "relicSortId": 3,
+              "relicGroupId": 1,
+              "orderId": "003",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_19": {
+              "relicId": "rogue_3_relic_legacy_19",
+              "relicSortId": 4,
+              "relicGroupId": 1,
+              "orderId": "004",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_22": {
+              "relicId": "rogue_3_relic_legacy_22",
+              "relicSortId": 5,
+              "relicGroupId": 1,
+              "orderId": "005",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_23": {
+              "relicId": "rogue_3_relic_legacy_23",
+              "relicSortId": 6,
+              "relicGroupId": 1,
+              "orderId": "006",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_35": {
+              "relicId": "rogue_3_relic_legacy_35",
+              "relicSortId": 7,
+              "relicGroupId": 1,
+              "orderId": "007",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_36": {
+              "relicId": "rogue_3_relic_legacy_36",
+              "relicSortId": 8,
+              "relicGroupId": 1,
+              "orderId": "008",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_37": {
+              "relicId": "rogue_3_relic_legacy_37",
+              "relicSortId": 9,
+              "relicGroupId": 1,
+              "orderId": "009",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_38": {
+              "relicId": "rogue_3_relic_legacy_38",
+              "relicSortId": 10,
+              "relicGroupId": 1,
+              "orderId": "010",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_40": {
+              "relicId": "rogue_3_relic_legacy_40",
+              "relicSortId": 11,
+              "relicGroupId": 1,
+              "orderId": "011",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_41": {
+              "relicId": "rogue_3_relic_legacy_41",
+              "relicSortId": 12,
+              "relicGroupId": 1,
+              "orderId": "012",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_43": {
+              "relicId": "rogue_3_relic_legacy_43",
+              "relicSortId": 13,
+              "relicGroupId": 1,
+              "orderId": "013",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_44": {
+              "relicId": "rogue_3_relic_legacy_44",
+              "relicSortId": 14,
+              "relicGroupId": 1,
+              "orderId": "014",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_54": {
+              "relicId": "rogue_3_relic_legacy_54",
+              "relicSortId": 15,
+              "relicGroupId": 1,
+              "orderId": "015",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_55": {
+              "relicId": "rogue_3_relic_legacy_55",
+              "relicSortId": 16,
+              "relicGroupId": 1,
+              "orderId": "016",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_56": {
+              "relicId": "rogue_3_relic_legacy_56",
+              "relicSortId": 17,
+              "relicGroupId": 1,
+              "orderId": "017",
+              "isSpRelic": false,
+              "enrollId": null
+            },
+            "rogue_3_relic_legacy_59": {
+              "relicId": "rogue_3_relic_legacy_59",
+              "relicSortId": 18,
+              "relicGroupId": 1,
+              "orderId": "018",
+              "isSpRelic": false,
+              "enrollId": null
+            }
+          }
+          const ifnull = (obj) => {
+            if(obj == null){
+              return "";
+            } else{
+              return obj
+            }
+            return obj;
+          }
+        $.getJSON("zh_CN/gamedata/excel/roguelike_topic_table.json",relic => {
+          $.each(a,(id , value) => {
+            $.each(relic.details.rogue_3.items,(relicId, relicData) =>{
+              if(id == relicId){
+                $("#a1").html($("#a1").html() + `{{肉鸽收藏品<br/>
+                  |relicId=${relicData.id}<br/>
+                  |编号=${value.orderId}<br/>
+                  |藏品名=${relicData.name}<br/>
+                  |效果=【常态化】${relicData.usage}<br/>
+                  |描述=${relicData.description}<br/>
+                  |解锁方式=${ifnull(relicData.unlockCondDesc)}<br/>
+                  |背景颜色=rgb(201, 221, 222)<br/>
+                  |价格={{data|源石锭|${relicData.value}}}<br/>
+                  }}<br/>`)
+              }
+              if(id + "_a" == relicId){
+                $("#a2").html($("#a2").html() + `${relicData.name}<br/>&#60;br/>【高寒化】${relicData.usage}&#60;br/>`)
+              }
+              if (id + "_b" == relicId) {
+                $("#a2").html($("#a2").html() + `【冻土化】${relicData.usage}&#60;br/>`)
+              }
+              if (id + "_c" == relicId) {
+                $("#a2").html($("#a2").html() + `【极地化】${relicData.usage}<br/>`)
+              }
+            })
+          })
+        })
+        // var count = 1;
+        // function iF(obj) {
+        //     if (obj !== null) {
+        //         return obj
+        //     }else{
+        //         return ""
+        //     }
+            
+        // }
+
+        // for (x in a) {
+        //     a1.innerHTML += "{{收藏品|" + (count++) + "|" +
+        //         a[x].name + "|" + a[x].usage + "|" +
+        //         a[x].description + "|" + iF(a[x].unlockCondDesc) + "|" +
+        //         "主题=水月与深蓝之树" + "}}" + "<br/>";
+        // }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
