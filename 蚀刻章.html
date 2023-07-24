@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="box0"></div>
+  <div id="box1"></div>
+
+  <script src="/js/taicireplace.js"></script>
+  <script src="/js/jQuery.js"></script>
+  <script>
+
+    var medals = {
+      "groupId": "medalGroupRogue03",
+      "groupName": "探索者的银凇止境蚀刻章套组",
+      "groupDesc": "记录一段北地科考历程的蚀刻章套组。\n抓住极寒中任何一线生机，挪步追寻无尽冰原的尽头。\n无论命运多么严苛，领受它，向前走。",
+      "medalId": [
+        "medal_rogue_3_01",
+        "medal_rogue_3_02",
+        "medal_rogue_3_03",
+        "medal_rogue_3_04",
+        "medal_rogue_3_05",
+        "medal_rogue_3_06",
+        "medal_rogue_3_07",
+        "medal_rogue_3_08",
+        "medal_rogue_3_09",
+        "medal_rogue_3_10",
+        "medal_rogue_3_11",
+        "medal_rogue_3_12"
+      ],
+      "sortId": 36,
+      "groupBackColor": "90BCD5",
+      "groupGetTime": 1689220800,
+      "sharedExpireTimes": null
+    }
+    $("#box0").html("==" + medals.groupName + "==");
+    $.getJSON("zh_CN/gamedata/excel/medal_table.json", data => {
+      let nm = "";
+      let rlt = "";
+      let cdt = "";
+      let desc = "";
+      let up = "";
+      let id = "";
+      $("#box1").html(`{{蚀刻章套组|c=${medals.groupBackColor}|d=${medals.groupDesc}|l=`);
+      for (let i = 0; i < medals.medalId.length; i++) {
+        for (let j = 0; j < data.medalList.length; j++) {
+          if (medals.medalId[i] == data.medalList[j].medalId) {
+            nm = data.medalList[j].medalName;
+            rlt = data.medalList[j].rarity.replace(/T/g, "").replace(/D5/g,"");
+            desc = data.medalList[j].description;
+            if (data.medalList[j].getMethod == null) {
+              cdt = `获得${data.medalList[j].preMedalIdList.length}枚前置蚀刻章`;
+            } else {
+              cdt = data.medalList[j].getMethod;
+            }
+            // if (data.medalList[j].advancedMedal != null) {
+            //   if (data.medalList[j].medalId + "5" == data.medalList[j]) {
+            //     up = "*" + data.medalList[j].medalId;
+
+            //   }
+            // }
+          }
+          if(data.medalList[j].originMedal == medals.medalId[i]){
+            let id = medals.medalId[i];
+            up = "*" + data.medalList[j].getMethod + `,${data.medalList[j].medalName}（镀层）*${data.medalList[j].rarity.replace(/T/g, "") }*${data.medalList[j].getMethod}*${desc}`;
+          }
+        }
+        $("#box1").html($("#box1").html() + `${nm}*${rlt}*${cdt}*${desc}${up},`);
+      }
+      $("#box1").html($("#box1").html().slice(0, -1) + "}}");
+    })
+
+
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
