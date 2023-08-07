@@ -47,12 +47,12 @@
       let desc = "";
       let up = "";
       let id = "";
-      $("#box1").html(`{{蚀刻章套组|c=${medals.groupBackColor}|d=${medals.groupDesc}|l=`);
+      $("#box1").html(`{{蚀刻章套组|c=${medals.groupBackColor}|d=${medals.groupDesc.replace(/\n/g,"&#60;br/>")}|l=`);
       for (let i = 0; i < medals.medalId.length; i++) {
         for (let j = 0; j < data.medalList.length; j++) {
           if (medals.medalId[i] == data.medalList[j].medalId) {
             nm = data.medalList[j].medalName;
-            rlt = data.medalList[j].rarity.replace(/T/g, "").replace(/.*D5/g, "");
+            rlt = data.medalList[j].rarity.replace(/T/g, "");
             desc = data.medalList[j].description;
             if (data.medalList[j].getMethod == null) {
               cdt = `获得${data.medalList[j].preMedalIdList.length}枚前置蚀刻章`;
@@ -71,10 +71,10 @@
             up = "*" + data.medalList[j].getMethod;
           }
         }
-        $("#box1").html($("#box1").html() + `${nm}*${rlt}*${cdt}*${desc}${up},`);
+        $("#box1").html($("#box1").html() + `${nm}*${rlt}*${cdt}*${desc.replace(/\n/g, "&#60;br/>")}${up},`);
       }
       $("#box1").html($("#box1").html().slice(0, -1) + "}}");
-    })
+    });
 
 
 
