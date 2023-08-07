@@ -17,28 +17,33 @@
   <script>
 
     var medals = {
-      "groupId": "medalGroupRogue03",
-      "groupName": "探索者的银凇止境蚀刻章套组",
-      "groupDesc": "记录一段北地科考历程的蚀刻章套组。\n抓住极寒中任何一线生机，挪步追寻无尽冰原的尽头。\n无论命运多么严苛，领受它，向前走。",
+      "groupId": "medalGroupActivityRune01",
+      "groupName": "黄铁行动蚀刻章套组",
+      "groupDesc": "记录黄铁行动期间危机合约履行情况的蚀刻章套组。\n每一枚蚀刻章都见证了博士在黄铁行动中所作出的贡献。\n死战不退，历战不竭，传奇陨落，黄铁重铸。",
       "medalId": [
-        "medal_rogue_3_01",
-        "medal_rogue_3_02",
-        "medal_rogue_3_03",
-        "medal_rogue_3_04",
-        "medal_rogue_3_05",
-        "medal_rogue_3_06",
-        "medal_rogue_3_07",
-        "medal_rogue_3_08",
-        "medal_rogue_3_09",
-        "medal_rogue_3_10",
-        "medal_rogue_3_11",
-        "medal_rogue_3_12"
+        "medal_activity_10d0_01",
+        "medal_activity_10d0_02",
+        "medal_activity_10d0_03",
+        "medal_activity_10d0_04",
+        "medal_activity_10d0_05",
+        "medal_activity_10d0_06",
+        "medal_activity_10d0_07",
+        "medal_activity_10d0_08",
+        "medal_activity_10d0_09",
+        "medal_activity_10d0_10"
       ],
-      "sortId": 36,
-      "groupBackColor": "90BCD5",
-      "groupGetTime": 1689220800,
-      "sharedExpireTimes": null
+      "sortId": 1,
+      "groupBackColor": "86693c",
+      "groupGetTime": -1,
+      "sharedExpireTimes": [
+        {
+          "start": 1592251200,
+          "end": -1,
+          "type": "PERM"
+        }
+      ]
     }
+
     $("#box0").html("==" + medals.groupName + "==");
     $.getJSON("zh_CN/gamedata/excel/medal_table.json", data => {
       let nm = "";
@@ -47,7 +52,7 @@
       let desc = "";
       let up = "";
       let id = "";
-      $("#box1").html(`{{蚀刻章套组|c=${medals.groupBackColor}|d=${medals.groupDesc.replace(/\n/g,"&#60;br/>")}|l=`);
+      $("#box1").html(`{{蚀刻章套组|c=${medals.groupBackColor}|d=${medals.groupDesc.replace(/\n/g, "&#60;br/>")}|l=`);
       for (let i = 0; i < medals.medalId.length; i++) {
         for (let j = 0; j < data.medalList.length; j++) {
           if (medals.medalId[i] == data.medalList[j].medalId) {
@@ -66,12 +71,20 @@
             //   }
             // }
           }
-          if (data.medalList[j].originMedal == medals.medalId[i]) {
-            let id = medals.medalId[i];
-            up = "*" + data.medalList[j].getMethod;
+          if (data.medalList[j].originMedal != null) {
+            if (data.medalList[j].originMedal == medals.medalId[i]) {
+              let id = medals.medalId[i];
+              up = "*" + data.medalList[j].getMethod;
+            }
           }
         }
         $("#box1").html($("#box1").html() + `${nm}*${rlt}*${cdt}*${desc.replace(/\n/g, "&#60;br/>")}${up},`);
+        nm = "";
+        rlt = "";
+        cdt = "";
+        desc = "";
+        up = "";
+        id = "";
       }
       $("#box1").html($("#box1").html().slice(0, -1) + "}}");
     });
