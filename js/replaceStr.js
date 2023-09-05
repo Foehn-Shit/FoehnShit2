@@ -19,6 +19,7 @@ function replaceStr(obj) {
         replace(/<\$ba.inspire>鼓舞/g,"{{释义|鼓舞").
         replace(/<\$ba.protect>庇护/g,"{{释义|庇护").
         replace(/<\$ba.dt.neural>神经损伤/g,"{{释义|神经损伤").
+        replace(/<\$ba.dt.burning>灼燃损伤/g,"{{释义|灼燃损伤").
         replace(/<\$ba.charged>蓄力/g,"{{释义|蓄力").
         replace(/<\$ba.strong>精力充沛/g,"{{释义|精力充沛").
         replace(/<\$ba.float>近地悬浮/g,"{{释义|近地悬浮").
@@ -36,8 +37,11 @@ function replaceStr(obj) {
         replace(/<\$ba.weightless>失重/g, "{{释义|失重").
         replace(/<\$ba.berserk>坚忍/g, "{{释义|坚忍").
         replace(/<\$ba.dt.apoptosis2>凋亡损伤/g, "{{释义|凋亡损伤").
+        replace(/<\$ba.dt.element>元素损伤/g, "{{释义|元素损伤").
+        replace(/<\$ba.epbarrier>损伤屏障/g, "{{释义|损伤屏障").
+        
 
-
+        replace(/<\@ba.dt.element>/g, "{{释义|").
         replace(/<\$cc.bd_A_1>/g,"{{释义|").
         replace(/<\$cc.bd_A_2>/g,"{{释义|").
         replace(/<\$cc.bd_B_1>/g,"{{释义|").
@@ -99,6 +103,7 @@ function replaceStr(obj) {
         replace(/<@ba.xe>/g,"{{color|00FFFF|").
         replace(/<@ba.xf>/g,"{{color|0291FF|").
         replace(/<@ba.xg>/g,"{{color|FF00FF|").
+        
         replace(/<@eb.key>/g,"{{color|00FFFF|").
         replace(/<@eb.danger>/g,"{{color|FF0000|").
         replace(/<@ro.get>/g,"{{color|0098DC|").
