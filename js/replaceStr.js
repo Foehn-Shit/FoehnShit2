@@ -4,41 +4,43 @@ function replaceStr(obj) {
         replace(/\n/g,"&#060;br/&#062;").
         replace(/<\/>/g, "}}").
         // 释义类
-        replace(/<\$ba.shield>护盾/g, "{{释义|护盾").
-        replace(/<\$ba.camou>迷彩/g, "{{释义|迷彩").
-        replace(/<\$ba.invisible>隐匿/g, "{{释义|隐匿").
-        replace(/<\$ba.stun>晕眩/g, "{{释义|晕眩").
-        replace(/<\$ba.fragile>脆弱/g,"{{释义|脆弱").
-        replace(/<\$ba.frozen>冻结/g,"{{释义|冻结").
-        replace(/<\$ba.binding>绑定/g,"{{释义|绑定").
-        replace(/<\$ba.sleep>沉睡/g,"{{释义|沉睡").
-        replace(/<\$ba.buffres>抵抗/g,"{{释义|抵抗").
         replace(/<\$ba.sluggish>停顿/g,"{{释义|停顿").
         replace(/<\$ba.root>束缚/g,"{{释义|束缚").
-        replace(/<\$ba.cold>寒冷/g,"{{释义|寒冷").
-        replace(/<\$ba.inspire>鼓舞/g,"{{释义|鼓舞").
+        replace(/<\$ba.stun>晕眩/g, "{{释义|晕眩").
+        replace(/<\$ba.buffres>抵抗/g,"{{释义|抵抗").
+        replace(/<\$ba.invisible>隐匿/g, "{{释义|隐匿").
+        replace(/<\$ba.camou>迷彩/g, "{{释义|迷彩").
+        replace(/<\$ba.fragile>脆弱/g,"{{释义|脆弱").
+        replace(/<\$ba.shield>护盾/g, "{{释义|护盾").
         replace(/<\$ba.protect>庇护/g,"{{释义|庇护").
+        replace(/<\$ba.cold>寒冷/g,"{{释义|寒冷").
+        replace(/<\$ba.frozen>冻结/g,"{{释义|冻结").
+        replace(/<\$ba.sleep>沉睡/g,"{{释义|沉睡").
+        replace(/<\$ba.inspire>鼓舞/g,"{{释义|鼓舞").
+        replace(/<\$ba.binding>绑定/g,"{{释义|绑定").
         replace(/<\$ba.dt.neural>神经损伤/g,"{{释义|神经损伤").
-        replace(/<\$ba.dt.burning>灼燃损伤/g,"{{释义|灼燃损伤").
         replace(/<\$ba.charged>蓄力/g,"{{释义|蓄力").
         replace(/<\$ba.strong>精力充沛/g,"{{释义|精力充沛").
+        replace(/<\$ba.dt.erosion>侵蚀损伤/g,"{{释义|侵蚀损伤").
+        replace(/<\$ba.dt.burning>灼燃损伤/g,"{{释义|灼燃损伤").
         replace(/<\$ba.float>近地悬浮/g,"{{释义|近地悬浮").
         replace(/<\$ba.refraction>折射/g,"{{释义|折射").
+        replace(/<\$ba.dt.element>元素损伤/g,"{{释义|元素损伤").
         replace(/<\$ba.overdrive>过载/g,"{{释义|过载").
-        replace(/<\$ba.dt.apoptosis>凋亡损伤/g,"{{释义|凋亡损伤").
+        replace(/<\$ba.dt.apoptosis>凋亡损伤/g, "{{释义|凋亡损伤").
         replace(/<\$ba.debuff>异常状态/g,"{{释义|异常状态").
         replace(/<\$ba.levitate>浮空/g,"{{释义|浮空").
         replace(/<\$ba.physhield>物理护盾/g,"{{释义|物理护盾").
         replace(/<\$ba.magicfragile>法术脆弱/g,"{{释义|法术脆弱").
         replace(/<\$ba.dying>重伤/g,"{{释义|重伤").
         replace(/<\$ba.barrier>屏障/g,"{{释义|屏障").
-        replace(/<\$ba.steal>偷取/g, "{{释义|偷取").
-        replace(/<\$ba.weaken>虚弱/g, "{{释义|虚弱").
         replace(/<\$ba.weightless>失重/g, "{{释义|失重").
         replace(/<\$ba.berserk>坚忍/g, "{{释义|坚忍").
-        replace(/<\$ba.dt.apoptosis2>凋亡损伤/g, "{{释义|凋亡损伤").
-        replace(/<\$ba.dt.element>元素损伤/g, "{{释义|元素损伤").
-        replace(/<\$ba.epbarrier>损伤屏障/g, "{{释义|损伤屏障").
+        replace(/<\$ba.steal>偷取/g, "{{释义|偷取").
+        replace(/<\$ba.weaken>虚弱/g, "{{释义|虚弱").
+        replace(/<\$ba.strong>精力充沛/g,"{{释义|精力充沛").
+        replace(/<\$ba.dt.apoptosis2>凋亡损伤/g,"{{释义|凋亡损伤·我方|显示=凋亡损伤").
+        replace(/<\$ba.epbarrier>损伤屏障/g,"{{释义|损伤屏障").
         
 
         replace(/<\@ba.dt.element>/g, "{{释义|").
