@@ -43,20 +43,25 @@ function replaceStr(obj) {
         replace(/<\$ba.epbarrier>损伤屏障/g,"{{释义|损伤屏障").
         
 
-        replace(/<\@ba.dt.element>/g, "{{释义|").
         replace(/<\$cc.bd_A_1>/g,"{{释义|").
         replace(/<\$cc.bd_A_2>/g,"{{释义|").
         replace(/<\$cc.bd_B_1>/g,"{{释义|").
         replace(/<\$cc.bd_B_2>/g,"{{释义|").
         replace(/<\$cc.bd_A>/g,"{{释义|").
         replace(/<\$cc.bd_B>/g,"{{释义|").
+        replace(/<\$cc.bd_C>/g,"{{释义|").
         replace(/<\$cc.bd_a1>/g,"{{释义|").
         replace(/<\$cc.bd_b1>/g,"{{释义|").
         replace(/<\$cc.bd_ash>/g,"{{释义|").
         replace(/<\$cc.bd_tachanka>/g,"{{释义|").
+        replace(/<\$cc.bd_malist>/g,"{{释义|").
         replace(/<\$cc.bd_a1_a1>/g,"{{释义|").
         replace(/<\$cc.bd_a1_a2>/g,"{{释义|").
         replace(/<\$cc.bd_a1_a3>/g,"{{释义|").
+        replace(/<\$cc.bd.costdrop>/g,"{{释义|").
+        replace(/<\$cc.bd_felyne>/g,"{{释义|").
+        replace(/<\$cc.bd_felyne_1>/g,"{{释义|").
+        replace(/<\$cc.bd_felyne_2>/g,"{{释义|").
         replace(/<\$cc.m.var1>/g,"{{释义|").
         replace(/<\$cc.m.var2>/g,"{{释义|").
         replace(/<\$cc.t.snsant1>/g,"{{释义|").
@@ -69,10 +74,18 @@ function replaceStr(obj) {
         replace(/<\$cc.g.abyssal>/g,"{{释义|").
         replace(/<\$cc.g.karlan>/g,"{{释义|").
         replace(/<\$cc.g.sui>/g,"{{释义|").
+        replace(/<\$cc.g.glasgow>/g,"{{释义|").
+        replace(/<\$cc.g.rh>/g,"{{释义|").
+        replace(/<\$cc.g.sm>/g,"{{释义|").
+        replace(/<\$cc.g.bs>/g,"{{释义|").
         replace(/<\$cc.c.abyssal2_1>/g,"{{释义|").
-        replace(/<\$cc.c.abyssal2_2>/g,"{{释义|").
+        replace(/<\$cc.c.abyssal2_2>/g,"{{释义|特殊加成2|显示=").
         replace(/<\$cc.c.abyssal2_3>/g,"{{释义|").
-        replace(/<\$cc.t.strong2>/g,"{{释义|").
+        replace(/<\$cc.c.room1>/g,"{{释义|").
+        replace(/<\$cc.c.room2>/g,"{{释义|").
+        replace(/<\$cc.c.skill>/g,"{{释义|").
+        replace(/<\$cc.t.strong2>/g,"{{释义|特殊叠加规则2|显示=").
+        replace(/<\$cc.c.sui2_1>/g,"{{释义|").
         replace(/<\$cc.m.pow1>/g,"{{释义|").
         replace(/<\$cc.m.pow2>/g,"{{释义|").
         replace(/<\$cc.m.pow3>/g,"{{释义|").
@@ -80,9 +93,14 @@ function replaceStr(obj) {
         replace(/<\$cc.w.ncdeer1>/g,"{{释义|").
         replace(/<\$cc.w.ncdeer2>/g,"{{释义|").
         replace(/<\$cc.sk.manu1>/g,"{{释义|").
+        replace(/<\$cc.sk.manu2>/g,"{{释义|").
+        replace(/<\$cc.sk.manu3>/g,"{{释义|").
+        replace(/<\$cc.sk.manu4>/g,"{{释义|").
         replace(/<\$cc.tag.op>/g,"{{释义|").
         replace(/<\$cc.tag.knight>/g,"{{释义|").
         replace(/<\$cc.tag.durin>/g,"{{释义|").
+        replace(/<\$cc.tag.mh>/g,"{{释义|").
+        replace(/<\$cc.gvial>/g,"{{释义|").
         // 颜色类
         replace(/<@mission.levelname>/g,"{{color|FFDE00|").
         replace(/<@mission.number>/g,"{{color|FFDE00|").
