@@ -100,22 +100,27 @@
   <script>
 
     var enemy = {
-   "enemy_1543_cstlrs": {
-        "enemyId": "enemy_1543_cstlrs",
-        "enemyIndex": "KW",
+      "enemy_1546_cliff": {
+        "enemyId": "enemy_1546_cliff",
+        "enemyIndex": "BSC",
         "enemyTags": null,
-        "sortId": 737,
-        "name": "克丽斯腾",
+        "sortId": 771,
+        "name": "“桥夹”克里夫",
         "enemyLevel": "BOSS",
-        "description": "自私者。背叛者。求道者。独行者。先驱者。\n晚安，泰拉。",
+        "description": "传奇佣兵，黑钢国际的创始人。战火将他摧毁，亦将他重塑。",
         "attackType": null,
         "ability": null,
         "isInvalidKilled": false,
         "overrideKillCntInfos": {},
         "hideInHandbook": false,
+        "hideInStage": true,
         "abilityList": [
           {
-            "text": "每一个“星环”使<克丽斯腾>占用阻挡数+1，受到的伤害减少",
+            "text": "攻击使数秒内目标防御力减少，该效果可叠加",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "受到废热喷口的伤害时攻击力和防御力大幅降低",
             "textFormat": "NORMAL"
           },
           {
@@ -123,15 +128,7 @@
             "textFormat": "TITLE"
           },
           {
-            "text": "免疫控制且受到“行星碎屑”的伤害减少",
-            "textFormat": "NORMAL"
-          },
-          {
-            "text": "周期性夺取最远的“行星碎屑”将其化为“星环”（周围8格我方单位受到法术伤害并降低攻速）",
-            "textFormat": "NORMAL"
-          },
-          {
-            "text": "【热寂】生命值降为0时，引爆场上所有“星环”对全场我方单位造成法术伤害",
+            "text": "【闪电之手】晕眩目标和相邻单位，随后连续攻击3次",
             "textFormat": "NORMAL"
           },
           {
@@ -139,25 +136,21 @@
             "textFormat": "TITLE"
           },
           {
-            "text": "进入第二形态时立即夺取所有“行星碎屑”",
+            "text": "进入第二形态时立即清空场上所有废热喷口的技力",
             "textFormat": "NORMAL"
           },
           {
-            "text": "攻击力提升，额外攻击1个目标",
+            "text": "攻击力和防御力提升，攻击速度大幅增加",
             "textFormat": "NORMAL"
           },
           {
-            "text": "自身不再夺取“行星碎屑”，但每个“星环”被击破时，对全场我方造成法术伤害，并增加全体敌人移动速度",
+            "text": "【雷霆之手】晕眩目标和相邻单位，随后连续攻击6次，若目标撤退或被击倒，快速穿过一段距离并刷新此技能",
             "textFormat": "NORMAL"
-          },
-          {
-            "text": "【热寂】生命值降为0时，引爆场上所有“星环”对全场我方单位造成高额法术伤害",
-            "textFormat": "SILENCE"
           }
         ],
         "linkEnemies": [],
         "damageType": [
-          "MAGIC"
+          "PHYSIC"
         ],
         "invisibleDetail": false
       }
@@ -229,11 +222,12 @@
       if (enemy[x].abilityList.length != 0) {
         const ablt = (a, elemt) => {
           let str = "";
+          let str_desc = "";
           for (let b = 0; b < a.length; b++) {
             if (a[b].textFormat == "TITLE") {
               str += "$*$" + a[b].text;
             } else if (a[b].textFormat == "NORMAL") {
-              str += "#*#" + a[b].text;
+              str += "#*#" + a[b].text + "??????";
             } else if (a[b].textFormat == "SILENCE") {
               str += "#*#[[file:Icon_enemy_silence.png|link=]]" + a[b].text;
             }
@@ -241,20 +235,27 @@
           let content = "";
           if (str.indexOf("$*$") != -1) {
             for (let i = 0; i < str.slice(3).split("$*$").length; i++) {
-              // console.log(str.slice(3).split("$*$")[i].split("#*#").length)
               if (str.slice(3).split("$*$")[i].split("#*#").length == 1) {
                 $(elemt).html($(elemt).html() + `{{Enemy/ability
-                |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0]).slice(0, -5)}
+                |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0]).slice(0, -5).replace(/\?\?\?\?\?\?/g, "") }
                 }}`);
               }
               if (str.slice(3).split("$*$")[i].split("#*#").length > 1) {
-                for (let j = 1; j < str.slice(3).split("$*$")[i].split("#*#").length; j++) {
-                  content += str.slice(3).split("$*$")[i].split("#*#")[j] + ";"
+                if (str.slice(3).split("$*$")[i].split("#*#")[0].indexOf("??????") != -1) {
+                  for (let jo = 0; jo < str.slice(3).split("$*$")[i].split("#*#").length; jo++) {
+                  $(elemt).html($(elemt).html() + `{{Enemy/ability
+                    |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[jo]).slice(0, -5).replace(/\?\?\?\?\?\?/g,"")}
+                    }}`);
+                  }
+                } else {
+                  for (let j = 1; j < str.slice(3).split("$*$")[i].split("#*#").length; j++) {
+                    content += replaceStr(str.slice(3).split("$*$")[i].split("#*#")[j]).slice(0, -5).replace(/\?\?\?\?\?\?/g, "") + ";"
+                  }
+                  $(elemt).html($(elemt).html() + `{{Enemy/ability
+                    |标题=${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0]).slice(0, -5)}
+                    |${replaceStr(content.slice(0, -1)).slice(0, -5).replace(/\?\?\?\?\?\?/g, "") }
+                    }}`);
                 }
-                $(elemt).html($(elemt).html() + `{{Enemy/ability
-                |标题=${str.slice(3).split("$*$")[i].split("#*#")[0]}
-                |${replaceStr(content.slice(0, -1)).slice(0, -5)}
-                }}`);
                 content = "";
               }
             }

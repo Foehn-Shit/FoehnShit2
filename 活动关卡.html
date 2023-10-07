@@ -13,6 +13,7 @@
 <body>
   {{活动关卡<br />
   |stageId=<span id="id"></span><br />
+  |actname=<span id="actname"></span><br />
   |活动类型=别传 &lt;!--此处填“插曲”或“别传”，若所属活动为故事集则不用填--><br />
   |关卡名=<span id="a1"></span><br />
   |行动名=<span id="a2"></span><br />
@@ -42,7 +43,16 @@
   |突袭视频攻略=<span id="a25"></span><br />
   |突袭图文攻略=<span id="a26"></span><br />
   |mapTag=<span id="a27"></span>&lt;!--在关卡数据中查找 tag ，如果没有不用写，有就原样挪过来 多个tag使用顿号隔开--><br />
-  }}
+  }}<br />
+  &#60;noinclude><br />
+  &#60;tabber><br />
+  活动={{#widget:pgsLink|id=<span class="id"></span>}}<br />
+  |-|<br />
+  复刻={{#widget:pgsLink|id=<span class="id"></span>_rep}}<br />
+  |-|<br />
+  常驻={{#widget:pgsLink|id=<span class="id"></span>_perm}}<br />
+  &#60;/tabber><br />
+  &#60;/noinclude>
   <script src="/js/jQuery.js"></script>
   <script src="/js/replaceStr.js"></script>
   <script src="/js/taicireplace.js"></script>
@@ -54,96 +64,125 @@
   <script>
     //普通
     var normal = {
-      "act26side_ex08": {
-        "stageType": "ACTIVITY",
-        "difficulty": "NORMAL",
-        "performanceStageFlag": "NORMAL_STAGE",
-        "diffGroup": "NONE",
-        "unlockCondition": [
+      "act17side_07": {
+      "stageType": "ACTIVITY",
+      "difficulty": "NORMAL",
+      "performanceStageFlag": "NORMAL_STAGE",
+      "diffGroup": "NONE",
+      "unlockCondition": [
+      ],
+      "stageId": "act17side_07",
+      "levelId": "Activities/act17side/level_act17side_07",
+      "zoneId": "act17sre_zone2",
+      "code": "SN-7",
+      "name": "黄金回廊",
+      "description": "他不辨美丑、不懂畏惧、不知疲惫——我们该如何称呼这种人？\\n<@lv.item><圣徒之手></>向部署方向弹射“圣徒之手”，伤害并晕眩碰撞到的敌人",
+      "hardStagedId": null,
+      "dangerLevel": "精英1 LV.55",
+      "dangerPoint": -1.0,
+      "loadingPicId": "loading_SN_Boat",
+      "canPractice": true,
+      "canBattleReplay": true,
+      "apCost": 15,
+      "apFailReturn": 14,
+      "etItemId": null,
+      "etCost": -1,
+      "etFailReturn": -1,
+      "etButtonStyle": null,
+      "apProtectTimes": 1,
+      "diamondOnceDrop": 1,
+      "practiceTicketCost": 1,
+      "dailyStageDifficulty": 0,
+      "expGain": 150,
+      "goldGain": 150,
+      "loseExpGain": 0,
+      "loseGoldGain": 0,
+      "passFavor": 14,
+      "completeFavor": 15,
+      "slProgress": 0,
+      "displayMainItem": null,
+      "hilightMark": false,
+      "bossMark": false,
+      "isPredefined": false,
+      "isHardPredefined": false,
+      "isSkillSelectablePredefined": false,
+      "isStoryOnly": false,
+      "appearanceStyle": "MAIN_NORMAL",
+      "stageDropInfo": {
+        "firstPassRewards": null,
+        "firstCompleteRewards": null,
+        "passRewards": null,
+        "completeRewards": null,
+        "displayRewards": [
           {
-            "stageId": "act26side_ex07",
-            "completeState": "PASS"
+            "type": "ACTIVITY_ITEM",
+            "id": "act17side_token_compass_rep_1",
+            "dropType": "COMPLETE"
+          },
+          {
+            "type": "ACTIVITY_ITEM",
+            "id": "act17side_token_compass_rep_1",
+            "dropType": "NORMAL"
+          },
+          {
+            "type": "MATERIAL",
+            "id": "30062",
+            "dropType": "NORMAL"
+          },
+          {
+            "type": "MATERIAL",
+            "id": "30042",
+            "dropType": "NORMAL"
+          },
+          {
+            "type": "DIAMOND",
+            "id": "4002",
+            "dropType": "COMPLETE"
           }
         ],
-        "stageId": "act26side_ex08",
-        "levelId": "Activities/act26side/level_act26side_ex08",
-        "zoneId": "act26side_zone2",
-        "code": "HE-EX-8",
-        "name": "夕阳西沉",
-        "description": "我们终将独自前往人生的终点。\\n<@lv.item><临时步道></>木板搭建的临时步道，易被落石破坏变为地穴，经过的地面单位会摔落至底部直接死亡\\n<@lv.item><塌落的墙垣></>每隔一段时间会掉落落石，沿坡道向前滚动对我方造成伤害\\n<@lv.fs>本次行动中远程干员可部署于近战位</>",
-        "hardStagedId": "act26side_ex08#f#",
-        "dangerLevel": "精英2 LV.40",
-        "dangerPoint": -1.0,
-        "loadingPicId": "loading_HE_AFTER",
-        "canPractice": true,
-        "canBattleReplay": true,
-        "apCost": 20,
-        "apFailReturn": 19,
-        "etItemId": null,
-        "etCost": -1,
-        "etFailReturn": -1,
-        "etButtonStyle": null,
-        "apProtectTimes": 1,
-        "diamondOnceDrop": 1,
-        "practiceTicketCost": 1,
-        "dailyStageDifficulty": 0,
-        "expGain": 200,
-        "goldGain": 200,
-        "loseExpGain": 0,
-        "loseGoldGain": 0,
-        "passFavor": 19,
-        "completeFavor": 20,
-        "slProgress": 0,
-        "displayMainItem": null,
-        "hilightMark": false,
-        "bossMark": false,
-        "isPredefined": false,
-        "isHardPredefined": false,
-        "isSkillSelectablePredefined": false,
-        "isStoryOnly": false,
-        "appearanceStyle": "MAIN_NORMAL",
-        "stageDropInfo": {
-          "firstPassRewards": null,
-          "firstCompleteRewards": null,
-          "passRewards": null,
-          "completeRewards": null,
-          "displayRewards": [
-            {
-              "type": "ACTIVITY_ITEM",
-              "id": "act26side_token_fragmenta",
-              "dropType": "COMPLETE"
-            },
-            {
-              "type": "DIAMOND",
-              "id": "4002",
-              "dropType": "COMPLETE"
-            }
-          ],
-          "displayDetailRewards": [
-            {
-              "occPercent": "ALWAYS",
-              "type": "ACTIVITY_ITEM",
-              "id": "act26side_token_fragmenta",
-              "dropType": "COMPLETE"
-            },
-            {
-              "occPercent": "ALWAYS",
-              "type": "DIAMOND",
-              "id": "4002",
-              "dropType": "COMPLETE"
-            }
-          ]
-        },
-        "canUseCharm": false,
-        "canUseTech": false,
-        "canUseTrapTool": false,
-        "canUseBattlePerformance": false,
-        "startButtonOverrideId": null,
-        "isStagePatch": false,
-        "mainStageId": "act26side_ex01",
-        "extraCondition": null,
-        "extraInfo": null
-      }
+        "displayDetailRewards": [
+          {
+            "occPercent": "ALWAYS",
+            "type": "ACTIVITY_ITEM",
+            "id": "act17side_token_compass_rep_1",
+            "dropType": "COMPLETE"
+          },
+          {
+            "occPercent": "ALWAYS",
+            "type": "ACTIVITY_ITEM",
+            "id": "act17side_token_compass_rep_1",
+            "dropType": "NORMAL"
+          },
+          {
+            "occPercent": "ALMOST",
+            "type": "MATERIAL",
+            "id": "30062",
+            "dropType": "NORMAL"
+          },
+          {
+            "occPercent": "USUAL",
+            "type": "MATERIAL",
+            "id": "30042",
+            "dropType": "NORMAL"
+          },
+          {
+            "occPercent": "ALWAYS",
+            "type": "DIAMOND",
+            "id": "4002",
+            "dropType": "COMPLETE"
+          }
+        ]
+      },
+      "canUseCharm": false,
+      "canUseTech": true,
+      "canUseTrapTool": false,
+      "canUseBattlePerformance": false,
+      "startButtonOverrideId": null,
+      "isStagePatch": false,
+      "mainStageId": "act17side_06",
+      "extraCondition": null,
+      "extraInfo": null
+    }
     };
 
 
@@ -187,9 +226,13 @@
       a1.innerHTML = normal[x].code;
       a2.innerHTML = normal[x].name;
       a5.innerHTML = "{{data|理智|" + normal[x].apCost + "}}";
-      $("#a3").html(`${starNum(normal[x].unlockCondition[0].completeState)}星通关[[${stageCode(normal[x].unlockCondition[0].stageId)}]] ${stageName(normal[x].unlockCondition[0].stageId)}`);
+      $("#a3").html(
+        normal[x].unlockCondition.length != 0 ?
+        `${starNum(normal[x].unlockCondition[0].completeState)}星通关[[${stageCode(normal[x].unlockCondition[0].stageId)}]] ${stageName(normal[x].unlockCondition[0].stageId)}`: null
+      );
       a7.innerHTML = normal[x].dangerLevel;
       $("#id").html(normal[x].stageId);
+      $(".id").html(normal[x].stageId);
       $.ajaxSettings.async = false;
       $.getJSON(`/zh_CN/gamedata/levels/${normal[x].levelId}.json`, stageData => {
         a6.innerHTML = stageData.options.characterLimit;
@@ -207,13 +250,13 @@
             $("#a8").html($("#a8").html() + `{{data|${ms(normal[x].stageDropInfo.displayDetailRewards[i].id)}|三星获得}}`);
           }
           if ((normal[x].stageDropInfo.displayDetailRewards[i].dropType == "NORMAL" || normal[x].stageDropInfo.displayDetailRewards[i].dropType == 2) && normal[x].stageDropInfo.displayDetailRewards[i].type != "ACTIVITY_ITEM") {
-            $("#a9").html($("#a9").html() + `{{data|${ms(normal[x].stageDropInfo.displayDetailRewards[i].id)}|${dropProbblt(normal[x].stageDropInfo.displayDetailRewards[i].occPercent)}}}`);
+            $("#a9").html($("#a9").html() + `{{data|${ms(normal[x].stageDropInfo.displayDetailRewards[i].id)}|d=${dropProbblt(normal[x].stageDropInfo.displayDetailRewards[i].occPercent)}}}`);
           }
           if ((normal[x].stageDropInfo.displayDetailRewards[i].dropType == "SPECIAL" || normal[x].stageDropInfo.displayDetailRewards[i].dropType == 3) && normal[x].stageDropInfo.displayDetailRewards[i].type != "ACTIVITY_ITEM") {
-            $("#a10").html($("#a10").html() + `{{data|${ms(normal[x].stageDropInfo.displayDetailRewards[i].id)}|${dropProbblt(normal[x].stageDropInfo.displayDetailRewards[i].occPercent)}}}`);
+            $("#a10").html($("#a10").html() + `{{data|${ms(normal[x].stageDropInfo.displayDetailRewards[i].id)}|d=${dropProbblt(normal[x].stageDropInfo.displayDetailRewards[i].occPercent)}}}`);
           }
           if ((normal[x].stageDropInfo.displayDetailRewards[i].dropType == "ADDITIONAL" || normal[x].stageDropInfo.displayDetailRewards[i].dropType == 4) && normal[x].stageDropInfo.displayDetailRewards[i].type != "ACTIVITY_ITEM") {
-            $("#a11").html($("#a11").html() + `{{data|${ms(normal[x].stageDropInfo.displayDetailRewards[i].id)}|${dropProbblt(normal[x].stageDropInfo.displayDetailRewards[i].occPercent)}}}`);
+            $("#a11").html($("#a11").html() + `{{data|${ms(normal[x].stageDropInfo.displayDetailRewards[i].id)}|d=${dropProbblt(normal[x].stageDropInfo.displayDetailRewards[i].occPercent)}}}`);
           }
         }
 
@@ -248,13 +291,13 @@
                 $("#a12").html($("#a12").html() + `{{data|${ms(value.stageDropInfo.displayDetailRewards[iu].id)}|三星获得}}`);
               }
               if (value.stageDropInfo.displayDetailRewards[iu].dropType == "NORMAL" || value.stageDropInfo.displayDetailRewards[iu].dropType == 2) {
-                $("#a13").html($("#a13").html() + `{{data|${ms(value.stageDropInfo.displayDetailRewards[iu].id)}|${dropProbblt(value.stageDropInfo.displayDetailRewards[iu].occPercent)}}}`);
+                $("#a13").html($("#a13").html() + `{{data|${ms(value.stageDropInfo.displayDetailRewards[iu].id)}|d=${dropProbblt(value.stageDropInfo.displayDetailRewards[iu].occPercent)}}}`);
               }
               if (value.stageDropInfo.displayDetailRewards[iu].dropType == "SPECIAL" || value.stageDropInfo.displayDetailRewards[iu].dropType == 3) {
-                $("#a14").html($("#a14").html() + `{{data|${ms(value.stageDropInfo.displayDetailRewards[iu].id)}|${dropProbblt(value.stageDropInfo.displayDetailRewards[iu].occPercent)}}}`);
+                $("#a14").html($("#a14").html() + `{{data|${ms(value.stageDropInfo.displayDetailRewards[iu].id)}|d=${dropProbblt(value.stageDropInfo.displayDetailRewards[iu].occPercent)}}}`);
               }
               if (value.stageDropInfo.displayDetailRewards[iu].dropType == "ADDITIONAL" || value.stageDropInfo.displayDetailRewards[iu].dropType == 4) {
-                $("#a15").html($("#a15").html() + `{{data|${ms(value.stageDropInfo.displayDetailRewards[iu].id)}|${dropProbblt(value.stageDropInfo.displayDetailRewards[iu].occPercent)}}}`);
+                $("#a15").html($("#a15").html() + `{{data|${ms(value.stageDropInfo.displayDetailRewards[iu].id)}|d=${dropProbblt(value.stageDropInfo.displayDetailRewards[iu].occPercent)}}}`);
               }
             }
           }

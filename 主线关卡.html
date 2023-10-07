@@ -34,7 +34,14 @@
   |备注2=<span id="a13"></span><br /><!--剧情环境备注-->
   |备注=<span id="a12"></span><br />
   |突袭备注=<span id="a14"></span><br />
-  }}
+  }}<br />
+  &#60;noinclude><br />
+  &#60;tabber><br />
+  普通={{#widget:pgsLink|id=<span class="id"></span>}}<br />
+  |-|<br />
+  磨难={{#widget:pgsLink|id=<span class="hardId"></span>}}<br />
+  &#60;/tabber><br />
+  &#60;/noinclude>
   <br />
   <script src="/js/jQuery.js"></script>
   <script src="/js/replaceStr.js"></script>
@@ -44,29 +51,25 @@
   <script src="js/stageTable.js"></script>
   <script>
     const stage = {
-    "main_12-01": {
+  "main_12-05": {
         "stageType": "MAIN",
         "difficulty": "NORMAL",
         "performanceStageFlag": "NORMAL_STAGE",
         "diffGroup": "NORMAL",
         "unlockCondition": [
           {
-            "stageId": "main_11-16",
-            "completeState": "PASS"
-          },
-          {
-            "stageId": "tr_22",
+            "stageId": "main_12-04",
             "completeState": "PASS"
           }
         ],
-        "stageId": "main_12-01",
-        "levelId": "Obt/Main/level_main_12-01",
+        "stageId": "main_12-05",
+        "levelId": "Obt/Main/level_main_12-05",
         "zoneId": "main_12",
-        "code": "12-2",
-        "name": "静候驾临",
-        "description": "好吧，你们是维多利亚不可战胜的象征，是将要帮助我们的拯救者，那现在可以出发了吗？\\n我方费用上限大幅降低",
+        "code": "12-6",
+        "name": "谁的战争",
+        "description": "当炮火的声音在耳边响起，军人和平民都会不约而同想到同一个问题。\\n我方费用上限大幅降低",
         "hardStagedId": null,
-        "dangerLevel": "精英1 LV.60",
+        "dangerLevel": "精英2 LV.15",
         "dangerPoint": -1.0,
         "loadingPicId": "loading_VC_street2",
         "canPractice": true,
@@ -82,13 +85,13 @@
         "practiceTicketCost": 1,
         "dailyStageDifficulty": -1,
         "expGain": 210,
-        "goldGain": 0,
+        "goldGain": 210,
         "loseExpGain": 0,
         "loseGoldGain": 0,
         "passFavor": 20,
         "completeFavor": 21,
-        "slProgress": 227,
-        "displayMainItem": "4001",
+        "slProgress": 231,
+        "displayMainItem": "30073",
         "hilightMark": false,
         "bossMark": false,
         "isPredefined": false,
@@ -103,9 +106,14 @@
           "completeRewards": null,
           "displayRewards": [
             {
-              "type": "GOLD",
-              "id": "4001",
+              "type": "MATERIAL",
+              "id": "30073",
               "dropType": "NORMAL"
+            },
+            {
+              "type": "MATERIAL",
+              "id": "30074",
+              "dropType": "SPECIAL"
             },
             {
               "type": "DIAMOND",
@@ -115,63 +123,81 @@
           ],
           "displayDetailRewards": [
             {
-              "occPercent": "ALWAYS",
-              "type": "GOLD",
-              "id": "4001",
+              "occPercent": "OFTEN",
+              "type": "MATERIAL",
+              "id": "30073",
               "dropType": "NORMAL"
             },
             {
-              "occPercent": "OFTEN",
-              "type": "MATERIAL",
-              "id": "30011",
-              "dropType": "ADDITIONAL"
-            },
-            {
               "occPercent": "SOMETIMES",
               "type": "MATERIAL",
-              "id": "30061",
-              "dropType": "ADDITIONAL"
+              "id": "30074",
+              "dropType": "SPECIAL"
             },
             {
               "occPercent": "OFTEN",
               "type": "MATERIAL",
-              "id": "30012",
+              "id": "30031",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "OFTEN",
+              "type": "MATERIAL",
+              "id": "30051",
               "dropType": "ADDITIONAL"
             },
             {
               "occPercent": "SOMETIMES",
               "type": "MATERIAL",
-              "id": "30062",
+              "id": "30032",
               "dropType": "ADDITIONAL"
             },
             {
               "occPercent": "SOMETIMES",
               "type": "MATERIAL",
-              "id": "30013",
+              "id": "30052",
               "dropType": "ADDITIONAL"
             },
             {
               "occPercent": "SOMETIMES",
               "type": "MATERIAL",
-              "id": "30063",
+              "id": "30033",
               "dropType": "ADDITIONAL"
             },
             {
               "occPercent": "SOMETIMES",
               "type": "MATERIAL",
-              "id": "30073",
+              "id": "30053",
               "dropType": "ADDITIONAL"
             },
             {
               "occPercent": "SOMETIMES",
               "type": "MATERIAL",
-              "id": "31013",
+              "id": "30093",
               "dropType": "ADDITIONAL"
             },
             {
               "occPercent": "SOMETIMES",
               "type": "MATERIAL",
-              "id": "3003",
+              "id": "31033",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "30103",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "31053",
+              "dropType": "ADDITIONAL"
+            },
+            {
+              "occPercent": "SOMETIMES",
+              "type": "MATERIAL",
+              "id": "31043",
               "dropType": "ADDITIONAL"
             },
             {
@@ -188,10 +214,10 @@
         "canUseBattlePerformance": false,
         "startButtonOverrideId": null,
         "isStagePatch": false,
-        "mainStageId": "main_12-01",
+        "mainStageId": "main_12-05",
         "extraCondition": null,
         "extraInfo": null
-      } 
+      }
     };
 
     const starNum = obj => {
@@ -234,6 +260,7 @@
         levelId = stage[x].levelId;
         // stageId
         $("#id").html(stage[x].stageId);
+        $(".id").html(stage[x].stageId);
         // 关卡名
         $("#a1").html(stage[x].code);
         // 行动名
@@ -253,15 +280,15 @@
         for (let o = 0; o < stage[x].stageDropInfo.displayDetailRewards.length; o++) {
           // 常规掉落
           if (stage[x].stageDropInfo.displayDetailRewards[o].dropType == "NORMAL" || stage[x].stageDropInfo.displayDetailRewards[o].dropType == 2) {
-            $("#a9").html($("#a9").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|" +
+            $("#a9").html($("#a9").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|d=" +
               occProbblt(stage[x].stageDropInfo.displayDetailRewards[o].occPercent) + "}}")
             // 特殊掉落
           } else if (stage[x].stageDropInfo.displayDetailRewards[o].dropType == "SPECIAL" || stage[x].stageDropInfo.displayDetailRewards[o].dropType == 3) {
-            $("#a23").html($("#a23").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|" +
+            $("#a23").html($("#a23").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|d=" +
               occProbblt(stage[x].stageDropInfo.displayDetailRewards[o].occPercent) + "}}")
             // 额外物资
           } else if (stage[x].stageDropInfo.displayDetailRewards[o].dropType == "ADDITIONAL" || stage[x].stageDropInfo.displayDetailRewards[o].dropType == 4) {
-            $("#a22").html($("#a22").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|" +
+            $("#a22").html($("#a22").html() + "{{data|" + ms(stage[x].stageDropInfo.displayDetailRewards[o].id) + "|d=" +
               occProbblt(stage[x].stageDropInfo.displayDetailRewards[o].occPercent) + "}}")
           }
         }
@@ -281,6 +308,7 @@
             $.each(bro.stages, (index, elmt) => {
               if (stage[x].diffGroup != "TOUGH") {
                 if ("tough" + stage[x].mainStageId.slice(4) == index) {
+                  $(".hardId").html("tough" + stage[x].stageId.slice(4));
                   for (let hsi = 0; hsi < elmt.unlockCondition.length; hsi++) {
                     // 突袭解锁条件
                     $("#a17").html(starNum(elmt.unlockCondition[hsi].completeState) + "星通关磨难" + stageCode(elmt.unlockCondition[hsi].stageId) + "[[" + stageName(elmt.unlockCondition[hsi].stageId) + "]]");
