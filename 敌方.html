@@ -52,11 +52,12 @@
   |元素抗性=<span id="a35"></span><br /><!--epDamageResistance的值-->
   |损伤抵抗=<span id="a36"></span><br /><!--epResistance的值-->
   <!--以下抗性判断为持有该抗性的条件为：m_defined与m_value的值同时为true，否则无需填写-->
-  |眩晕抗性=<span id="a22"></span><br />
+  |晕眩抗性=<span id="a22"></span><br />
   |沉默抗性=<span id="a23"></span><br />
   |沉睡抗性=<span id="a24"></span><br />
   |冻结抗性=<span id="a25"></span><br />
   |浮空抗性=<span id="a26"></span><br />
+  |战栗抗性=<span id="a38"></span><br />
   |攻击方式=<span id="a4"></span><br /><!-- applyWay的值，英文“,”隔开 -->
   |位置=<span id="a37"></span><br /><!-- motion的值，地面/飞行 -->
   |种族=<span id="a3"></span><br /><!-- enemyTags的值，英文“,”隔开，23年8月1日起可以选择填写代码原文或转码中文 -->
@@ -95,19 +96,20 @@
     style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;background-color: rgb(255, 0, 0);border-radius: 5px;">
   </div>
   <script src="js/jQuery.js"></script>
-  <script src="js/replaceStr.js"></script>
+  <!-- <script src="js/replaceStr.js"></script> -->
+  <script src="js/stringReplace.js"></script>
   <script src="js/enemyId.js"></script>
   <script>
 
     var enemy = {
-      "enemy_1546_cliff": {
-        "enemyId": "enemy_1546_cliff",
-        "enemyIndex": "BSC",
+      "enemy_1550_dhnzzh": {
+        "enemyId": "enemy_1550_dhnzzh",
+        "enemyIndex": "SUI",
         "enemyTags": null,
-        "sortId": 771,
-        "name": "“桥夹”克里夫",
+        "sortId": 849,
+        "name": "“祟”",
         "enemyLevel": "BOSS",
-        "description": "传奇佣兵，黑钢国际的创始人。战火将他摧毁，亦将他重塑。",
+        "description": "自苏醒的巨兽之心中诞生的化物。岁月千载，阴影虬结，岁的代理人们并不孤独，因有恐惧常伴左右；是静候无涯之混沌，还是穿针引线，寻求那一线明识？",
         "attackType": null,
         "ability": null,
         "isInvalidKilled": false,
@@ -116,35 +118,35 @@
         "hideInStage": true,
         "abilityList": [
           {
-            "text": "攻击使数秒内目标防御力减少，该效果可叠加",
-            "textFormat": "NORMAL"
-          },
-          {
-            "text": "受到废热喷口的伤害时攻击力和防御力大幅降低",
-            "textFormat": "NORMAL"
-          },
-          {
-            "text": "第一形态",
+            "text": "混沌",
             "textFormat": "TITLE"
           },
           {
-            "text": "【闪电之手】晕眩目标和相邻单位，随后连续攻击3次",
+            "text": "每受到一定次数的伤害蜕皮，对所在田地造成病害污染，自身攻击力、防御力、法术抗性、重量降低，移动速度增加",
             "textFormat": "NORMAL"
           },
           {
-            "text": "第二形态",
+            "text": "生命值首次降为0时，化入水中，持续召唤敌人，重生后进入明识形态",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "明识",
             "textFormat": "TITLE"
           },
           {
-            "text": "进入第二形态时立即清空场上所有废热喷口的技力",
+            "text": "属性改变，攻击变为物理二连击，免疫大部分控制效果",
             "textFormat": "NORMAL"
           },
           {
-            "text": "攻击力和防御力提升，攻击速度大幅增加",
+            "text": "标记所有攻击过“祟”的我方单位，被标记单位离场时，对“祟”所在田地造成极严重的病害污染",
             "textFormat": "NORMAL"
           },
           {
-            "text": "【雷霆之手】晕眩目标和相邻单位，随后连续攻击6次，若目标撤退或被击倒，快速穿过一段距离并刷新此技能",
+            "text": "【如梭】所在田地病害程度超过阈值时，持续吸收病害并凝聚成一把长枪，优先对被标记干员投掷，造成大量法术伤害",
+            "textFormat": "NORMAL"
+          },
+          {
+            "text": "在无病害的田地里，或是被无病害的水流冲刷时，“祟”的防御力、法术抗性、移动速度降低",
             "textFormat": "NORMAL"
           }
         ],
@@ -190,8 +192,6 @@
         a3.innerHTML = enemy[x].enemyTags;
       }
       // a3.innerHTML = enemy[x].enemyRace;
-      //攻击方式
-      a4.innerHTML = enemy[x].attackType;
       //介绍
       a5.innerHTML = enemy[x].description;
       // 关联
@@ -212,7 +212,7 @@
       }
       //备注
       if (enemy[x].ability != null) {
-        a10.innerHTML = replaceStr(enemy[x].ability).slice(0, -5);
+        a10.innerHTML = replaceStr(enemy[x].ability);
       }
       // 分组
       a11.innerHTML = enemyLevel(enemy[x].enemyLevel);
@@ -227,7 +227,7 @@
             if (a[b].textFormat == "TITLE") {
               str += "$*$" + a[b].text;
             } else if (a[b].textFormat == "NORMAL") {
-              str += "#*#" + a[b].text + "??????";
+              str += "#*#" + a[b].text;
             } else if (a[b].textFormat == "SILENCE") {
               str += "#*#[[file:Icon_enemy_silence.png|link=]]" + a[b].text;
             }
@@ -237,23 +237,23 @@
             for (let i = 0; i < str.slice(3).split("$*$").length; i++) {
               if (str.slice(3).split("$*$")[i].split("#*#").length == 1) {
                 $(elemt).html($(elemt).html() + `{{Enemy/ability
-                |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0]).slice(0, -5).replace(/\?\?\?\?\?\?/g, "") }
+                |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0]).replace(/\?\?\?\?\?\?/g, "").replace("??????", "")}
                 }}`);
               }
               if (str.slice(3).split("$*$")[i].split("#*#").length > 1) {
                 if (str.slice(3).split("$*$")[i].split("#*#")[0].indexOf("??????") != -1) {
                   for (let jo = 0; jo < str.slice(3).split("$*$")[i].split("#*#").length; jo++) {
-                  $(elemt).html($(elemt).html() + `{{Enemy/ability
-                    |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[jo]).slice(0, -5).replace(/\?\?\?\?\?\?/g,"")}
+                    $(elemt).html($(elemt).html() + `{{Enemy/ability
+                    |${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[jo]).replace(/\?\?\?\?\?\?/g, "").replace("??????", "")}
                     }}`);
                   }
                 } else {
                   for (let j = 1; j < str.slice(3).split("$*$")[i].split("#*#").length; j++) {
-                    content += replaceStr(str.slice(3).split("$*$")[i].split("#*#")[j]).slice(0, -5).replace(/\?\?\?\?\?\?/g, "") + ";"
+                    content += replaceStr(str.slice(3).split("$*$")[i].split("#*#")[j]).replace(/\?\?\?\?\?\?/g, "").replace("??????", "") + ";"
                   }
                   $(elemt).html($(elemt).html() + `{{Enemy/ability
-                    |标题=${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0]).slice(0, -5)}
-                    |${replaceStr(content.slice(0, -1)).slice(0, -5).replace(/\?\?\?\?\?\?/g, "") }
+                    |标题=${replaceStr(str.slice(3).split("$*$")[i].split("#*#")[0])}
+                    |${replaceStr(content.slice(0, -1)).replace(/\?\?\?\?\?\?/g, "")}
                     }}`);
                 }
                 content = "";
@@ -262,7 +262,7 @@
           } else {
             for (let i = 0; i < str.slice(3).split("#*#").length; i++) {
               $(elemt).html($(elemt).html() + `{{Enemy/ability
-              |${replaceStr(str.slice(3).split("#*#")[i]).slice(0, -5)}
+              |${replaceStr(str.slice(3).split("#*#")[i])}
               }}`);
             }
             content = "";
@@ -288,7 +288,7 @@
       if (obj == true) {
         return "有";
       } else {
-        return "无";
+        return "";
       }
     }
     function range(obj) {
@@ -305,12 +305,31 @@
         return obj2;
       }
     }
+    function atkType(obj) {
+      switch (obj) {
+        case "NONE":
+          return "不攻击";
+          break;
+        case "MELEE":
+          return "近战";
+          break;
+        case "RANGED":
+          return "远程";
+          break;
+        case "ALL":
+          return "近战,远程";
+          break;
+      }
+    }
     $.getJSON("/zh_CN/gamedata/levels/enemydata/enemy_database.json", function (data) {
       for (let i = 0; i < data.enemies.length; i++) {
+        // console.log(data.enemies[i].Value[0].enemyData.applyWay.m_value);
         if ($("#a34").html() == data.enemies[i].Key) {
+          //攻击方式
+          a4.innerHTML = atkType(data.enemies[i].Value[0].enemyData.applyWay.m_value);
           //描述
           (data.enemies[i].Value[0].enemyData.description.m_defined == true) ?
-            a12.innerHTML = replaceStr(data.enemies[i].Value[0].enemyData.description.m_value).slice(0, -5) : "";
+            a12.innerHTML = replaceStr(data.enemies[i].Value[0].enemyData.description.m_value) : "";
           //生命数值
           (data.enemies[i].Value[0].enemyData.attributes.maxHp.m_defined == true) ?
             a13.innerHTML = data.enemies[i].Value[0].enemyData.attributes.maxHp.m_value : "";
@@ -333,18 +352,19 @@
           (data.enemies[i].Value[0].enemyData.attributes.baseAttackTime.m_defined == true) ?
             a19.innerHTML = data.enemies[i].Value[0].enemyData.attributes.baseAttackTime.m_value.toFixed(1) : "";
           //重量
-          (data.enemies[i].Value[0].enemyData.attributes.massLevel.m_defined == true) ?
+          (data.enemies[i].Value[0].enemyData.attributes.massLevel.m_defined == true && data.enemies[i].Value[0].enemyData.attributes.massLevel.m_value != 0) ?
             a21.innerHTML = data.enemies[i].Value[0].enemyData.attributes.massLevel.m_value : "";
           // 生命恢复速度
           (data.enemies[i].Value[0].enemyData.attributes.hpRecoveryPerSec.m_defined == true) ?
             a33.innerHTML = data.enemies[i].Value[0].enemyData.attributes.hpRecoveryPerSec.m_value : "";
           // 元素抗性
           (data.enemies[i].Value[0].enemyData.attributes.epDamageResistance.m_defined == true) ?
-            a35.innerHTML = data.enemies[i].Value[0].enemyData.attributes.epDamageResistance.m_value : "";
+            (data.enemies[i].Value[0].enemyData.attributes.epDamageResistance.m_value != 0) ?
+              a35.innerHTML = data.enemies[i].Value[0].enemyData.attributes.epDamageResistance.m_value : "" : "";
           // 损伤抵抗
-          (data.enemies[i].Value[0].enemyData.attributes.epResistance.m_defined == true) ?
+          (data.enemies[i].Value[0].enemyData.attributes.epResistance.m_defined == true && data.enemies[i].Value[0].enemyData.attributes.epResistance.m_value != 0) ?
             a36.innerHTML = data.enemies[i].Value[0].enemyData.attributes.epResistance.m_value : "";
-          //眩晕抗性
+          //晕眩抗性
           a22.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.stunImmune.m_value);
           //沉默抗性
           a23.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.silenceImmune.m_value);
@@ -354,6 +374,8 @@
           a25.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.frozenImmune.m_value);
           //浮空抗性
           a26.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.levitateImmune.m_value);
+          //战栗抗性
+          a38.innerHTML = immune(data.enemies[i].Value[0].enemyData.attributes.disarmedCombatImmune.m_value);
           //生命值扣除数
           a27.innerHTML = data.enemies[i].Value[0].enemyData.lifePointReduce.m_value;
           //攻击范围半径
@@ -443,9 +465,9 @@
                 data.enemies[i].Value[1].enemyData.attributes.massLevel.m_value,
                 data.enemies[i].Value[0].enemyData.attributes.massLevel.m_value);
             }
-            // 眩晕抗性
+            // 晕眩抗性
             if (data.enemies[i].Value[1].enemyData.attributes.stunImmune.m_defined == true) {
-              b11.innerHTML = "|眩晕抗性=" + change(data.enemies[i].Value[1].enemyData.attributes.stunImmune.m_defined,
+              b11.innerHTML = "|晕眩抗性=" + change(data.enemies[i].Value[1].enemyData.attributes.stunImmune.m_defined,
                 immune(data.enemies[i].Value[1].enemyData.attributes.stunImmune.m_value),
                 immune(data.enemies[i].Value[0].enemyData.attributes.stunImmune.m_value));
             }
@@ -488,7 +510,7 @@
           }
           if (data.enemies[i].Value.length > 2) {
             span2.innerHTML =
-              "{{Enemy/level|等级=2  " +
+              "{{Enemy/level|等级=2" +
               "<span id=\"c2\"></span>" +
               "<span id=\"c3\"></span>" +
               "<span id=\"c4\"></span>" +
@@ -496,23 +518,23 @@
               "<span id=\"c6\"></span>" +
               "<span id=\"c7\"></span>" +
               "<span id=\"c8\"></span>" +
-              "<span id=\"c10\"></span" +
-              "<span id=\"c11\"></span" +
-              "<span id=\"c12\"></span" +
-              "<span id=\"c13\"></span" +
-              "<span id=\"c14\"></span" +
-              "<span id=\"c15\"></span" +
-              "<span id=\"c16\"></span" +
-              "<span id=\"c17\"></span" +
+              "<span id=\"c10\"></span>" +
+              "<span id=\"c11\"></span>" +
+              "<span id=\"c12\"></span>" +
+              "<span id=\"c13\"></span>" +
+              "<span id=\"c14\"></span>" +
+              "<span id=\"c15\"></span>" +
+              "<span id=\"c16\"></span>" +
+              "<span id=\"c17\"></span>" +
               "}}";
             // span2.innerHTML += "}}";
-
             // 生命数值 如果等级0不等于等级2
             if (data.enemies[i].Value[2].enemyData.attributes.maxHp.m_defined == true) {
               c2.innerHTML = "|最大生命值=" + change(data.enemies[i].Value[2].enemyData.attributes.maxHp.m_defined,
                 data.enemies[i].Value[2].enemyData.attributes.maxHp.m_value,
                 data.enemies[i].Value[0].enemyData.attributes.maxHp.m_value);
             }
+            console.log
             // 攻击数值 如果等级0不等于等级2
             if (data.enemies[i].Value[2].enemyData.attributes.atk.m_defined == true) {
               c3.innerHTML = "|攻击力数值=" + change(data.enemies[i].Value[2].enemyData.attributes.atk.m_defined,
@@ -555,9 +577,9 @@
                 data.enemies[i].Value[2].enemyData.attributes.massLevel.m_value,
                 data.enemies[i].Value[0].enemyData.attributes.massLevel.m_value);
             }
-            // 眩晕抗性
+            // 晕眩抗性
             if (data.enemies[i].Value[2].enemyData.attributes.stunImmune.m_defined == true) {
-              c11.innerHTML = "|眩晕抗性=" + change(data.enemies[i].Value[2].enemyData.attributes.stunImmune.m_defined,
+              c11.innerHTML = "|晕眩抗性=" + change(data.enemies[i].Value[2].enemyData.attributes.stunImmune.m_defined,
                 immune(data.enemies[i].Value[2].enemyData.attributes.stunImmune.m_value),
                 immune(data.enemies[i].Value[0].enemyData.attributes.stunImmune.m_value));
             }

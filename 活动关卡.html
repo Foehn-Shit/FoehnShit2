@@ -54,7 +54,8 @@
   &#60;/tabber><br />
   &#60;/noinclude>
   <script src="/js/jQuery.js"></script>
-  <script src="/js/replaceStr.js"></script>
+  <!-- <script src="/js/replaceStr.js"></script> -->
+   <script src="/js/stringReplace.js"></script>
   <script src="/js/taicireplace.js"></script>
   <script src="/js/cailiao.js"></script>
   <script src="/js/enemyId.js"></script>
@@ -64,125 +65,97 @@
   <script>
     //普通
     var normal = {
-      "act17side_07": {
-      "stageType": "ACTIVITY",
-      "difficulty": "NORMAL",
-      "performanceStageFlag": "NORMAL_STAGE",
-      "diffGroup": "NONE",
-      "unlockCondition": [
-      ],
-      "stageId": "act17side_07",
-      "levelId": "Activities/act17side/level_act17side_07",
-      "zoneId": "act17sre_zone2",
-      "code": "SN-7",
-      "name": "黄金回廊",
-      "description": "他不辨美丑、不懂畏惧、不知疲惫——我们该如何称呼这种人？\\n<@lv.item><圣徒之手></>向部署方向弹射“圣徒之手”，伤害并晕眩碰撞到的敌人",
-      "hardStagedId": null,
-      "dangerLevel": "精英1 LV.55",
-      "dangerPoint": -1.0,
-      "loadingPicId": "loading_SN_Boat",
-      "canPractice": true,
-      "canBattleReplay": true,
-      "apCost": 15,
-      "apFailReturn": 14,
-      "etItemId": null,
-      "etCost": -1,
-      "etFailReturn": -1,
-      "etButtonStyle": null,
-      "apProtectTimes": 1,
-      "diamondOnceDrop": 1,
-      "practiceTicketCost": 1,
-      "dailyStageDifficulty": 0,
-      "expGain": 150,
-      "goldGain": 150,
-      "loseExpGain": 0,
-      "loseGoldGain": 0,
-      "passFavor": 14,
-      "completeFavor": 15,
-      "slProgress": 0,
-      "displayMainItem": null,
-      "hilightMark": false,
-      "bossMark": false,
-      "isPredefined": false,
-      "isHardPredefined": false,
-      "isSkillSelectablePredefined": false,
-      "isStoryOnly": false,
-      "appearanceStyle": "MAIN_NORMAL",
-      "stageDropInfo": {
-        "firstPassRewards": null,
-        "firstCompleteRewards": null,
-        "passRewards": null,
-        "completeRewards": null,
-        "displayRewards": [
+      "act29side_ex01": {
+        "stageType": "ACTIVITY",
+        "difficulty": "NORMAL",
+        "performanceStageFlag": "NORMAL_STAGE",
+        "diffGroup": "NONE",
+        "unlockCondition": [
           {
-            "type": "ACTIVITY_ITEM",
-            "id": "act17side_token_compass_rep_1",
-            "dropType": "COMPLETE"
-          },
-          {
-            "type": "ACTIVITY_ITEM",
-            "id": "act17side_token_compass_rep_1",
-            "dropType": "NORMAL"
-          },
-          {
-            "type": "MATERIAL",
-            "id": "30062",
-            "dropType": "NORMAL"
-          },
-          {
-            "type": "MATERIAL",
-            "id": "30042",
-            "dropType": "NORMAL"
-          },
-          {
-            "type": "DIAMOND",
-            "id": "4002",
-            "dropType": "COMPLETE"
+            "stageId": "act29side_st03",
+            "completeState": "PASS"
           }
         ],
-        "displayDetailRewards": [
-          {
-            "occPercent": "ALWAYS",
-            "type": "ACTIVITY_ITEM",
-            "id": "act17side_token_compass_rep_1",
-            "dropType": "COMPLETE"
-          },
-          {
-            "occPercent": "ALWAYS",
-            "type": "ACTIVITY_ITEM",
-            "id": "act17side_token_compass_rep_1",
-            "dropType": "NORMAL"
-          },
-          {
-            "occPercent": "ALMOST",
-            "type": "MATERIAL",
-            "id": "30062",
-            "dropType": "NORMAL"
-          },
-          {
-            "occPercent": "USUAL",
-            "type": "MATERIAL",
-            "id": "30042",
-            "dropType": "NORMAL"
-          },
-          {
-            "occPercent": "ALWAYS",
-            "type": "DIAMOND",
-            "id": "4002",
-            "dropType": "COMPLETE"
-          }
-        ]
-      },
-      "canUseCharm": false,
-      "canUseTech": true,
-      "canUseTrapTool": false,
-      "canUseBattlePerformance": false,
-      "startButtonOverrideId": null,
-      "isStagePatch": false,
-      "mainStageId": "act17side_06",
-      "extraCondition": null,
-      "extraInfo": null
-    }
+        "stageId": "act29side_ex01",
+        "levelId": "Activities/act29side/level_act29side_ex01",
+        "zoneId": "act29side_zone2",
+        "code": "ZT-EX-1",
+        "name": "急板",
+        "description": "急功近利的学徒，只会把所有法术都变成急板，冥顽不灵！\\n<@lv.item><调谐节点></>受击回复，乐曲变奏中开启可以切换变奏，并使我方获得短暂增益效果",
+        "hardStagedId": "act29side_ex01#f#",
+        "dangerLevel": "精英1 LV.50",
+        "dangerPoint": -1.0,
+        "loadingPicId": "loading_ZT_street",
+        "canPractice": true,
+        "canBattleReplay": true,
+        "apCost": 10,
+        "apFailReturn": 9,
+        "etItemId": null,
+        "etCost": -1,
+        "etFailReturn": -1,
+        "etButtonStyle": null,
+        "apProtectTimes": 1,
+        "diamondOnceDrop": 1,
+        "practiceTicketCost": 1,
+        "dailyStageDifficulty": 0,
+        "expGain": 100,
+        "goldGain": 100,
+        "loseExpGain": 0,
+        "loseGoldGain": 0,
+        "passFavor": 9,
+        "completeFavor": 10,
+        "slProgress": 0,
+        "displayMainItem": null,
+        "hilightMark": false,
+        "bossMark": false,
+        "isPredefined": false,
+        "isHardPredefined": false,
+        "isSkillSelectablePredefined": false,
+        "isStoryOnly": false,
+        "appearanceStyle": "MAIN_NORMAL",
+        "stageDropInfo": {
+          "firstPassRewards": null,
+          "firstCompleteRewards": null,
+          "passRewards": null,
+          "completeRewards": null,
+          "displayRewards": [
+            {
+              "type": "ACTIVITY_ITEM",
+              "id": "act29side_token_erin",
+              "dropType": "COMPLETE"
+            },
+            {
+              "type": "DIAMOND",
+              "id": "4002",
+              "dropType": "COMPLETE"
+            }
+          ],
+          "displayDetailRewards": [
+            {
+              "occPercent": "ALWAYS",
+              "type": "ACTIVITY_ITEM",
+              "id": "act29side_token_erin",
+              "dropType": "COMPLETE"
+            },
+            {
+              "occPercent": "ALWAYS",
+              "type": "DIAMOND",
+              "id": "4002",
+              "dropType": "COMPLETE"
+            }
+          ]
+        },
+        "canUseCharm": false,
+        "canUseTech": false,
+        "canUseTrapTool": false,
+        "canUseBattlePerformance": false,
+        "canContinuousBattle": true,
+        "startButtonOverrideId": null,
+        "isStagePatch": false,
+        "mainStageId": "act29side_ex01",
+        "extraCondition": null,
+        "extraInfo": null
+      }
     };
 
 
@@ -275,7 +248,7 @@
                 }
                 $("#a23").html(replaceStr(value.description.replace(/<@lv.fs>附加条件：/g, "").replace(/\\n/g, "").replace(/<\/>/g, "")));
                 for (let i = 0; i < value.stageDropInfo.displayDetailRewards.length; i++) {
-                  $("#a24").html(`{{data|${ms(value.stageDropInfo.displayDetailRewards[i].id)}|}}`);
+                  $("#a24").html(`{{data|${ms(value.stageDropInfo.displayDetailRewards[i].id)}|d=三星获得}}`);
                 }
               }
             })
@@ -306,7 +279,6 @@
     }
 
     $("#a22").html($("#a22").html().slice(0, -11));
-    $("#a23").html($("#a23").html().slice(0, -4));
     a17.innerHTML = a17.innerHTML.slice(0, -1);
 
 

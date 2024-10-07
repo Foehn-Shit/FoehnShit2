@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box3">
+        <input type="text" id="ipt" value="米格鲁">
+        <button id="btn">开搜</button>
+    </div>
+    <br />
+    <div id="box1"></div>
+    <br />
+    <div id="box2"></div>
+    <script src="/js/jQuery.js"></script>
+    <script src="js/stars.js"></script>
+    <script src="js/operator.js"></script>
+    <!-- <script src="js/replaceStr.js"></script> -->
+     <script src="js/stringReplace.js"></script>
+    <script>
+        let text, text2;
+
+        $("#btn").bind("click", () => {
+
+            $.getJSON(`zh_CN/gamedata/excel/character_table.json`, data => {
+                $.each(data, (cid, cvl) => {
+                    if (cvl.name == $("#ipt").val()) {
+                        text = `{{材料图鉴<br/>
+                        |材料名称=${cvl.name}招聘合同<br/>
+                        |材料介绍=${cvl.itemUsage}<br/>
+                        |材料备注=${replaceStr(cvl.itemDesc)}<br/>
+                        |itemid=${cid}<br/>
+                        |材料类型=干员信物<br/>
+                        |获得方式=招募寻访<br/>
+                        |固定掉落=<br/>
+                        |大概率=<br/>
+                        |概率掉落=<br/>
+                        |小概率=<br/>
+                        |罕见=<br/>
+                        |额外物资=<br/>
+                        |基建生产=<br/>
+                        |稀有度=${star(cvl.rarity) - 1}<br/>
+                        |备注=<br/>
+                        }}`
+                    }
+                });
+                return false;
+            });
+
+            $.getJSON(`zh_CN/gamedata/excel/item_table.json`, data2 => {
+                $.each(data2.items, (id, itemValue) => {
+                    if (itemValue.name == `${$("#ipt").val()}的信物` ||
+                        itemValue.name == `${$("#ipt").val()}的文件夹`) {
+                        text2 = `{{材料图鉴<br/>
+                        |材料名称=${itemValue.name}<br/>
+                        |材料介绍=${itemValue.usage}<br/>
+                        |材料备注=${replaceStr(itemValue.description)}<br/>
+                        |itemid=${itemValue.itemId}<br/>
+                        |材料类型=干员信物<br/>
+                        |获得方式=${itemValue.obtainApproach}<br/>
+                        |固定掉落=<br/>
+                        |大概率=<br/>
+                        |概率掉落=<br/>
+                        |小概率=<br/>
+                        |罕见=<br/>
+                        |额外物资=<br/>
+                        |基建生产=<br/>
+                        |稀有度=${star(itemValue.rarity) - 1}<br/>
+                        |备注=<br/>
+                        }}`
+                    }
+                });
+                return false;
+            });
+
+            $("#box1").html(text);
+            $("#box2").html(text2);
+
+            text = null;
+            text2 = null;
+        })
+    </script>
+</body>
+
+</html>
